@@ -57,7 +57,7 @@ Our challenge starts by defining a test from a requirement or a user story. A us
 User story
 
 As a logged in user,
-So I can buy a fruit online,
+So I can buy an item online,
 I want to add an apple to my basket.
 ````
 
@@ -70,16 +70,16 @@ context 'as a logged in user' do
   it 'adds an apple to his basket' do
     user_account = Account.new
     user_account.add_to_basket('apple')
-    expect(user_account.basket).to include apple
+    expect(user_account.basket).to include 'apple'
   end
 end
 ````
 
-Here, in the test, first, we define the noun that is going to do the action (account) for 'logged in user', second we define the verb that is going to do the action (add_to_basket) and third, the noun that is going to be used during the action (apple). In that case, we are using [Rspec testing framework](http://rspec.info/) , this is for the programming language Ruby. Here we define 'user_account' as an instance of 'New Account', 'add_to_basket' as a 'method' with 'apple' as an 'argument'. Then we write the 'expectation', we expect the 'user_account' to have a 'basket' that includes an 'apple'.
+Here, in the test, first, we define the noun that is going to do the action (account) for 'logged in user', second we define the verb that is going to do the action (add_to_basket) and third, the noun that is going to be used during the action (apple). In that case, we are using [Rspec testing framework](http://rspec.info/) , this is for the [programming language Ruby](https://www.ruby-lang.org/en/). Here we define 'user_account' as an instance of 'New Account', 'add_to_basket' as a 'method' with 'apple' as an 'argument'. Then we write the 'expectation', we expect the 'user_account' to have a 'basket' that includes an 'apple'.
 
-A test is like a black box where we describe an input and an output that summarises a user story but that does not explain how it is going to be solved. A user story test is created from the user perspective, it is called a 'Feature Test', a non-software-developer person should be able to understand it. We can micmic a user interaction to help us.
+A test is like a 'black box' where we describe an 'input' and an 'output' that summarises a user story but that does not explain how it is going to be solved. A user story test is created from the user perspective, it is called a 'Feature Test', a non-software-developer person should be able to understand it. We can micmic a user interaction to help us.
 
-Then we decompose the feature test that is often a complex black box into smaller, simplier black boxes that we call 'Unit Test'. Each time we encounter an error message from the feature test, we create a 'Unit Test' that is going to be simplier about the code but may be only readable by software-developers. The process is the following:
+Then we decompose the 'Feature Test' that is often a complex black box into smaller, simplier black boxes that we call 'Unit Test'. Each time we encounter an error message from the feature test, we create a 'Unit Test' that is going to create the same error message. Once we have solved the 'Unit Test' error message, the 'Feature Test' error message should change, then we move on to the next error message, and so, the next 'Unit Test'. The 'Unit Test is simplier about the problem to solve for a developer but it may be less readable by non-software-developers. The process is the following:
 
 ![feature-unit-test-cycle](readme_images/feature-unit-test-cycle.jpg)
 
@@ -106,11 +106,9 @@ Refactor phase - Refactor
 
 ---
 
-When I plan, I work on the scope of my test. Making my test simple but meaningful, one of the risk is to test the state instead of the behavior.
+When I commit, I add, commit and push to [Github](https://github.com), is helps to save the different version of my work, working alone or in a group. I can also take more risk when I find new solution because a saved version of the working code exists. So, here it is important to write meaningful and consistent message when I commit.
 
-When I commit, I add, commit and push to [Github](https://github.com), is helps to save the different version of my work, working alone or in a group. I can also take more risk when I find new solution because a saved version of the working code exists.
-
-After 15 minutes working on writing some code to implement a test, it is good to step back and wonder if the test we are doing is the good one in term of what we are testing and of how much we are testing, this is why it is recommended to remove all our changes since our last commit (revert) and simplify our test.
+After 15 minutes working on writing some code to implement a test, it is good to step back and wonder if the test we are doing is the good one in term of what we are testing and of how much we are testing, this is why it is recommended to remove all our changes since our last commit , 'revert', and 'simplify' our test.
 
 We can see how the 'Unit test' is defined by the 'Feature test error'. In the example taken earlier, the first error would be that we don't have a class Account.
 
@@ -177,7 +175,9 @@ end
 
 Then we would keep going this way, I am not going to go further here. What is important is to understand the step by step approach so we always know what to do next. And if we do hesitate because we work with a new testing framework we can search online, and we know what we are looking for.
 
-Trying to do small steps we may be tempted to create unecessary test, for example, one usual mistake is to test State over Behavior. The previous example was testing the Behavior because 'add' is the name of the method that will transform the 'items'. However, the following test is a bad one because it tests the state.
+Trying to do small steps, we may be tempted to create unecessary test, for example, one usual mistake is to test State over Behavior. When I plan, I work on the scope of my test, making my test simple but meaningful.
+
+The previous example was testing the Behavior because 'add' is the name of the method that will transform the 'items'. However, the following test is a 'bad' one because it tests the state.
 
 ````ruby
   it 'basket to have an apple' do
@@ -186,7 +186,7 @@ Trying to do small steps we may be tempted to create unecessary test, for exampl
   end
 ````
 
-Because to solve this test I could code the answer directly, this is called to 'hardocde'. So, I am testing a State I am writing, not a Behavior I am creating, this is why the following test is unecessary.
+ To solve this test I could code the answer directly, and no transformation would happen, this is called to 'hardocde' the result. So, I am testing a State I am writing, not a Behavior I am creating, this is why the following test is unecessary.
 
 ````ruby
 it 'adds an apple to the basket' do
@@ -200,7 +200,9 @@ end
 
 Our approach to Test Drive Development is Behavior Driven Development.
 
-I can Test Drive Develop anything means that when I am facing a problem, I am able to divide it in small chunks, that I am able to be very clear about what I want to achieve in that chunk, that I develop my solution step by step, writing the test first and then finding the solution. It means that whatever language or project I am working on, I am able to consistently use a methodology such as the Red-Green-Refactor, in other words, I can use a process to create structured code, easy to read, debug and update.
+---
+
+'I can Test Drive Develop anything' means that when I am facing a problem, I am able to divide it in small chunks, that I am able to be very clear about what I want to achieve in those chunks, that I develop my solution step by step, writing the test first and then finding the solution. It means that whatever language or project I am working on, I am able to consistently use a methodology such as the Red-Green-Refactor, in other words, I can use a process to create structured code, easy to read, debug and update.
 
 ---
 
@@ -216,7 +218,7 @@ let(:plane) { Plane.new }
 
 ````
 
-https://github.com/AdrienFabre/airport_challenge_ruby/blob/6a4b4bc5c3e53e515494e33da19f00478da84f63/spec/airport_spec.rb
+[Link to faking a plane object while solving Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_ruby/blob/6a4b4bc5c3e53e515494e33da19f00478da84f63/spec/airport_spec.rb)
 
 In the Airport Challenge, in the Airport class unit test, so we can use an instance of the class Plane, we create a double that we can access everywhere in this test. This is a good way to make the Unit Test independent, so we only test the Airport class with the Airport Unit Test. While the feature test would test everything together, so we would never see a double in a feature test.
 
@@ -231,7 +233,7 @@ When we want to test what is output in the terminal, we use the following syntax
   end
 ````
 
-https://github.com/AdrienFabre/echo_ruby/blob/0307b636c4e105de552e64d75b369bb57daec184/spec/echo_spec.rb
+[Link to testing the output in the terminal in the Echo Challenge TDD](https://github.com/AdrienFabre/echo_ruby/blob/0307b636c4e105de552e64d75b369bb57daec184/spec/echo_spec.rb)
 
 This syntax enables us to create an expected output, that will not be returned at the end of the code, but like something that is displayed in the terminal and that a user can see.
 
@@ -246,7 +248,7 @@ it 'receive the user answer' do
 end
 ````
 
-https://github.com/AdrienFabre/echo_ruby/commit/48baaf4b5a212df450160a0ba9de9ec7bbeeb67a#diff-fb4dc7c0bd38dc2a980d90e370c3338a
+[Link to testing the input in the terminal in the Echo Challenge TDD](https://github.com/AdrienFabre/echo_ruby/commit/48baaf4b5a212df450160a0ba9de9ec7bbeeb67a#diff-fb4dc7c0bd38dc2a980d90e370c3338a)
 
 This 'allow...' syntax enables to mimic the user input in that specific case because it is use on ':gets', however we can use it in many situation to fake the behavior of another class for example.
 
@@ -260,7 +262,7 @@ When we want to test a class that includes the time we need to fake it, in that 
 
 ````
 
-https://github.com/AdrienFabre/echo_ruby/blob/master/spec/echo_spec.rb
+[Link to setting the time 'now' to a fixed time in the Echo Challenge TDD](https://github.com/AdrienFabre/echo_ruby/blob/master/spec/echo_spec.rb)
 
 Here we are using one of the class defined by Ruby, the class Time.
 
@@ -275,7 +277,7 @@ Here what is interesting, in the Rock Paper Scissors game, is that we are faking
     end
 ````
 
-https://github.com/AdrienFabre/rps-challenge/blob/master/spec/computer_spec.rb
+[Link to setting the 'randomness' to a fixed number in the RPS Challenge TDD](https://github.com/AdrienFabre/rps-challenge/blob/master/spec/computer_spec.rb)
 
 Here we are using the class define by Ruby, Kernel to return a fix number, so we can expect a specific outcome.
 
@@ -296,7 +298,7 @@ feature 'display the celebration message' do
 end
 ````
 
-https://github.com/AdrienFabre/birthday_app/blob/334a29bc2c364e30420e98666e2b1c8b56303592/spec/features/display_birthday_spec.rb
+[Link to a feature test with Capybara in the Birthday App Challenge TDD](https://github.com/AdrienFabre/birthday_app/blob/334a29bc2c364e30420e98666e2b1c8b56303592/spec/features/display_birthday_spec.rb)
 
 Here the test is doing the job of testing for the sentence to be right, however, this sentence could be valid every month, while the ideal would be to have test that is valid once a year.
 
@@ -318,7 +320,7 @@ This feature test drived me to create those 2 unit tests that are testing the ca
   end
 ````
 
-https://github.com/AdrienFabre/birthday_app/blob/master/spec/calculator_spec.rb
+[Link to a unit test with Rspec in the Birthday App Challenge TDD](https://github.com/AdrienFabre/birthday_app/blob/master/spec/Capybaracalculator_spec.rb)
 
 ---
 
@@ -332,6 +334,7 @@ Here is another example of the Airport Challenge, where I am using a new languag
   });
 
 ````
+[Link to airport unit test with Jasmine in the Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_js/blob/master/spec/AirportSpec.js)
 
 ---
 
@@ -347,6 +350,8 @@ it("can create a new card", () => {
   })
 ````
 
+[Link to feature test with Cypress in the project management app](https://github.com/what-zen/what-zen-app/blob/dev/cypress/integration/ourTests/Cards.spec.js)
+
 Here we did not succeed to properly Test Drive our application, we did create feature test after we created our app. We would have needed a some more time to be confortable enough with Jest and Enzyme to Test Drive the entire application. This is where I found the limit of learning a new language and test drive at the same time. In that moment, spiking is a way to learn, otherwise it is hard to test something that we don't know about.
 
 ---
@@ -356,6 +361,18 @@ Once everything is TDD, it brings several advantages.
 Firstly, the test coverage is theoricaly 100%, with Ruby we used [Simplecov](https://github.com/colszowka/simplecov).
 
 ---
+
+Here are the feedback I received related to TDD:
+
+Alice - Coach at Makers - After the training process review
+"You ask less questions but a very good one 'could you give an example of user interaction?'" "You process was good, you may need to believe in it more"
+
+Kai - Student at Makers - After the training process review
+"You follow the process and persevere to follow the step by step approach"
+
+Brooke - Student at Makers - After the training process review
+"This is impressive. You don't use the cards because you know the process very well and you know what you are doing at each step."
+
 
 ### I can program fluently
 

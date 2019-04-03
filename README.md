@@ -8,6 +8,8 @@ The [Makers Software Engineering Bootcamp](https://makers.tech/) is a 12 week, f
 
 ## Table of Contents
 
+- [Makers Coding Bootcamp Portfolio](#makers-coding-bootcamp-portfolio)
+  - [Table of Contents](#table-of-contents)
   - [I can make anything](#i-can-make-anything)
     - [I can TDD anything](#i-can-tdd-anything)
     - [I can program fluently](#i-can-program-fluently)

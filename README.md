@@ -362,7 +362,7 @@ Firstly, the test coverage is theoricaly 100%, with Ruby we used [Simplecov](htt
 
 ---
 
-Here are the feedback I received related to TDD:
+Here are a few feedback I received related to TDD:
 
 Alice - Coach at Makers - After the training process review
 "You ask less questions but a very good one 'could you give an example of user interaction?'" "You process was good, you may need to believe in it more"
@@ -373,79 +373,476 @@ Kai - Student at Makers - After the training process review
 Brooke - Student at Makers - After the training process review
 "This is impressive. You don't use the cards because you know the process very well and you know what you are doing at each step."
 
+Clare Pinder - Student at Makers - After the training process review
+"Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
 
 ### I can program fluently
 
 From my experiences with human languages, as a French that learnt English and Russian within the past 10 years, I would divide fluency in different parts.
 
-The part that is similar among languages and that makes it easier to learn new languages such as the main logic, structures, rules, characters, environments all of this, even if it is not identical helps to understand and use new languages easily.
+The part that is similar among languages and that makes it easier to learn new languages such as the main logic, structures, rules, characters, environments all of this, even if it is not identical, it helps to understand and adapt in new language environment easily. Each part that is unique to a language can still differenciate what can be done and not be done, so, we can always draw parallels among languages even if they are very different.
 
-The part that is unique to a language such as syntax specificities and particular abilities, this is often what we mention when we describe a language, what is does differently than others. 
+Programming language have those two parts too, learning Ruby was challenging because I did not have any reference from previous programming language. Once I understood the patterns, the big picture, the details, I acquired the key words to quickly search online whatever syntax was missing. Because I did not know the syntax but I knew what I was willing to use in term of logic or structure. This first programming language helped me to explore Javascript and a little bit of Java with their own differences and similarities. Then, learning the test framework language was another step, because the logic is different, however after RSpec, Jasmine was also easier.
 
-Programming language have those two parts too, learning Ruby was challenging because I did not have any reference from previous programming language. Once I understood the patterns, the big picture, the details, I acquired the key words to quickly search online whatever syntax was missing. Because I did not know the syntax but I knew what I was willing to use in term of logic or structure. And this first language helped me to explore Javascript and a little bit of Java with their own differences and similarities. Then, learning the test framework language was another step, because the logic was different, however after RSpec, Jasmine was also easier.
+Program fluency means that I have explored enough programming languages so that I am confident that I can use my acquired abilities to understand programming languages, to search efficiently and to learn quickly, and perform in a reasonable amount of time.
 
-Program fluency means that I have explored enough programming languages so that I am confident that I can use my acquired abilities to understand program languages, to search efficiently and to learn quickly, new programming languages.
+I can show few examples of different programming environments I adapted in the past.
 
-At the edge of programming fluency, there is on one side the ability to translate human language such as specification or user stories into code and to write code using the best practices such as Test Driven Development, Don’t Repeat Yourself, and Single Responsibility. In other words, keep in mind the person that may use your user interface and your code.
+[Link to my first project at Makers where I created docking station class for the Boris Bike Challenge](https://github.com/AdrienFabre/boris_bikes-1/blob/master/lib/docking_station.rb)
+
+[Link to the commits to my process review Echo Challenge](https://github.com/AdrienFabre/boris_bikes-1/blob/master/lib/docking_station.rb)
+
+The important part is that between those 2 projects, while the language and the testing framework are identical, my understanding of coding and of the entire process evolved a lot. The fluency is shown by how I was able to solve the Echo challenge that requires different techniques to implement each features. So, programming fluently is about learning how to learn as well as understanding the basics of how to understand client request, testing and coding.
+
+[Link to a version of a minimalist Facebook created with Ruby on Rails in a group](https://github.com/simian-sinister/Acebook-Simian-Sinister)
+
+[Link to a version of a minimalist AirBnb created with React and Node in a group](https://github.com/AdrienFabre/makersbnb)
+
+[Link to a version of a minimalist Trello created with React and FireBase in a group](https://github.com/what-zen/what-zen-app)
+
+The other side of progamming fluently, is the ability to translate human language such as specification or user stories into code and to write code using the best practices such as Test Driven Development, Don’t Repeat Yourself, and Single Responsibility. In other words, keep in mind the person that may use your user interface as a user and your code as a software developer.
+
+I found that my various expriences in term of jobs as well as facilitation of design thinking workshops helped me to keep those 2 types of person in mind.
+
+---
+
+Feedback I received
+
+Krzysztof Balejko - Student at Makers
+
+"I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
 
 ---
 
 ### I can debug anything
 
 A bug is an unexpected behavior. Debugging is about finding why this behavior occurs and modifying it so it matches our expectations.
+
 Being able to debug anything is about having a clear process to find the source of a bug, a process that can be used in any language. This process is divided in two main parts.
 
-Getting visibility
+'Getting visibility', finding ways to follow the flow and to display the information created along the flow, then 'Tighten the loop', narrow down so we can find out at which moment the unexpected behavior starts. Each environment has different syntax to make it happen but the process is similar in those environments.
 
-Tighten the loop
+The first example would be the error message I shown in the first part, when the error message shows, this is a bug, but because we define a precise test, the bug is already clear, we already have the visibility and the loop thightened, so we know how to move forward. So, the first way to get some information about the bug is to run the test.
 
-Method 
-Process
+Bug are in lot of places. I learn that one of the main skill is to be able to read the error message. For example, the bug could be during the setup and we are not able to get much visibility from places we don't control. For example:
 
-I get visibility, I print
+I downloaded a repository online and when I run 'rspec' to see the test I receive the following message:
 
-I tighten the loop
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ rpsec
+Command 'rpsec' not found, did you mean:
 
-Follow the flow
+  command 'rspec' from deb ruby-rspec-core
+  command 'ipsec' from deb strongswan-starter
+  command 'ipsec' from deb libreswane
+````
 
-View Controller Model 
-Browser 
-Test results
+Here this is clear and helpful, my error is the way I spelled 'rspec' and also I am getting relevant suggestions. So, I write it the correct way.
 
-Different languages 
+Then I get:
 
-Process
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ rspec
+Could not find concurrent-ruby-1.1.4 in any of the sources
+Run `bundle install` to install missing gems.
+````
 
-Bug from the console
-Bug from the test
-Bug from terminal 
-Tighten the loop and get visibility in different languages
+Here as well I am getting a clear and helpful message. So, I tape 'bundle install'.
+
+Then, while the gems are installing, I get a long line of errors containing this line:
+
+````bash
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+````
+
+and this line
+
+````bash
+checking for pg_config... no
+````
+
+after some Googling, I find out that this error often occurs on Windows or Ubuntu because a package is missing and that running the following line will solve it:
+
+````bash
+sudo apt-get install libpq-dev
+````
+
+Then, I run it, I run 'bundle install' and it works. So I try to run 'rspec' again, but now the error is:
+
+````bash
+An error occurred while loading ./spec/features/welcome_page_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: No such file or directory
+        Is the server running locally and accepting
+        connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+````
+
+From the first few lines I can see that the problem is because I did not create the database locally. After some research on Google. I ran:
+
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ rake db:create
+FATAL:  role "adrien" does not exist
+Couldn't create 'instagram_development' database. Please check your configuration.
+rake aborted!
+ActiveRecord::NoDatabaseError: FATAL:  role "adrien" does not exist
+````
+
+So, I encountered a new problem, I went to Google again. I entered:
+
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ sudo -i -u postgres
+````
+
+then
+
+````bash
+postgres@adrien-XPS-13-9360:~$ psql -d postgres
+````
+
+then
+
+````bash
+postgres=# CREATE ROLE adrien;
+````
+
+and the role adrien was created. Then I faced a new problem:
+
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ rake db:create
+FATAL:  role "adrien" is not permitted to log in
+Couldn't create 'instagram_development' database. Please check your configuration.
+rake aborted!
+PG::ConnectionBad: FATAL:  role "adrien" is not permitted to log in
+````
+
+So, I Googled the authorisation of this new role. I entered:
+
+````bash
+postgres=# ALTER ROLE adrien WITH LOGIN;
+````
+
+and finally, I have got:
+
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ rake db:create
+Created database 'instagram_development'
+Created database 'instagram_test'
+````
+
+What is important here is that this is the debbugging part related to the setup, this is also this one that is hard because we do not get the visibility from inside the code. This is where the skill to read the right line, to make the right assumption, to Google the right question and to take the right information, then doing the right action, customised to my situation is the key to move forward.
+
+Now, if I try to do 'rspec':
+
+````bash
+Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=test
+````
+
+It is good because it is telling be exactly what to do, however I am getting another error:
+
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ bin/rails db:migrate RAILS_ENV=test
+bash: bin/rails: Permission denied
+````
+
+After some Googling I tape:
+
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ chmod u+x bin/rails
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ bin/rails db:migrate RAILS_ENV=test
+== 20190303110850 DeviseCreateUsers: migrating ================================
+-- create_table(:users)
+   -> 0.0161s
+````
+
+And finally it works.
+
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ rspec
+...
+
+Finished in 0.30878 seconds (files took 1.15 seconds to load)
+3 examples, 0 failures
+````
+
+This is how, in a new environment (Linux Ubuntu 18.04), I start to use my debugging skills before writting any code. This is actually a skill that I built through Makers and that slowed me down during weekend challenges.
+
+---
+
+Now that we are setup with a working small Ruby on Rails program with a database I can modify the test and get a 'bug' from a feature test.
+
+````bash
+adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ rspec
+F..
+
+Failures:
+
+  1) Sign in Can sign in from the welcome page
+     Failure/Error: expect(page).to have_content("Welcome to instag!")
+       expected to find text "Welcome to instag!" in "Toggle navigation Insta!\nSign up Sign in\nWelcome to insta!\n“Photography is the story I fail to put into words.” — Destin Sparks"
+     # ./spec/features/user_sign_in_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+Finished in 0.18407 seconds (files took 1.2 seconds to load)
+3 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/features/user_sign_in_spec.rb:4 # Sign in Can sign in from the welcome page
+````
+
+Here what is very important is that I get the error message telling me to have a look at the file user_sign_in_spec.rb:7, which means line 7, this is where the test is failing. (the line 4, from the second green line is indicating the beginning of this test).
+
+This is a very precise and precious indication. I can also see what is not working: 'expected to find text "Welcome to instag!" in "Toggle navigation Insta!\nSign up Sign in\nWelcome to insta!...'
+
+Here we can already see that the problem is that what exist does not match the expectation, we can see that I made a mistake in my test, I wanted to write "Welcome to insta!" and not "Welcome to instag!", this is one bug fixed.
+
+Or, as I can see on my test that the page tested is "/", I could just change the text from the view file that matches the "/" route.
+
+---
+
+This is a Ruby on Rails environment. So I can run 'rails s' and get visibility from the browser on the given address, here it is 'http://localhost:3000/'.
+
+In the terminal when I do 'rails s' I can see what is happening when I click, this is also a way to get visibility. For example when I try to 'Sign in' with an Unauthorized account is says:
+
+````bash
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-04-03 16:58:48 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OVFYvABljkPEaR9f5zgyXwmUkHlc1jcbsfXzEaqqqomNI2Bc9G3HBCifnqwG3hQllUTTUcOyVZLUBbtEpPlQsQ==", "user"=>{"email"=>"adrien.fabre.1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  User Load (0.7ms)  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2  [["email", "adrien.fabre.1@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/adrien/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.7ms)
+````
+
+When I click on 'Sign up' I get:
+
+````bash
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-04-03 17:20:32 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+````
+
+and when I 'Sign up' it says:
+
+````bash
+Started POST "/users" for 127.0.0.1 at 2019-04-03 16:59:07 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u9UMHWPhW+GMcgsxYMmPQQ5kEiYEVWxY/b2GuufjL0f9UA27a8MgUVaoOQL97f/UOWW50gDRfDx0zntlwR7maQ==", "user"=>{"user_name"=>"Adrien", "email"=>"adrien.fabre.1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+   (0.2ms)  BEGIN
+  ↳ /home/adrien/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  User Exists (0.4ms)  SELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2  [["email", "adrien.fabre.1@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/adrien/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  User Create (1.1ms)  INSERT INTO "users" ("user_name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_name", "Adrien"], ["email", "adrien.fabre.1@gmail.com"], ["encrypted_password", "$2a$11$DOfRRtjJJlKVJ7NP.IOHKO28dN8wZbQdqXOZBgmMZZ2wnTIvY4jcG"], ["created_at", "2019-04-03 15:59:07.382565"], ["updated_at", "2019-04-03 15:59:07.382565"]]
+  ↳ /home/adrien/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+   (3.1ms)  COMMIT
+  ↳ /home/adrien/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 162ms (ActiveRecord: 4.9ms)
+````
+
+Here I can see all the information that are being created, for example those which are saved into the database. In that specific case we are using [Devise as an identification solution](https://github.com/plataformatec/devise), so we don't manage everything. I can also see what is created in the database using [TablePlus](https://tableplus.io/) or [Postman](https://www.getpostman.com/).
+
+Here is the end of this example with Ruby on Rails.
+[Link to the test of the repo used from the Instagram Challenge](https://github.com/AdrienFabre/instagram-challenge/blob/master/spec/features/welcome_page_spec.rb)
+
+---
+
+Here we can see an example with javascript and the Airport Challenge.
+[Link to the tests from the Airport Challenge in Javascript](https://github.com/AdrienFabre/airport_challenge_js/tree/master/spec)
+
+Here the testing framework is Jasmine, so we don't get the visibility from the tests in the terminal but we get it from openning 'SpecRunner.html'.
+
+When everything is working the tests look like in the browser.
+
+![Jasmine 0 failure Airport challenge](readme_images/Jasmine-0-failure-Airport-challenge.png)
+
+When I create an error I can see:
+
+![Jasmine 1 failure Airport challenge](readme_images/Jasmine-1-failure-Airport-challenge.png)
+
+Here we can see 2 information, first, the expectation 'throw an Error', second, a file(AirportSpec.js), a line(44) and a number of character(61) to look at.
+
+Another thing interesting to notice is that if I refresh the page I get different error. This means that the errors varies, so I can already think about our programme, that the is a random weather,  and that may be the cause of the variation in the errors.
+
+![Jasmine 2 failures Airport challenge](readme_images/Jasmine-2-failures-Airport-challenge.png)
+
+If I go to look where is my first error is, I can see that it targets in the file AirportSpec.js:
+
+````Javascript
+it('does not clear plane for takeoff', function(){
+      expect(function(){ airport.clearForTakeOff(plane); }).toThrowError('cannot takeoff during storm');
+});
+````
+
+ Now, I can go to the file Airport.js and see where is the method '.clearForTakeOff(plane)' that is expected to ".toThrowError('cannot takeoff during storm')". And I can see: 
+
+````Javascript
+if(this._weather.isStormy())
+    throw new Error('cannot takeoff during storm');
+}
+````
+
+What I am seeing is that the result of 'this._weather.isStormy()' defines if the Error will be thrown or not. So, I can get visibility on what is its result by doing console.log(this._weather.isStormy()) just before it. The I can go to the file SpecRunner.html in the browser, right click and inspect the page, then I go to see what is happening in the console.
+
+![Console-Airport-challenge-js](readme_images/Console-Airport-challenge-js.png)
+
+Here what I can see is that the result varies among the tests.
+
+Now, I can have a at what is this._weather, the 'this' means that is it one of the variable from the Airport object. So, I go to see where this variable is created:
+
+````Javascript
+function Airport(wether){
+  this._weather = typeof weather !== 'undefined' ? weather : new Weather();
+  this._hangar = [];
+}
+````
+
+Here I can see that there is spelling mistake, 'wether', should be 'weather', so I can correct it and see that I do not have anymore errors. However, if I want to really understand I wonder, what is hapenning here? If the 'weather' argument is 'undefined' we get 'new Weater()', a new instance of the class Weather. So, in our case, a new instance of the class 'Weather' is created each time we are creating a new instance of 'Airport'. It means that the argument we are passing does not count.
+
+Now, as all error messages come from the file AirportSpec.js,let's see how we get the weather into this file.
+
+````Javascript
+beforeEach(function(){
+  weather = jasmine.createSpyObj('weather',['isStormy']);
+  plane = jasmine.createSpy('plane');
+  airport = new Airport(weather);
+});
+````
+
+Here we can see that in the file AirportSpec.js, we create a Spy Object of 'Weather' that can answer to the method 'isStormy', then we pass is as an argument into the object 'Airport'. However, because the argument of the new Airport is never read because of the spelling mistake, our Spy is never really used. So when we do:
+
+````Javascript
+beforeEach(function(){
+  weather.isStormy.and.returnValue(false);
+});
+````
+
+It is working for the weather we define in our test but not for the weather that is used in the airport we are using. So, we do not control the result of our 'isStormy' method and this is why our result varies.
+
+[Link to the AirportSpec.js file on Airport Challenge JS](https://github.com/AdrienFabre/airport_challenge_js/blob/master/spec/AirportSpec.js)
+
+---
+
+I can debug anything means that I am able to understand what is the expected behavior, to notice that the expected behavior it not fulfilled and then I am able to make a clear assumption about why this unexpected error occurs and then find ways to verify this assumption. Then, step by step, througt research and following the flow of the error, I finally solve the error message. Meaning that with enough time, I have developed the right process to debug anything. One step at a time.
+
+---
+
+A bug could be other things too, for example, on our deployed website What Zen, the cards coming from the database take time to appear, this is unconvenient for any user, we could consider it like a bug.
+
+Also when we are logged in, when we go to the website and click on the button 'What Zen' to go to 'https://what-zen-app.firebaseapp.com/home' it works. But if we refresh the exact same page, we get '404
+Page Not Found'.
+
+Finally, when we go to the deployed website and go to 'inspect' and 'console' we can see the warning message:
+
+````md
+It looks like you're using the development build of the Firebase JS SDK.
+When deploying Firebase apps to production, it is advisable to only import
+the individual SDK components you intend to use.
+
+For the CDN builds, these are available in the following manner
+(replace <PACKAGE> with the name of a component - i.e. auth, database, etc):
+
+https://www.gstatic.com/firebasejs/5.0.0/firebase-<PACKAGE>.js
+````
+
+Each of those 'bugs' could be sorted, the only reason it is not is the amount of time I would have to dedicate to sort them. The more I debug, the faster I am to debug because I have seen multiple problems and multiple version of different problems in different languages, however the research is a big part of debugging and as we constantly practiced TDD in our processes at Makers, debugging is a part of my daily practice.
+
+[Link to the deployed What Zen website](https://what-zen-app.firebaseapp.com/)
+
+[Link to the What Zen repository on Git](https://github.com/what-zen/what-zen-app)
+
+---
+Feedback I recieved.
+
+Krzysztof Balejko - Student at Makers
+
+"I have worked with Adrien on several occasions, during our pair programming sessions he has proven to be very good at debugging, championing the process of tightening the loop and getting visibility."
+
 
 ---
 
 ### I can model anything
 
-Transforming specification and user stories into a few squares and arrows, that develops our understanding of the big picture and help us to define each part and how they fits together.
+Model something is about taking something abstract and transforming in something more tangible.
 
-Wireframe
+In our situations as software developers, we can model different things, often we are transforming specification and user stories into a few squares and arrows, that develops our understanding of the big picture and help us to define each part and how they fits together.
 
-Diagram
+We can also model how technology work together, we can create user stories from our intentions, we can create a model of what the user interaction would be, a model of how we organised the files of an app or just model to explain the logic behind a method.
 
-Flow
+Here, I am defining user stories from our collective intention during the final project:
 
-Miro
+[Link to the What Zen readme with User Stories](https://github.com/what-zen/what-zen-app)
 
-Break down 
+Then once this is created, we discussed the technology we are going to use, and one model helped to understand how pieces fit together, this model was found online.
 
-Link steps
+![Mern-stack-model](readme_images/MERN-stack-model.png)
 
-Structure 
+This contributed to the collective decision to move towards less new technologies, using React as the Front End (Client Machine) and [Firebase](https://firebase.google.com/) for the whole Back End and the DataBase.
 
-Logic 
+Then I drew a first wireframe, we started on a white board together and recorded digitally the most important part:
 
-Adapt
+![Wireframe-0-what-zen](readme_images/Wireframe-0-what-zen.jpg)
 
-Properties and interactions 
+Then we updated it when our knowledge increased an the project advanced:
+
+![Wireframe-1-what-zen](readme_images/Wireframe-1-what-zen.jpg)
+
+What is important here is to understand that a model is a way to put thoughts into shape. Also it helps to maintain a clear and a common understanding. For example, we created a file tree to understand how the different React component are interacting with each other:
+
+![File-tree-what-zen](readme_images/File-tree-what-zen.jpg)
+
+---
+
+In another example, we receive the challenge to create a bowling scorecard. I started to translate requirements into user stories and then into tests:
+
+[Link to test on Scorecard Bowling Challenge in Javascript](https://github.com/AdrienFabre/bowling-challenge/blob/master/spec/scorecardSpec.js)
+
+And I created the potential wireframe, the idea is always to see what would be a way the ideal solution look like, so we know the direction:
+
+![Wireframe-bowling-scorecard](readme_images/Wireframe-bowling-scorecard.jpg)
+
+But this only one part of the modeling, the other part is more precise and focuses on how the data shape and movements.
+
+Such as the diagram on this README file that reprensents the first user story with the interaction among the Client, the Controller, the Model and the View:
+
+[Link to the Bookmark manager README file and its diagram](https://github.com/AdrienFabre/bookmark_manager)
+
+I personaly really like to diagram as it really helps my understanding of things, for example, here the understanding of MVC:
+
+![MVC-diagram-with-details](readme_images/MVC-diagram-with-details.jpg)
+
+For most of those diagram I used [RealTimeBoard (or its new name Miro)](https://realtimeboard.com)
+
+Also, I found that a small diagram with a pen and paper, deciding on what will be a class, what will be a method and what will be an argument helps to create a test and to make sense of the entirety of the project. Those small diagrams enable me to have the logic on paper and to avoid to re-understand the entire flow each time.
+
+Then, taking time to identify the type of data between each block helps to understand it deeply, as my project were quite small, I did succeed to get a good understanding of flows without every diagram detailled however I can see the benefit of it in bigger and long term projects. Where I could do a diagram per feature created, so each of my commit on Github would have a diagram relevant to the current state of the implemented features.
+
+At Makers, we used Unified Modeling Language, or UML, to model the relationship among CEO, COO and HR manager, what was very valuable is the common understanding of this kind of diagram. Here I used a similar approach to the Bank Tech Test
+
+[Link to Bank tech test README](Bhttps://github.com/AdrienFabre/bank_tech_test_ruby)
+
+I created the following diagram:
+
+![Diagram-bank-test](readme_images/Diagram-bank-test.jpg)
+
+This diagram shows the different interaction among classes that could represent the solution of the Bank Challenge, this is independent to the language, as soon as the language is Object Oriented Programmed we can use it, like Ruby or Javascript.
+
+I can model anything means that I am able to understand abstract concepts and to create words, shapes and interaction that may help personal and collective understanding of what exists or of what is planned to be created.
+
+When I was studying electronics, I focused on the outcome I wanted under specific circumstances. For example if a user was pushing a button a train should go at a specific speed. The electricity was transformed in a way so that each element was aligned to produce this specific speed and a numerous number of logic gates could be necessary to achieve this. To be clear and experiment each possibility, we drew the whole schema and we were able to define the exact number of required gates.
+
+---
+
+Feedback I recieved
+
+Krzysztof Balejko - Student at Makers
+
+"Adrien starts each of his projects with careful planing and I was invited to join in before both bowling and front-end API challenges. During the process Adrien has demonstrated his abilities of modelling user interaction. We have used Realtime Board during both sessions for diagraming and general brainstorming. I would very happily work with him again!"
 
 ---
 
@@ -613,10 +1010,21 @@ He's super eager to learn and always found a ton of resources for us to use to u
 
 Krzysztof Balejko
 
-I have worked with Adrien on several occasions, during our pair programming sessions he has proven to be very good at debugging, championing the process of tightening the loop and getting visibility. I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base.
+I have worked with Adrien on several occasions, during our pair programming sessions he has proven to be very good at debugging, championing the process of tightening the loop and getting visibility. 
+
+I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base.
+
+
+Krzysztof Balejko
+
+
 Adrien starts each of his projects with careful planing and I was invited to join in before both bowling and front-end API challenges. During the process Adrien has demonstrated his abilities of modelling user interaction. We have used Realtime Board during both sessions for diagraming and general brainstorming. I would very happily work with him again!
 
 Alice ( see details on google doc )
 
 Overall. I think your process was good. But you may need to believe in it more. You asked a very good question to start, split the task into steps, and started writing one behaviour test to start. You reasearch process could use some more practice, but it's doing the job. You seem to know your tools.
 If there is one thing to work on, it may be self-awareness. What are you doing. How can you see when/if you are stuck, or if you just need to give it more time.
+
+
+Clare Pinder 
+Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'.

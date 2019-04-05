@@ -34,7 +34,6 @@ The [Makers Software Engineering Bootcamp](https://makers.tech/) is a 12 week, f
 
 ### I can TDD anything
 
-
 TDD stands for Test Driven Development. It means that before writing any code, we think, plan and write the result that we want to obtain. We focus on the simpliest next step. We postpone decisions.
 
 Once the next step is defined, we write and run the test. Then, we read the error messages produced by our test and fix them one by one. The error messages drive the development of our code, this is TDD.
@@ -61,7 +60,7 @@ So I can buy an item online,
 I want to add an apple to my basket.
 ````
 
-Here, what is important is to select the keywords and to create a test from it. The test is going to impact the design of the code, this is important. We need to understand what the client wants and it may be worth asking for more details if the specifiations or user stories are not clear enough. Here is one possibility for the test.
+Here, what is important is to select the keywords and to create a test from it. The test is going to impact the design of the code, this is important. We need to understand what the client wants and it may be worth asking for more details if the specifiations or user stories are not clear enough. To ask how the user is expected to use the programme. Here is one possibility for the test.
 
 ````ruby
 Feature test
@@ -79,7 +78,7 @@ Here, in the test, first, we define the noun that is going to do the action (acc
 
 A test is like a 'black box' where we describe an 'input' and an 'output' that summarises a user story but that does not explain how it is going to be solved. A user story test is created from the user perspective, it is called a 'Feature Test', a non-software-developer person should be able to understand it. We can micmic a user interaction to help us.
 
-Then we decompose the 'Feature Test' that is often a complex black box into smaller, simplier black boxes that we call 'Unit Test'. Each time we encounter an error message from the feature test, we create a 'Unit Test' that is going to create the same error message. Once we have solved the 'Unit Test' error message, the 'Feature Test' error message should change, then we move on to the next error message, and so, the next 'Unit Test'. The 'Unit Test is simplier about the problem to solve for a developer but it may be less readable by non-software-developers. The process is the following:
+Then we decompose the 'Feature Test' that is often a complex black box into smaller, simplier black boxes that we call 'Unit Test'. Each time we encounter an error message from the feature test, we create a 'Unit Test' that is going to create the same error message. Once we have solved the 'Unit Test' error message, the 'Feature Test' error message should change, then we move on to the next error message, and so, we create the next 'Unit Test'. The 'Unit Test is simplier about the problem to solve for a developer but it may be less readable by non-software-developers. The process could be represented in the following way:
 
 ![feature-unit-test-cycle](readme_images/feature-unit-test-cycle.jpg)
 
@@ -104,11 +103,11 @@ Refactor phase - Refactor
 - 9- I run tests again to check that the refactoring did not break the tests.
 - 10- I then start the loop again with a new user story.
 
+When I commit, I add, commit and push to [Github](https://github.com), it helps to save the different versions of my work, working alone or in a group. I can also take more risks when I write code because I know a saved version of the working code exists. Here it is important to write meaningful and consistent message, so, anyone can find the relevant commit.
+
+After 15 minutes working on writing some code to implement a test, it is good to step back and wonder if the test we are doing is the good one in term of what we are testing and of how much we are testing, this is why it is recommended that after 15 minutes we remove all our changes since our last commit , 'revert', and 'simplify' our test.
+
 ---
-
-When I commit, I add, commit and push to [Github](https://github.com), is helps to save the different version of my work, working alone or in a group. I can also take more risk when I find new solution because a saved version of the working code exists. So, here it is important to write meaningful and consistent message when I commit.
-
-After 15 minutes working on writing some code to implement a test, it is good to step back and wonder if the test we are doing is the good one in term of what we are testing and of how much we are testing, this is why it is recommended to remove all our changes since our last commit , 'revert', and 'simplify' our test.
 
 We can see how the 'Unit test' is defined by the 'Feature test error'. In the example taken earlier, the first error would be that we don't have a class Account.
 
@@ -117,7 +116,7 @@ NameError:
      uninitialized constant Account
 ````
 
-This is the moment to create a file for our unit test for our class 'Account', 'account_spec.rb'. Then, to answer this message error, we create an 'account.rb' file with.
+This is the moment to create a file for our unit test for our class 'Account': 'account_spec.rb'. Then, to answer this message error, we create an 'account.rb' file with:
 
 ````ruby
 class Account
@@ -127,7 +126,7 @@ end
 
 Because this test is very basic and simple, we tend to use it only to test the testing environment works and then to skip it. Also, the future test we will write will test this, and as we want to avoid redundant tests, we may delete previous tests in the refactor phase.
 
-Keeping our example, then we are going to receive an error message because we don't have a method called 'add_to_basket'.
+Keeping this example, we are going to receive an error message because we don't have a method called 'add_to_basket'. Here, '#<Account:0x000055f7f162a400>' is an object of the class Account.
 
 ````md
 NoMethodError:
@@ -177,7 +176,7 @@ Then we would keep going this way, I am not going to go further here. What is im
 
 Trying to do small steps, we may be tempted to create unecessary test, for example, one usual mistake is to test State over Behavior. When I plan, I work on the scope of my test, making my test simple but meaningful.
 
-The previous example was testing the Behavior because 'add' is the name of the method that will transform the 'items'. However, the following test is a 'bad' one because it tests the state.
+The previous example was testing the Behavior because 'add' is the name of the method that will transform the 'basket'. However, the following test is a 'bad' one because it tests the State.
 
 ````ruby
   it 'basket to have an apple' do
@@ -186,31 +185,31 @@ The previous example was testing the Behavior because 'add' is the name of the m
   end
 ````
 
- To solve this test I could code the answer directly, and no transformation would happen, this is called to 'hardocde' the result. So, I am testing a State I am writing, not a Behavior I am creating, this is why the following test is unecessary.
+ To solve this test I could code the answer directly, and no transformation would happen, this is called to 'hardocde' the result. So, I am testing a State that I am writing, not a Behavior I am creating, this is why the latest test is unecessary. Below you can see how I would anwer to a wront test, not creating the behavior expected by the user, not moving forward.
 
 ````ruby
 it 'adds an apple to the basket' do
   class Account
   attr_reader :basket
   def initialize
-  @basket = ['apple']
+    @basket = ['apple']
   end
 end
 ````
 
-Our approach to Test Drive Development is Behavior Driven Development.
+THis is why we say that our approach to Test Driven Development is **Behavior Driven Development**.
 
 ---
 
-'I can Test Drive Develop anything' means that when I am facing a problem, I am able to divide it in small chunks, that I am able to be very clear about what I want to achieve in those chunks, that I develop my solution step by step, writing the test first and then finding the solution. It means that whatever language or project I am working on, I am able to consistently use a methodology such as the Red-Green-Refactor, in other words, I can use a process to create structured code, easy to read, debug and update.
+'I can Test Drive Develop anything' means that when I am facing a problem, I am able to divide it in small chunks, that I am able to be very clear about what I want to achieve in those chunks, that I develop my solution step by step, writing the test first and then finding the solution. It means that whatever language or project I am working on, I am able to consistently use a methodology such as the Red-Green-Refactor In other words, I can use a process to create structured code, easy to read, debug and update.
 
 ---
 
-Here are few interesting examples. When we go further with testing we encounter several cases:
+Here are few interesting examples. When we go further with testing we encounter those cases:
 
 ---
 
-When a new class is created during unit test, we create a fake, here is an example:
+When a new class is created during a Unit Test, we create a fake, here is an example with Rspec:
 
 ````ruby
 
@@ -220,9 +219,9 @@ let(:plane) { Plane.new }
 
 [Link to faking a plane object while solving Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_ruby/blob/6a4b4bc5c3e53e515494e33da19f00478da84f63/spec/airport_spec.rb)
 
-In the Airport Challenge, in the Airport class unit test, so we can use an instance of the class Plane, we create a double that we can access everywhere in this test. This is a good way to make the Unit Test independent, so we only test the Airport class with the Airport Unit Test. While the feature test would test everything together, so we would never see a double in a feature test.
+In the Airport Challenge, in the Airport class unit test, so we can use an instance of the class Plane, we create a double that we can access everywhere in this test. This is a good way to make the Unit Test independent, so we only test the Airport class with the Airport Unit Test. This mindset is valuable for every part of the test, we want to test only one thing at a time, so we know what is broken if the test beaks. While in the feature test, we want to test everything together like if a user was using it, so we would never see a fake (or double) in a Feature Test.
 
-So we were able to use a plane in our tests for the Airport class while it was not existing yet.
+So, we were able to use a plane in our tests for the Airport class while it was not existing yet.
 
 ---
 When we want to test what is output in the terminal, we use the following syntax:
@@ -235,7 +234,7 @@ When we want to test what is output in the terminal, we use the following syntax
 
 [Link to testing the output in the terminal in the Echo Challenge TDD](https://github.com/AdrienFabre/echo_ruby/blob/0307b636c4e105de552e64d75b369bb57daec184/spec/echo_spec.rb)
 
-This syntax enables us to create an expected output, that will not be returned at the end of the code, but like something that is displayed in the terminal and that a user can see.
+This syntax enables us to create an expected output, that will not be returned at the end of the code, but displayed in the terminal.
 
 ---
 
@@ -250,7 +249,7 @@ end
 
 [Link to testing the input in the terminal in the Echo Challenge TDD](https://github.com/AdrienFabre/echo_ruby/commit/48baaf4b5a212df450160a0ba9de9ec7bbeeb67a#diff-fb4dc7c0bd38dc2a980d90e370c3338a)
 
-This 'allow...' syntax enables to mimic the user input in that specific case because it is use on ':gets', however we can use it in many situation to fake the behavior of another class for example.
+Here, this 'allow...' syntax enables to mimic the user input in that specific case because it is use on ':gets', however we can use it in many situation to fake the behavior of another class.
 
 ---
 
@@ -264,7 +263,7 @@ When we want to test a class that includes the time we need to fake it, in that 
 
 [Link to setting the time 'now' to a fixed time in the Echo Challenge TDD](https://github.com/AdrienFabre/echo_ruby/blob/master/spec/echo_spec.rb)
 
-Here we are using one of the class defined by Ruby, the class Time.
+Here we are using the class Time and the method 'now' defined by Ruby, we are telling them to return a specific value, so we can test something that involves Time.
 
 ---
 
@@ -279,11 +278,11 @@ Here what is interesting, in the Rock Paper Scissors game, is that we are faking
 
 [Link to setting the 'randomness' to a fixed number in the RPS Challenge TDD](https://github.com/AdrienFabre/rps-challenge/blob/master/spec/computer_spec.rb)
 
-Here we are using the class define by Ruby, Kernel to return a fix number, so we can expect a specific outcome.
+Here we are using the class Kernel and the method 'rand' defined by Ruby, we are telling them to return a specific value, so we can test something that involves randomness. In this specific case, we want the computer player sent random shape and each shape will have a different outcome to the game, so we want to be in control of the shape so we can test each outcome.
 
 ---
 
-When we want to do a feature test in a complete app, we don't want the user to use the terminal, but an interface through the browser, in that case we use feature tests mimicing the user interface. In this case we use Capybara testing framework to test the [Sinatra](http://sinatrarb.com/) and Ruby environment.
+When we want to do a Feature Test in a complete app, we don't want the user to use the terminal, but an interface through the browser, in that case we use Feature Tests mimicing the user interface in the browser. In this case we use [Capybara testing framework](https://github.com/teamcapybara/capybara) to test the [Sinatra](http://sinatrarb.com/) and Ruby environment.
 
 ````ruby
 feature 'display the celebration message' do
@@ -300,7 +299,7 @@ end
 
 [Link to a feature test with Capybara in the Birthday App Challenge TDD](https://github.com/AdrienFabre/birthday_app/blob/334a29bc2c364e30420e98666e2b1c8b56303592/spec/features/display_birthday_spec.rb)
 
-Here the test is doing the job of testing for the sentence to be right, however, this sentence could be valid every month, while the ideal would be to have test that is valid once a year.
+Here the test is doing the job of testing for the sentence to be right, however, we could need to do more tests because may be our code to answer the test may be valid only if we have a birthday day date that is later in the year, or may be it works only during the current month. This is the moment where we need to write the edge cases tests, that enables us to enable different uses of the app. However, no every case is necessary and testing each edge case is a matter of prioritisation, what is the most important and what resource is availble. Edge cases are dealt with with the unit tests.
 
 This feature test drived me to create those 2 unit tests that are testing the cases if it is my Birthday or if it is not.
 
@@ -334,11 +333,12 @@ Here is another example of the Airport Challenge, where I am using a new languag
   });
 
 ````
+
 [Link to airport unit test with Jasmine in the Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_js/blob/master/spec/AirportSpec.js)
 
 ---
 
-In the Makers Final Project, we used [React](https://reactjs.org/), so Javascript, to feature test our app tested with [Cypress](https://www.cypress.io/).
+In the Makers Final Project, we used [React](https://reactjs.org/), so Javascript, to Feature Test our app, we used [Cypress](https://www.cypress.io/).
 
 ````cypress
 it("can create a new card", () => {
@@ -352,19 +352,18 @@ it("can create a new card", () => {
 
 [Link to feature test with Cypress in the project management app](https://github.com/what-zen/what-zen-app/blob/dev/cypress/integration/ourTests/Cards.spec.js)
 
-Here we did not succeed to properly Test Drive our application, we did create feature test after we created our app. We would have needed a some more time to be confortable enough with Jest and Enzyme to Test Drive the entire application. This is where I found the limit of learning a new language and test drive at the same time. In that moment, spiking is a way to learn, otherwise it is hard to test something that we don't know about.
+Here we did not succeed to properly Test Drive our application, we did create feature test after we created our app. We would have needed a some more time to be confortable enough with Jest and Enzyme to Test Drive the entire application. This is where I found the limit of learning a new language and test drive at the same time. In that moment, spiking is a way to learn, otherwise it is hard to test something that we don't know about. With a bit more time, we could do everything again from scratch with TDD.
 
 ---
 
-Once everything is TDD, it brings several advantages.
-
-Firstly, the test coverage is theoricaly 100%, with Ruby we used [Simplecov](https://github.com/colszowka/simplecov).
+One of the advantage of TDD is that the test coverage is theoricaly 100%, with Ruby we used [Simplecov](https://github.com/colszowka/simplecov) to make sure it was.
 
 ---
 
-Here are a few feedback I received related to TDD:
+Feedback I received:
 
 Alice - Coach at Makers - After the training process review
+
 "You ask less questions but a very good one 'could you give an example of user interaction?'"
 
 "You process was good, you may need to believe in it more"
@@ -372,13 +371,18 @@ Alice - Coach at Makers - After the training process review
 "You are testing behaviour first, which is really good to see."
 
 Kai - Student at Makers - After the training process review
+
 "You follow the process and persevere to follow the step by step approach"
 
 Brooke - Student at Makers - After the training process review
+
 "This is impressive. You don't use the cards because you know the process very well and you know what you are doing at each step."
 
 Clare Pinder - Student at Makers - After the training process review
+
 "Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
+
+---
 
 ### I can program fluently
 
@@ -386,7 +390,7 @@ From my experiences with human languages, as a French that learnt English and Ru
 
 The part that is similar among languages and that makes it easier to learn new languages such as the main logic, structures, rules, characters, environments all of this, even if it is not identical, it helps to understand and adapt in new language environment easily. Each part that is unique to a language can still differenciate what can be done and not be done, so, we can always draw parallels among languages even if they are very different.
 
-Programming language have those two parts too, learning Ruby was challenging because I did not have any reference from previous programming language. Once I understood the patterns, the big picture, the details, I acquired the key words to quickly search online whatever syntax was missing. Because I did not know the syntax but I knew what I was willing to use in term of logic or structure. This first programming language helped me to explore Javascript and a little bit of Java with their own differences and similarities. Then, learning the test framework language was another step, because the logic is different, however after RSpec, Jasmine was also easier.
+Programming languages have those two parts too, learning Ruby was challenging because I did not have any reference from previous programming language. Once I understood the patterns, the big picture, the details, I acquired the key words to quickly search online whatever syntax was missing. Because I did not know the syntax but I knew what I was willing to use in term of logic or structure. This first programming language helped me to explore Javascript and a little bit of Java with their own differences and similarities. Then, learning the test framework language was another step, because the logic is different, however after RSpec, Jasmine was also easier.
 
 Program fluency means that I have explored enough programming languages so that I am confident that I can use my acquired abilities to understand programming languages, to search efficiently and to learn quickly, and perform in a reasonable amount of time.
 
@@ -408,13 +412,19 @@ The other side of progamming fluently, is the ability to translate human languag
 
 I found that my various expriences in term of jobs as well as facilitation of design thinking workshops helped me to keep those 2 types of person in mind.
 
+As an example, during Makers, facing over 30 challenges with different sizes, shapes and requirements in different languages, I learned how to approach programming challenges, this why I could say that I can programme fluently.
+
 ---
 
 Feedback I received
 
 Krzysztof Balejko - Student at Makers
 
-"I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
+"I’ve found his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
+
+Brooke - Student at Makers - After the training process review
+
+"This is impressive. You don't use the cards because you know the process very well and you know what you are doing at each step."
 
 ---
 
@@ -424,11 +434,11 @@ A bug is an unexpected behavior. Debugging is about finding why this behavior oc
 
 Being able to debug anything is about having a clear process to find the source of a bug, a process that can be used in any language. This process is divided in two main parts.
 
-'Getting visibility', finding ways to follow the flow and to display the information created along the flow, then 'Tighten the loop', narrow down so we can find out at which moment the unexpected behavior starts. Each environment has different syntax to make it happen but the process is similar in those environments.
+'Getting visibility', finding ways to follow the flow and to display the information created along the flow, then 'Tighten the loop', narrow down so we can find out at which moment the unexpected behavior occurs. Each environment has different syntax to make it happen but the process is similar in those environments.
 
-The first example would be the error message I shown in the first part, when the error message shows, this is a bug, but because we define a precise test, the bug is already clear, we already have the visibility and the loop thightened, so we know how to move forward. So, the first way to get some information about the bug is to run the test.
+The first example would be the error message I shown in the TDD part, when the error message shows, this is a bug, but because we define a precise test, the bug is already clear, we already have the visibility and the loop thightened, so we know how to move forward. So, the first way to get some information about the bug is to run the test. (if we are lucky enough to have tests in the test we are debugging)
 
-Bug are in lot of places. I learn that one of the main skill is to be able to read the error message. For example, the bug could be during the setup and we are not able to get much visibility from places we don't control. For example:
+Bug are in lot of places and even without a test, I learned that one of the main skill is to be able to read the error message. For example, the bug could be during the setup and we are not able to get much visibility from places we don't control. For example:
 
 I downloaded a repository online and when I run 'rspec' to see the test I receive the following message:
 
@@ -459,13 +469,13 @@ Then, while the gems are installing, I get a long line of errors containing this
 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
 ````
 
-and this line
+and this line:
 
 ````bash
 checking for pg_config... no
 ````
 
-after some Googling, I find out that this error often occurs on Windows or Ubuntu because a package is missing and that running the following line will solve it:
+after some research online, I find out that this error often occurs on Windows or Ubuntu (my situation) because a package is missing and that running the following line will solve it:
 
 ````bash
 sudo apt-get install libpq-dev
@@ -483,7 +493,7 @@ PG::ConnectionBad:
         connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
 ````
 
-From the first few lines I can see that the problem is because I did not create the database locally. After some research on Google. I ran:
+From the first few lines I can see that the problem is because I did not create the database locally. After some research online. (indeed I searched online because I did not write a proper README in the repository I downloaded). I ran:
 
 ````bash
 adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ rake db:create
@@ -493,19 +503,19 @@ rake aborted!
 ActiveRecord::NoDatabaseError: FATAL:  role "adrien" does not exist
 ````
 
-So, I encountered a new problem, I went to Google again. I entered:
+So, I encountered a new problem, I went to search online again. I ran:
 
 ````bash
 adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ sudo -i -u postgres
 ````
 
-then
+then:
 
 ````bash
 postgres@adrien-XPS-13-9360:~$ psql -d postgres
 ````
 
-then
+then:
 
 ````bash
 postgres=# CREATE ROLE adrien;
@@ -521,7 +531,7 @@ rake aborted!
 PG::ConnectionBad: FATAL:  role "adrien" is not permitted to log in
 ````
 
-So, I Googled the authorisation of this new role. I entered:
+So, I searched online how to authorise of this new role. I entered:
 
 ````bash
 postgres=# ALTER ROLE adrien WITH LOGIN;
@@ -535,7 +545,7 @@ Created database 'instagram_development'
 Created database 'instagram_test'
 ````
 
-What is important here is that this is the debbugging part related to the setup, this is also this one that is hard because we do not get the visibility from inside the code. This is where the skill to read the right line, to make the right assumption, to Google the right question and to take the right information, then doing the right action, customised to my situation is the key to move forward.
+What is important here is that this is the debbugging part related to the setup, this is also this one that is hard because we do not get the visibility from inside the code. This is where the skill to read the right line, to make the right assumption, to ask the right question and to take the right information, then doing the right action, customised to the situation is the key to move forward.
 
 Now, if I try to do 'rspec':
 
@@ -551,7 +561,7 @@ adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ bin/rails db:migrate R
 bash: bin/rails: Permission denied
 ````
 
-After some Googling I tape:
+After some more online search I tape:
 
 ````bash
 adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ chmod u+x bin/rails
@@ -559,6 +569,7 @@ adrien@adrien-XPS-13-9360:~/Projects/instagram-challenge$ bin/rails db:migrate R
 == 20190303110850 DeviseCreateUsers: migrating ================================
 -- create_table(:users)
    -> 0.0161s
+   ...
 ````
 
 And finally it works.
@@ -571,7 +582,7 @@ Finished in 0.30878 seconds (files took 1.15 seconds to load)
 3 examples, 0 failures
 ````
 
-This is how, in a new environment (Linux Ubuntu 18.04), I start to use my debugging skills before writting any code. This is actually a skill that I built through Makers and that slowed me down during weekend challenges.
+This is how, in a new environment (Linux Ubuntu 18.04), I start to use my debugging skills before writting any code. This is actually a skill that I built through Makers and that slowed me down more than expected during weekend challenges.
 
 ---
 
@@ -602,13 +613,13 @@ This is a very precise and precious indication. I can also see what is not worki
 
 Here we can already see that the problem is that what exist does not match the expectation, we can see that I made a mistake in my test, I wanted to write "Welcome to insta!" and not "Welcome to instag!", this is one bug fixed.
 
-Or, as I can see on my test that the page tested is "/", I could just change the text from the view file that matches the "/" route.
+Or, as I can see on my test that the page tested is "/", I could just change the text from the view file that matches the "/" route. Usually, this is the test that is right and the mistake is in the code.
 
 ---
 
 This is a Ruby on Rails environment. So I can run 'rails s' and get visibility from the browser on the given address, here it is 'http://localhost:3000/'.
 
-In the terminal when I do 'rails s' I can see what is happening when I click, this is also a way to get visibility. For example when I try to 'Sign in' with an Unauthorized account is says:
+In the terminal, when I do 'rails s' I can see details of what is happening when I click in the browser, this is also a way to get visibility. For example when I try to 'Sign in' with an Unauthorized account is says:
 
 ````bash
 Started POST "/users/sign_in" for 127.0.0.1 at 2019-04-03 16:58:48 +0100
@@ -619,7 +630,7 @@ Processing by Devise::SessionsController#create as HTML
 Completed 401 Unauthorized in 5ms (ActiveRecord: 0.7ms)
 ````
 
-When I click on 'Sign up' I get:
+I can clearly see what is sent to the database and the result: '401 Unauthosized'. When I click on 'Sign up' I get:
 
 ````bash
 Started GET "/users/sign_in" for 127.0.0.1 at 2019-04-03 17:20:32 +0100
@@ -630,7 +641,7 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.0ms)
 ````
 
-and when I 'Sign up' it says:
+I can see devise (what is taking care of the identification in Ruby on Rails), being responsible for registering the user, I can see that the password is not displayed and I can see '200 OK' that tells me that it worked, the form is rendered. Then, when I 'Sign up' it says:
 
 ````bash
 Started POST "/users" for 127.0.0.1 at 2019-04-03 16:59:07 +0100
@@ -649,7 +660,9 @@ Redirected to http://localhost:3000/
 Completed 302 Found in 162ms (ActiveRecord: 4.9ms)
 ````
 
-Here I can see all the information that are being created, for example those which are saved into the database. In that specific case we are using [Devise as an identification solution](https://github.com/plataformatec/devise), so we don't manage everything. I can also see what is created in the database using [TablePlus](https://tableplus.io/) or [Postman](https://www.getpostman.com/).
+Devise use Active Record to connect to the database and create my login data, so it returns:'302 Found', saying that it is working. Also I see that the password is encrypted.
+
+Here I see all the information being created, for example those which are saved into the database. In that specific case we are using [Devise as an identification solution](https://github.com/plataformatec/devise), so we don't manage everything. I can also see what is created in the database using [TablePlus](https://tableplus.io/) or [Postman](https://www.getpostman.com/).
 
 Here is the end of this example with Ruby on Rails.
 [Link to the test of the repo used from the Instagram Challenge](https://github.com/AdrienFabre/instagram-challenge/blob/master/spec/features/welcome_page_spec.rb)
@@ -661,7 +674,7 @@ Here we can see an example with javascript and the Airport Challenge.
 
 Here the testing framework is Jasmine, so we don't get the visibility from the tests in the terminal but we get it from openning 'SpecRunner.html'.
 
-When everything is working the tests look like in the browser.
+When everything is working the tests look like this in the browser.
 
 ![Jasmine 0 failure Airport challenge](readme_images/Jasmine-0-failure-Airport-challenge.png)
 
@@ -671,7 +684,7 @@ When I create an error I can see:
 
 Here we can see 2 information, first, the expectation 'throw an Error', second, a file(AirportSpec.js), a line(44) and a number of character(61) to look at.
 
-Another thing interesting to notice is that if I refresh the page I get different error. This means that the errors varies, so I can already think about our programme, that the is a random weather,  and that may be the cause of the variation in the errors.
+Another thing interesting to notice is that if I refresh the page I get different errors. This means that the errors varies, so I can already think about our programme, that the is a random weather,  and that may be the cause of the variation in the errors.
 
 ![Jasmine 2 failures Airport challenge](readme_images/Jasmine-2-failures-Airport-challenge.png)
 
@@ -683,7 +696,7 @@ it('does not clear plane for takeoff', function(){
 });
 ````
 
- Now, I can go to the file Airport.js and see where is the method '.clearForTakeOff(plane)' that is expected to ".toThrowError('cannot takeoff during storm')". And I can see: 
+ Now, I can go to the file Airport.js and see where is the method '.clearForTakeOff(plane)' that is expected to ".toThrowError('cannot takeoff during storm')". And I can see:
 
 ````Javascript
 if(this._weather.isStormy())
@@ -691,7 +704,7 @@ if(this._weather.isStormy())
 }
 ````
 
-What I am seeing is that the result of 'this._weather.isStormy()' defines if the Error will be thrown or not. So, I can get visibility on what is its result by doing console.log(this._weather.isStormy()) just before it. The I can go to the file SpecRunner.html in the browser, right click and inspect the page, then I go to see what is happening in the console.
+What I am seeing is that the result of 'this._weather.isStormy()' defines if the Error will be thrown or not. So, I can get visibility on what is its result by doing console.log(this._weather.isStormy()) just before it. I can go to the file SpecRunner.html in the browser, right click and inspect the page, then I go to see what is happening in the console.
 
 ![Console-Airport-challenge-js](readme_images/Console-Airport-challenge-js.png)
 
@@ -706,7 +719,7 @@ function Airport(wether){
 }
 ````
 
-Here I can see that there is spelling mistake, 'wether', should be 'weather', so I can correct it and see that I do not have anymore errors. However, if I want to really understand I wonder, what is hapenning here? If the 'weather' argument is 'undefined' we get 'new Weater()', a new instance of the class Weather. So, in our case, a new instance of the class 'Weather' is created each time we are creating a new instance of 'Airport'. It means that the argument we are passing does not count.
+Here I can see that there is spelling mistake, 'wether', should be 'weather', so I can correct it and see that I do not have anymore errors. However, if I want to really understand, I wonder, what is hapenning here? If the 'weather' argument is 'undefined' we get 'new Weater()', a new instance of the class Weather. So, in our case, a new instance of the class 'Weather' is created each time we are creating a new instance of 'Airport'. With the spelling mistatke, it means that the argument we are passing does not count.
 
 Now, as all error messages come from the file AirportSpec.js,let's see how we get the weather into this file.
 
@@ -726,11 +739,13 @@ beforeEach(function(){
 });
 ````
 
-It is working for the weather we define in our test but not for the weather that is used in the airport we are using. So, we do not control the result of our 'isStormy' method and this is why our result varies.
+The weather we define in our test is created but not used by the airport we are using. So, we do not control the result of our 'isStormy' method and this is why our result varies.
 
 [Link to the AirportSpec.js file on Airport Challenge JS](https://github.com/AdrienFabre/airport_challenge_js/blob/master/spec/AirportSpec.js)
 
 ---
+
+In several cases I faced errors where the expected behavior is not what I want and there is no error messages, so, I have to find by myself the information flow that creates this unwanted behavior. The examples shown are representative of the bugs I regularly faced but not extensive. With some time, debugging became natural and I did not notice it.
 
 I can debug anything means that I am able to understand what is the expected behavior, to notice that the expected behavior it not fulfilled and then I am able to make a clear assumption about why this unexpected error occurs and then find ways to verify this assumption. Then, step by step, througt research and following the flow of the error, I finally solve the error message. Meaning that with enough time, I have developed the right process to debug anything. One step at a time.
 
@@ -754,7 +769,7 @@ For the CDN builds, these are available in the following manner
 https://www.gstatic.com/firebasejs/5.0.0/firebase-<PACKAGE>.js
 ````
 
-Each of those 'bugs' could be sorted, the only reason it is not is the amount of time I would have to dedicate to sort them. The more I debug, the faster I am to debug because I have seen multiple problems and multiple version of different problems in different languages, however the research is a big part of debugging and as we constantly practiced TDD in our processes at Makers, debugging is a part of my daily practice.
+Each of those 'bugs' could be sorted, the only reason it is not is the amount of time I would have to dedicate to sort them. The more I debug, the faster I am to debug because I have seen multiple problems and multiple version of different problems in different languages, however the identification of the real problem and the research of solution that exist are a big part of debugging and as we constantly practiced TDD in our processes at Makers, debugging is a part of my daily practice.
 
 [Link to the deployed What Zen website](https://what-zen-app.firebaseapp.com/)
 
@@ -767,22 +782,25 @@ Krzysztof Balejko - Student at Makers
 
 "I have worked with Adrien on several occasions, during our pair programming sessions he has proven to be very good at debugging, championing the process of tightening the loop and getting visibility."
 
+Clare Pinder - Student at Makers - After the training process review
+
+"Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
 
 ---
 
 ### I can model anything
 
-Model something is about taking something abstract and transforming in something more tangible.
+Model something is about taking something abstract and transforming in something tangible.
 
 In our situations as software developers, we can model different things, often we are transforming specification and user stories into a few squares and arrows, that develops our understanding of the big picture and help us to define each part and how they fits together.
 
-We can also model how technology work together, we can create user stories from our intentions, we can create a model of what the user interaction would be, a model of how we organised the files of an app or just model to explain the logic behind a method.
+We can also model how technologies work together, we can create user stories from our intentions, we can create a model of what the user interaction would be, a model of how we organised the files of an app or just model to explain the logic behind a method, such as a list of conditional statements.
 
 Here, I am defining user stories from our collective intention during the final project:
 
 [Link to the What Zen readme with User Stories](https://github.com/what-zen/what-zen-app)
 
-Then once this is created, we discussed the technology we are going to use, and one model helped to understand how pieces fit together, this model was found online.
+Then once this is created, we discussed the technology we are going to use, and one model helped to understand how pieces fit together, this model was found online [here](https://www.mongodb.com/blog/post/the-modern-application-stack-part-1-introducing-the-mean-stack).
 
 ![Mern-stack-model](readme_images/MERN-stack-model.png)
 
@@ -792,7 +810,7 @@ Then I drew a first wireframe, we started on a white board together and recorded
 
 ![Wireframe-0-what-zen](readme_images/Wireframe-0-what-zen.jpg)
 
-Then we updated it when our knowledge increased an the project advanced:
+Then we updated it when our knowledge increased and the project advanced:
 
 ![Wireframe-1-what-zen](readme_images/Wireframe-1-what-zen.jpg)
 
@@ -802,11 +820,11 @@ What is important here is to understand that a model is a way to put thoughts in
 
 ---
 
-In another example, we receive the challenge to create a bowling scorecard. I started to translate requirements into user stories and then into tests:
+On another project, we receive the challenge to create a bowling scorecard. I started to translate requirements into user stories and then into tests:
 
-[Link to test on Scorecard Bowling Challenge in Javascript](https://github.com/AdrienFabre/bowling-challenge/blob/master/spec/scorecardSpec.js)
+[Link to tests on Scorecard Bowling Challenge in Javascript](https://github.com/AdrienFabre/bowling-challenge/blob/master/spec/scorecardSpec.js)
 
-And I created the potential wireframe, the idea is always to see what would be a way the ideal solution look like, so we know the direction:
+And I created the potential wireframe, the idea is always to see what the ideal solution would look like, so we know the direction:
 
 ![Wireframe-bowling-scorecard](readme_images/Wireframe-bowling-scorecard.jpg)
 
@@ -824,17 +842,17 @@ For most of those diagram I used [RealTimeBoard (or its new name Miro)](https://
 
 Also, I found that a small diagram with a pen and paper, deciding on what will be a class, what will be a method and what will be an argument helps to create a test and to make sense of the entirety of the project. Those small diagrams enable me to have the logic on paper and to avoid to re-understand the entire flow each time.
 
-Then, taking time to identify the type of data between each block helps to understand it deeply, as my project were quite small, I did succeed to get a good understanding of flows without every diagram detailled however I can see the benefit of it in bigger and long term projects. Where I could do a diagram per feature created, so each of my commit on Github would have a diagram relevant to the current state of the implemented features.
+Then, taking time to identify the type of data between each block helps to understand it deeply, as my projects were quite small, I did succeed to get a good understanding of flows without every diagram detailled however I can see the benefit of it in bigger projects. Where I could do a diagram per feature created, so each of my commit on Github would have a diagram relevant to the current state of the implemented features.
 
-At Makers, we used Unified Modeling Language, or UML, to model the relationship among CEO, COO and HR manager, what was very valuable is the common understanding of this kind of diagram. Here I used a similar approach to the Bank Tech Test
+At Makers, we used Unified Modeling Language, or UML, to model the relationship among CEO, COO and HR manager, what was very valuable is the broad common understanding of this kind of diagram. Here I used a similar approach to model the Bank Tech Test
 
 [Link to Bank tech test README](Bhttps://github.com/AdrienFabre/bank_tech_test_ruby)
 
-I created the following diagram:
+and created the following diagram:
 
 ![Diagram-bank-test](readme_images/Diagram-bank-test.jpg)
-
-This diagram shows the different interaction among classes that could represent the solution of the Bank Challenge, this is independent to the language, as soon as the language is Object Oriented Programmed we can use it, like Ruby or Javascript.
+the
+This diagram shows the different interactions among classes that could represent the solution of the Bank Challenge, this is independent to the language, as soon as the language is Object Oriented Programmed we can use it, like Ruby or Javascript.
 
 I can model anything means that I am able to understand abstract concepts and to create words, shapes and interaction that may help personal and collective understanding of what exists or of what is planned to be created.
 
@@ -848,31 +866,37 @@ Krzysztof Balejko - Student at Makers
 
 "Adrien starts each of his projects with careful planing and I was invited to join in before both bowling and front-end API challenges. During the process Adrien has demonstrated his abilities of modelling user interaction. We have used Realtime Board during both sessions for diagraming and general brainstorming. I would very happily work with him again!"
 
+Kwaku - Student at Makers
+
+"I saw Adrien very easily diagram the shape of our Acebook challenge using RealTimeBoard, a tool that he used in the past but he improved his skills using it to draw accurate diagrams."
+
+Clare - Student at Makers
+
+"During the process review, I have seen Adrien making a very simple diagram but meaningful before he started to write the tests."
+
 ---
 
 ### I can refactor anything
 
-Refactoring, this is modifying the code so it is better in different ways but the input and output stay the same. Basically this is doing the same thing in a better way.
-
-Firstly this is about knowing what is good and bad where the compromises should be made.
+Refactoring, this is modifying the code so it is better in different ways but the input and output stay the same. Basically this is doing the same thing in a better way. This is about knowing what is good and bad and where the compromises should be made.
 
 For example the best is to have a code that is easy to read and also short, but the fact that we keep it short does not mean that we allow ourselves to be misunderstood for the sake of being short.
 
-For example an Object is usually a noun, a method is usually a verb and both of them should be coherent and be understood by any software developer that is going to read your code. To choose those nouns and verbs we usually use those from requirements and user stories. During the refactoring, we can verify that we are using the right words.
+Then there are some best practices, an Object is usually a noun, a method is usually a verb and both of them should be coherent and be understood by any software developer that is going to read your code. To choose those nouns and verbs we usually use those from requirements and user stories. During the refactoring, we can verify that we are using the most relevant words.
 
-If we take the example of the Bank, here is the first line of the acceptance criteria:
+If we take the example of the Bank test, here is the first line of the acceptance criteria:
 
 ````md
 Given a client makes a deposit of 1000 on 10-01-2012
 ````
 
-Here we can see the verb make a deposit, the nouns like amount, date, transaction, bank_account, client that may be familiar with this line, then different design are possibles.
+Here we can see the verb 'make a deposit', the nouns like 'amount', 'date', 'transaction', 'bank account', 'client' may be familiar to anyone reading this this line, then different design are possibles.
 
 [Link to the Bank test in Ruby commits](https://github.com/AdrienFabre/bank_tech_test_ruby/commits/master)
 
 Here you can see several commits with few having the word 'refactor' inside. Some of the refactoring may come from messages coming from a linter, in that case [Rubocop](https://github.com/rubocop-hq/rubocop), it will check that I am respecting the best practices of this language. Or I may get some external information from the badges I integrated in my readme, if [Travis](https://travis-ci.org/) is passing, if the coverage is 100% with [Coveralls](https://coveralls.io) and if the maintainability is A with [Codeclimate](https://codeclimate.com), those are usually signs that the code has been refactored.
 
-However there are choices that are made that are less obvious. For example for the Bank-test, I limit the size of the Printer methods by separating them, making sure each method respect the Single Responsibility Principle and stays DRY (Do not Repeat Yourself).
+However there are choices that are made that are less obvious. For example for the Bank test, I limit the size of the Printer methods by separating them, making sure each method respect the Single Responsibility Principle and stays DRY (Do not Repeat Yourself).
 
 ````ruby
 class Printer
@@ -906,7 +930,9 @@ class Printer
 end
 ````
 
-Here, on another repository, we can see that refacoring enabled me to remove test and lines of code: [Link to commits of the Echo challenge](https://github.com/AdrienFabre/echo_ruby/commits/master)
+May be someone else would find a better way to do it. Here I made every method that is going to be used only internally, private. Private means that nobody has access to it outside of the classe, so there is no point to test it, in this case, it only helps the 'print_statement' method to be shorter and easier to read.
+
+Here, on another repository, we can see that refacoring enabled me to remove lines of code and tests: [Link to commits of the Echo challenge](https://github.com/AdrienFabre/echo_ruby/commits/master)
 
 Here as well, [Link to commits of the 10 minutes walk challenge](https://github.com/AdrienFabre/10_min_walk_ruby/commits/master)
 
@@ -915,9 +941,7 @@ The same way in other languages, here in React, we created several components, i
 [Link to the list of components of MakersBnB in React](https://github.com/AdrienFabre/makersbnb/tree/master/client/src/components)
 
 ---
-
-RESTFul
-https://en.wikipedia.org/wiki/Representational_state_transfer
+Feedback I received
 
 ---
 
@@ -929,9 +953,11 @@ He describes the idea to solve a problem Systematically and Systemically. It too
 
 I would say that the first is about knowing what to do next because we have process and the second is about knowing what to do next because we have a direction.
 
-This is what I used naturally in my previous description of my processes and how I implement them. I see all those processes we learnt as cycles. For example we have processes to solve a very small problem like implementing a test or it could be creating an entire app with a team an implementing the agile processes.
+This is what I used naturally in the previous description of my processes and how I implemented them. I see all those processes we learnt as cycles. For example we have processes to solve a very small problem like implementing a test or it could be creating an entire app with a team an implementing the agile processes.
 
-This is also about prioritisation.
+This is also about constant prioritisation and knowing how the different processes we have learned need to be used and how they fit together. Here is a way to connect them, every cycle having a different timescale.
+
+![Big-picture-processes](readme_images/Big-picture-processes.jpg)
 
 ---
 
@@ -970,11 +996,51 @@ Before working on Jungl-Book with Adrien I thought I had grasped the concept of 
 
 ### I write code that is easy to change
 
-Best practices
-Linter
+Writing a code easy to change means that each noun and verb, class and method names are choosing carefully so the understanding of the project is easy. TDD is a way to help to produce a code easy to change. Refactoring is a moment to specifically be careful at how easy the code is to be changed. Also, a good documentation, starting with an accessible README and a few diagram greatly help a software developer in front of a new code.
 
+What helps is to get insights and input from general best practices and linters. Then to correct every part of the code so we make sure the collective understand of what is good is applied. Another way to guarantee this is to have our own code reviewed so we get feedback, also review someone else code, so we can understand what is not helpful to understand the code.
 
---- 
+Another main point is to make sure we manage dependencies in our code, meaning that if one part of the code changes, the rest still works.
+
+Here is an example:
+
+````ruby
+def initialize(transaction_class = Transaction)
+  @balance = 0
+  @transactions = []
+  @transaction_class = transaction_class
+end
+  ````
+
+This code is inside the class BankAccount and Transaction is also a class. Here what we see is a dependency injection, it means that the class Transaction is injected in the class BankAccount throught an argument, so, this is optional, we can replace it with something else. However, if there is no argument the class Transaction is going to be used and I can use it in other methods like here:
+
+````ruby
+def make_a_deposit(amount, date = Date.today.strftime('%d-%m-%Y'))
+  @balance += amount
+  @transactions << @transaction_class.new(@balance, amount, 'credit', date)
+end
+````
+
+Here we can also see that I enable people to enter their own date by putting it as an argument of the method 'make_a_deposit', this is the same idea. Here we can see that I create a new transaction when I 'make_a_deposit' with '@transaction_class.new', which makes sense.
+
+[Link to this class on the Bank test in Ruby](https://github.com/AdrienFabre/bank_tech_test_ruby/blob/master/lib/bank_account.rb)
+
+---
+
+With another context, with the Airport in Javascript, we can see that we are getting a new Weather for a new Airport, so we get:
+
+````javascript
+function Airport(weather){
+  this._weather = typeof weather !== 'undefined' ? weather : new Weather();
+  this._hangar = [];
+}
+````
+
+[Link to the Airport repository in Javascript](https://github.com/AdrienFabre/airport_challenge_js/blob/master/src/Airport.js)
+
+We can consider all of it as a part of the best practices that we implement at each refactor, part of the TDD process. It could be also customised to what have been decided as a best practice for the project as a group, notably during the SCRUM ceremonies.
+
+---
 
 Feedback I received
 
@@ -982,40 +1048,48 @@ Krzysztof Balejko - Student at Makers
 
 "I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
 
-
 ---
 
 ### I can justify the way I work in a business context
 
-I can communicate in a way that people understand why I am taking a decision and why it makes sense to me into a context of a developer in a professional environment. I take into account client's perspective and needs.
+I can justify the way I work in a business context. To me, this means that I am able to discuss with very different stakeholders, understand their needs and communicate with them is a way so my decisions make sense.
 
+In previous situations, when I organise event with participants, venues and speakers or when I was project buyers with suppliers, project managers and engineers I always found ways to listen carefully and to offer the best solutions I could in the present situation. I found those multiple situations helped me to understand quickly a very diverse group of people. Also, in London, working in Sales and attending plenty of networking event, I got used to listen others properly and adpat my pitch, which is not about finding a way to sell something, but finding a way to help.
 
-Engineering
-Listening
-Communicate
+I have seen that during Makers, working in a group was a challenge
+by itself because everyone has a personal strong interest to progress, and progress does not mean the same to everyone, some people want to be more in control and some people have different expertises. I think that working in front of a white board, making sure everyone was heard, keeping the collective goal at the center of the discussion while being heard was a good exercise.
 
-Client Understanding 
+I collaborated with different kind of people, some willing to lead, some with less direct intentions, and I adapted to each environment. I found that the important is to keep a solid foundation in the discussion, for example with the client's requirement, and notifying that everyone has the same intention but with a different approach to it often helps to solidify a team. Then choices are justified one step at a time, so each point is made and is clear, then a concensus can be found.
 
-Understand problems
+---
+
+Feedback I received
+
+Elliot Jennings - Student at Makers - Collaboration on Acebook
+
+Before working on Jungl-Book with Adrien I thought I had grasped the concept of agile development. It was the guidance of Adrien during this project which allowed our team to now say we are confident with the framework. He gave us workshops on the scrum process and was devoted to making us stick to the following agile development in our second week. He is driven to manage a project and it seems to be a natural position for him as he always focuses on the bigger picture even when the team are being slightly short-sighted.
 
 ---
 
 ### I can grow collaboratively
 
-I can evolve in a team where I contribute to my individual progress as well as the individual progress to every person in the group and to the collective goal.
+It means that can evolve in a team where I contribute to my individual progress as well as the individual progress to every person in the group and to the collective goal.
 
-Networking
-Talks 
-Ask
-Feedback 
-Answer
-Listening 
-Explaining
-Will 
-Elliot 
-Kim
+In a broader sense it means that I collaborate with anyone in order to progress, that I perceive the value of working with people more skilled as well as less skilled and that in both cases I dedicate the energy to learn from expertise or to learn from intention to learn. 
 
---- 
+For example, at Makers, I was the mentee of Jackie Dunne and I mentored Kim Diep. Both of those relations were really focused on collaborative growth.
+
+Then, as a group, with the MakersBnB, the Acebook and the final project What Zen, I dedicated the time to learn and to listen others.
+
+In those project I initiated collective learning documentation:
+
+[Link to Acebook Wiki](https://github.com/simian-sinister/Acebook-Simian-Sinister/wiki/Learning-documentation)
+
+[Link to What Zen Wiki](https://github.com/what-zen/what-zen-app/wiki/Daily-Collective-Learnings)
+
+The same way when I was focusing on learning the facilitation of design thinking workshop for social entrepreneurs, I had a mentor and mentees, where at the beginning I was the only one learning and where at some point I became teacher as well.
+
+---
 
 Feedback I received
 
@@ -1053,10 +1127,17 @@ I met Dana, the Joy Officer for at least 3 times and kept her updated regularly.
 
 I also write a blog, for now this is a draft that I shared, and got several good feedback, I will follow recommendations, split it and develop it in 3 blogs. [Blog about Stretching mind and body at Makers.](https://medium.com/@AdrienFabre/stretching-mind-and-body-at-makers-f922582c9dbb)
 
-I also kept doing few talks on what I like, I social impact, on perspective and I saw people loving my pictures, that was very good to see this. 
+I also kept doing few talks on what I like, I social impact, on perspective and I saw people loving my pictures, that was very good to see this.
 
-Then I walk 45 min twice a day to come to Makers, this is also a way to spend some time with myself, looking at the trees, focusing on my posture or my breathing. 
+Then I walk 45 min twice a day to come to Makers, this is also a way to spend some time with myself, looking at the trees, focusing on my posture or my breathing.
 
+---
+
+Feedback I received
+
+Dana - Joy Officer at Makers
+
+"Adrien is highly contentious when it comes to managing his wellbeing. Adrien is regular attendee of meditation and yoga and was always very proactive regarding our 1:1 sessions."
 
 ---
 
@@ -1113,7 +1194,5 @@ Adrien demonstrates a really strong work ethic. If he says he will do something 
 Michael Graham - Founder and Director at MJB Graham Sales Consultancy
 
 "Adrien is a great asset to any team in a business environment. He has an incredible work ethic blended with a great student mentality. During his time at MJB he proved himself to be a fast learner and demonstrated a willingness to continuously go the extra mile to generate results. He developed his sales and business development skills massively whilst at MJB and I'm glad to say that he was a pleasure to work with."
-
-
 
 ---

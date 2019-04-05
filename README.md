@@ -365,7 +365,11 @@ Firstly, the test coverage is theoricaly 100%, with Ruby we used [Simplecov](htt
 Here are a few feedback I received related to TDD:
 
 Alice - Coach at Makers - After the training process review
-"You ask less questions but a very good one 'could you give an example of user interaction?'" "You process was good, you may need to believe in it more"
+"You ask less questions but a very good one 'could you give an example of user interaction?'"
+
+"You process was good, you may need to believe in it more"
+
+"You are testing behaviour first, which is really good to see."
 
 Kai - Student at Makers - After the training process review
 "You follow the process and persevere to follow the step by step approach"
@@ -848,11 +852,69 @@ Krzysztof Balejko - Student at Makers
 
 ### I can refactor anything
 
-Knowing what is good and bad.
+Refactoring, this is modifying the code so it is better in different ways but the input and output stay the same. Basically this is doing the same thing in a better way.
 
-Single responsibility 
+Firstly this is about knowing what is good and bad where the compromises should be made.
 
-Redundancy DRY
+For example the best is to have a code that is easy to read and also short, but the fact that we keep it short does not mean that we allow ourselves to be misunderstood for the sake of being short.
+
+For example an Object is usually a noun, a method is usually a verb and both of them should be coherent and be understood by any software developer that is going to read your code. To choose those nouns and verbs we usually use those from requirements and user stories. During the refactoring, we can verify that we are using the right words.
+
+If we take the example of the Bank, here is the first line of the acceptance criteria:
+
+````md
+Given a client makes a deposit of 1000 on 10-01-2012
+````
+
+Here we can see the verb make a deposit, the nouns like amount, date, transaction, bank_account, client that may be familiar with this line, then different design are possibles.
+
+[Link to the Bank test in Ruby commits](https://github.com/AdrienFabre/bank_tech_test_ruby/commits/master)
+
+Here you can see several commits with few having the word 'refactor' inside. Some of the refactoring may come from messages coming from a linter, in that case [Rubocop](https://github.com/rubocop-hq/rubocop), it will check that I am respecting the best practices of this language. Or I may get some external information from the badges I integrated in my readme, if [Travis](https://travis-ci.org/) is passing, if the coverage is 100% with [Coveralls](https://coveralls.io) and if the maintainability is A with [Codeclimate](https://codeclimate.com), those are usually signs that the code has been refactored.
+
+However there are choices that are made that are less obvious. For example for the Bank-test, I limit the size of the Printer methods by separating them, making sure each method respect the Single Responsibility Principle and stays DRY (Do not Repeat Yourself).
+
+````ruby
+class Printer
+  def print_statement(transactions)
+    transactions.reverse.map.with_index do |transaction, index|
+      print 'date || credit || debit || balance' if index.zero?
+      print "\n#{format_transaction(transaction)}"
+    end
+  end
+
+  private
+
+  def format_transaction(transaction)
+    date = format_date(transaction.date)
+    amount = format_amount(transaction.amount)
+    balance = format_amount(transaction.balance)
+    if transaction.type == 'credit'
+      "#{date} || #{amount} || || #{balance}"
+    else
+      "#{date} || || #{amount} || #{balance}"
+    end
+  end
+
+  def format_date(date)
+    Date.parse(date).strftime('%d/%m/%Y')
+  end
+
+  def format_amount(amount)
+    format('%.2f', amount)
+  end
+end
+````
+
+Here, on another repository, we can see that refacoring enabled me to remove test and lines of code: [Link to commits of the Echo challenge](https://github.com/AdrienFabre/echo_ruby/commits/master)
+
+Here as well, [Link to commits of the 10 minutes walk challenge](https://github.com/AdrienFabre/10_min_walk_ruby/commits/master)
+
+The same way in other languages, here in React, we created several components, it helped us not to repeat ourselves.
+
+[Link to the list of components of MakersBnB in React](https://github.com/AdrienFabre/makersbnb/tree/master/client/src/components)
+
+---
 
 RESTFul
 https://en.wikipedia.org/wiki/Representational_state_transfer
@@ -861,6 +923,15 @@ https://en.wikipedia.org/wiki/Representational_state_transfer
 
 ### I have a methodical approach to solving problems
 
+Methodical approach to solving problems is what we are learning all along at Makers. In other words this is about knowing what to do next. In the [blog about problem solving from Sam Morgan](https://blog.makersacademy.com/how-i-solve-problems-a6a84d167598).
+
+He describes the idea to solve a problem Systematically and Systemically. It took me some time to really understand it but now it is clear to me.
+
+I would say that the first is about knowing what to do next because we have process and the second is about knowing what to do next because we have a direction.
+
+This is what I used naturally in my previous description of my processes and how I implement them. I see all those processes we learnt as cycles. For example we have processes to solve a very small problem like implementing a test or it could be creating an entire app with a team an implementing the agile processes.
+
+This is also about prioritisation.
 
 ---
 
@@ -870,20 +941,46 @@ https://en.wikipedia.org/wiki/Representational_state_transfer
 
 ### I use an Agile product development process
 
-XP 
-Scrum Master
-MVP 
-Cycles 
-Facilitation
+As I learnt and practiced design thinking workshop facilitation before I really enjoyed learning and practicing Agile values and Scrum methods along my Acebook and final project What Zen, I spent time to understand it and shared my knowledge with the groups.
 
+I have done it through the white board and through the Wiki:
 
- 
+[Agile: Scrum process 2 days sprint Wiki from our Acebook challenge](https://github.com/simian-sinister/Acebook-Simian-Sinister/wiki/Agile-Processes:-Scrum)
 
-Wiki
+As well as during our final project presentation, I highlighted the Agile Values focusing on eXtreme Programming: communication, Simplicity, Feedback, Courage and Respect.
+
+The way I embodied this is to make sure that everyday we had a session in front of the whiteboard where we remembered the collective goal and why we were going in that direction. Also, creating space for everyone to be heard, those stepping forward as much as those who were ok with any direction.
+
+I also summarised our 4 cycles with different focused:
+![Scrum-presentation-final-project](readme_images/Scrum-presentation-final-project.png)
+
+---
+
+Feedback I received:
+
+Luca Fruzza - Student at Makers - Collaboration on Acebook
+
+"Adrien was very enthusiastic and helped the whole team to really understand it the second week of the Acebook challenge, while the first scrum process was jeopardize by our learning of Ruby on Rails."
+
+Elliot Jennings - Student at Makers - Collaboration on Acebook
+
+Before working on Jungl-Book with Adrien I thought I had grasped the concept of agile development. It was the guidance of Adrien during this project which allowed our team to now say we are confident with the framework. He gave us workshops on the scrum process and was devoted to making us stick to the following agile development in our second week. He is driven to manage a project and it seems to be a natural position for him as he always focuses on the bigger picture even when the team are being slightly short-sighted.
 
 ---
 
 ### I write code that is easy to change
+
+Best practices
+Linter
+
+
+--- 
+
+Feedback I received
+
+Krzysztof Balejko - Student at Makers
+
+"I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
 
 
 ---
@@ -908,21 +1005,35 @@ Understand problems
 I can evolve in a team where I contribute to my individual progress as well as the individual progress to every person in the group and to the collective goal.
 
 Networking
-
 Talks 
-
-Ask 
-
+Ask
 Feedback 
-
 Answer
-
 Listening 
 Explaining
-
 Will 
 Elliot 
 Kim
+
+--- 
+
+Feedback I received
+
+Vaith Schmitz - Student at Makers - Collaborated on Acebook
+
+Adrien has been great to work with on JunglBook. He's super eager to learn and always found a ton of resources for us to use to understand a topic. His curiosity led us to question our processes more and he was the driving force behind us deciding to redo everything from scratch in week 2 to follow strict agile principles. Especially in this implementing good practices, Adrien was a huge asset to the team by his knowledge and experience.
+
+Krzysztof Balejko - Student at Makers
+
+"I have worked with Adrien on several occasions, during our pair programming sessions he has proven to be very good at debugging, championing the process of tightening the loop and getting visibility."
+
+Emilie Desterbecq - Food Entrepreneur
+
+"Highly proactive, Adrien has greatly helped me to set up my company. He is creative and always find new ways to market the shop. He has very good eye for details and do things from A to Z regardless how long it takes. Adrien is a mutli-tasks from painting to website improving. He listen carefully people to be able to understand the all concept and offer an optimal solution for their business."
+
+Mursal Hedayat - Chatterbox Founder, Forbes 30 Under 30, MIT Innovator, FT Top 100 Most Influential Leaders in Tech
+
+"It was a delightful working with Adrien. He produced a highly engaging and well attended MakeSense workshop for Chatterbox in very little time. He was very attentive to our needs and delivered outputs that far exceeded our expectations. I would highly recommend him."
 
 ---
 
@@ -932,99 +1043,77 @@ Kim
 
 ### I manage my own well-being
 
-Balance
+Manage my own well-being it is like if I was a good coach to myself, where I find the balance in doing what is new and what I already know so I progress and my motivation stays high. 
 
-Yoga 
+At Makers I was constantly challenged and I took every opportunity to find the balanche between the challenge of my body and my mind, among different kind of focus an pace.
 
-Meditation 
+I went to every yoga and meditation class, I kept going to swim several times a week and took few courses so I was able to swim over 3km in 1h10min, it was a way for me not to only prioritise mental challenges.
 
-Swimming
+I met Dana, the Joy Officer for at least 3 times and kept her updated regularly. This goes with my regular healthy habits and I could find that her advice resonated with me and the week of meditation retreat I did last year in Scotland.
 
-Blog
+I also write a blog, for now this is a draft that I shared, and got several good feedback, I will follow recommendations, split it and develop it in 3 blogs. [Blog about Stretching mind and body at Makers.](https://medium.com/@AdrienFabre/stretching-mind-and-body-at-makers-f922582c9dbb)
 
- Dana
+I also kept doing few talks on what I like, I social impact, on perspective and I saw people loving my pictures, that was very good to see this. 
+
+Then I walk 45 min twice a day to come to Makers, this is also a way to spend some time with myself, looking at the trees, focusing on my posture or my breathing. 
+
 
 ---
 
 ### I can learn anything by myself
 
-Motivation 
-Focus 
-Perseverance
-Method 
-Practice 
-Wellbeing
+I can learn anyting by myself, I think this starts with the belief that everything is possible and that every intention is important, so it drives actions and progress. Actions and progresses that can take many shapes, more or less expected but that bring us into a zone of exploration and transforms into learnings.
 
-Small town to Big cities.
-Small business to Corporate.
-Vocational Electronics to Business Engineering
-Cook to Buyer.
+I have a deep belief that I can learn anything.
 
-Russian lanugage.
+2006, I learned vocational electronics, my internship was to setup antennas on roofs, in south of France.
 
-Facilitate events.
+2008, I learned electronics, my project was to create and analyse the signal that could power a miniature train going at a progressing speed.
 
-Wordpress.
-http://attitude-michele-joel.com 
-http://adrienfabre.net 
+2010, I learned industrial maintenance, I studied mechanics and other scientific fields, I build a street light powered by solar power and created a wind turbine from scratch. I spent 10 weeks internship repairing helicopters.
 
- Feedback
+2012, I did Master a Master in Business Engineering, the first year I joined a student-enterprise, learning about marketing a lot, the second year I learned international business, I spent a year in Moscow, did a marketing internship and learned Russian. The last year, I was studying and working as a Project Buyer of electronic components for Schneider Electric.
 
-Rohan Metha from MakeSense (an open source volunteer-driven network creating events to support social entrepreneurs)
+2015, I came to London, I learned sales and entrepreurship, going to undreds of events, learning how to network and people skills.
 
-Very soon after attending his first event he was eager to jump on board and learn how to facilitate one of our workshops. By conducting these workshops he got to deeply understand several social entrepreneurs and help them figure out how to improve their business. He did these extremely well and soon became part of the core team. 6 months after he attended his first MakeSense workshop Adrien was the lead in organising a large-scale event “Food Glorious Food” tackling food waste with a full day event with workshops, activities, and talks featuring 12 different social entrepreneurs in the food sustainability sector. Adrien found the venue, negotiated using it for free, came up with the concept, created the marketing materials and was directing 6 other volunteers to pull off a really successful event.
+2016, I learned facilitation of design thinking workshops and organisation of events through a network that helps social entrepreneurs to thrive. Exploring the social innovation ecosystem.
 
-Adrien demonstrates a really strong work ethic. If he says he will do something he will go to great lengths to make sure it gets done. I have also found that he learns very quickly. If he is interested in something he will dive head first into it, contacting people to talk to and create opportunities to learn as much as he can by doing. He is a self-starter and very good at finding ways to improve the ways we work together.
+2017, I learned about system thinking and how I could contribute to society on the long term while being just an individual into a mass.
 
+2018, I learned a lot about myself, creating events on my own under my own brand and exploring how to cultivate social impact leardership individually and collectively.
 
+2019, I joined Makers and learned to be a software engineer.
 
+All this journey was surrounded by by-products of my progression.
 
+For example and learned English very well. I learned that international politic conflicts, like the sanctions that made the Russian currency drop made me come to London, so, even with the best I can do, I am not in control. I learnt to drive a motorcycle, I learned scuba diving. I learnt some finance by doing a loan to support myself. I learnt to create and cook food going through plenty of jobs from green houses, to fast food, to healthy food and to delivery of food by bicycle to pay my expenses. I learned to meditate and to travel in my body, to calm me down and to find new ways to explore the unknown. I learned to travel, to adapt to cultures and environment, also in places like India or Australia. I learned to adapt to different social levels, city sizes, and working environments.
 
-==== draft feedback list  ====
+You may believe I am doing too many things, but I also learned to focus, one thing at a time. Watching Ted Talks and reading The Power of Now helped me to do so.
 
-Dana
-Katerina Georgiou
-Ed 
+Recently I improved my swimming skills, my front crawl and also my ability to write blogs. I really found that Makers helped me not only to learn to code but to enhance this confidence at learning anything, in this specific case, learning a programming language, a testing framework, a stack and then do it again for an entire new environment. So, learning to learn is also about knowing that we don't know everything, one thing I progressed a lot is about problem solving and Googling, I think people found me good at it already, but now, I can apply it and enlarge any kind of limit.
 
-Process Review  
-Kai Hoffman
-Brooke Wooley
-Gabriel
+During this whole journey, I cultivated my perseverance and developed a higher level of self awareness.
 
-William Dunk
-Ibrahim Butt
+I also learned to create few wordpress websites:
 
-Sherif Shendidy
+[Family Hairdressing Salon Website](http://attitude-michele-joel.com)
 
+[Personal Website](http://adrienfabre.net)
 
-Elliot Jennings on Acebook
+---
 
-Before working on Jungl-Book with Adrien I thought I had grasped the concept of agile development. It was the guidance of Adrien during this project which allowed our team to now say we are confident with the framework. He gave us workshops on the scrum process and was devoted to making us stick to the following agile development in our second week. He is driven to manage a project and it seems to be a natural position for him as he always focuses on the bigger picture even when the team are being slightly short-sighted.
+Feedback I received
 
+Rohan Metha - from MakeSense (an open source volunteer-driven network creating events to support social entrepreneurs)
 
-Vaith Schmitz on Acebook
+"Very soon after attending his first event he was eager to jump on board and learn how to facilitate one of our workshops. By conducting these workshops he got to deeply understand several social entrepreneurs and help them figure out how to improve their business. He did these extremely well and soon became part of the core team. 6 months after he attended his first MakeSense workshop Adrien was the lead in organising a large-scale event “Food Glorious Food” tackling food waste with a full day event with workshops, activities, and talks featuring 12 different social entrepreneurs in the food sustainability sector. Adrien found the venue, negotiated using it for free, came up with the concept, created the marketing materials and was directing 6 other volunteers to pull off a really successful event.
 
-Adrien has been great to work with on JunglBook.
-He's super eager to learn and always found a ton of resources for us to use to understand a topic. His curiosity led us to question our processes more and he was the driving force behind us deciding to redo everything from scratch in week 2 to follow strict agile principles. Especially in this implementing good practices, Adrien was a huge asset to the team by his knowledge and experience.
+Adrien demonstrates a really strong work ethic. If he says he will do something he will go to great lengths to make sure it gets done. I have also found that he learns very quickly. If he is interested in something he will dive head first into it, contacting people to talk to and create opportunities to learn as much as he can by doing. He is a self-starter and very good at finding ways to improve the ways we work together."
+
+Michael Graham - Founder and Director at MJB Graham Sales Consultancy
+
+"Adrien is a great asset to any team in a business environment. He has an incredible work ethic blended with a great student mentality. During his time at MJB he proved himself to be a fast learner and demonstrated a willingness to continuously go the extra mile to generate results. He developed his sales and business development skills massively whilst at MJB and I'm glad to say that he was a pleasure to work with."
 
 
-Krzysztof Balejko
 
-I have worked with Adrien on several occasions, during our pair programming sessions he has proven to be very good at debugging, championing the process of tightening the loop and getting visibility. 
-
-I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base.
-
-
-Krzysztof Balejko
-
-
-Adrien starts each of his projects with careful planing and I was invited to join in before both bowling and front-end API challenges. During the process Adrien has demonstrated his abilities of modelling user interaction. We have used Realtime Board during both sessions for diagraming and general brainstorming. I would very happily work with him again!
-
-Alice ( see details on google doc )
-
-Overall. I think your process was good. But you may need to believe in it more. You asked a very good question to start, split the task into steps, and started writing one behaviour test to start. You reasearch process could use some more practice, but it's doing the job. You seem to know your tools.
-If there is one thing to work on, it may be self-awareness. What are you doing. How can you see when/if you are stuck, or if you just need to give it more time.
-
-
-Clare Pinder 
-Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'.
+---

@@ -414,6 +414,36 @@ I found that my various expriences in term of jobs as well as facilitation of de
 
 As an example, during Makers, facing over 30 challenges with different sizes, shapes and requirements in different languages, I learned how to approach programming challenges, this why I could say that I can programme fluently.
 
+Here for example, this is a more complex example, this is the Takeway Challenge, I think fluency is also about progressing I understand the different interactions among objects and how they are progressively built with TDD.
+
+````ruby
+subject(:takeaway) { described_class.new(menu: menu, order: order, sms: sms, config: {}) }
+
+let (:menu) { double(:menu, print: printed_menu) }
+let (:order) { instance_double("Order", total: 15.50) }
+let(:sms) { instance_double("SMS", deliver: nil) }
+let(:printed_menu) { "Chicken: 3.50" }
+
+````
+
+[Link to Takeaway Spec class in the takeaway challenge in Ruby](https://github.com/AdrienFabre/takeaway-challenge-ruby/blob/master/spec/takeaway_spec.rb)
+
+The most interesting here is how the different objects are created from the 'Unit Test' of the Takeaway class. On the first line we can see all the argument passed to the class, then we can see the double of each of those argument being created with their specific methods and attributes. To me, the fluency is to be able to move forward step by step using the TDD methodology, to read and write code. Here, 'double' does not take into account the real class while the 'instance_double' does, it allows to check that the real class has the method we doubled. Here, if the tests passe, it means that the real Object 'Order' has a method called 'total' and that the real Object 'SMS' has a method 'deliver'.
+
+I think fluency needs to be cultivated, it is about knowing enough of the basics to learn fast while also maintaining a some practice in different languages.
+
+I keep practicing on:
+
+[Codewars](https://www.codewars.com/users/AdrienFabre)
+
+[Codeacademy](https://www.codecademy.com/AdrienFabre)
+
+[Exercism](https://exercism.io/profiles/AdrienFabre)
+
+[Udemy](https://www.udemy.com/user/adrien-fabre-add/)
+
+and personal projects under constructions.
+
 ---
 
 Feedback
@@ -856,12 +886,20 @@ At Makers, we used Unified Modeling Language, or UML, to model the relationship 
 and created the following diagram:
 
 ![Diagram-bank-test](readme_images/Diagram-bank-test.jpg)
-the
+
 This diagram shows the different interactions among classes that could represent the solution of the Bank Challenge, this is independent to the language, as soon as the language is Object Oriented Programmed we can use it, like Ruby or Javascript.
 
 I can model anything means that I am able to understand abstract concepts and to create words, shapes and interaction that may help personal and collective understanding of what exists or of what is planned to be created.
 
 When I was studying electronics, I focused on the outcome I wanted under specific circumstances. For example if a user was pushing a button a train should go at a specific speed. The electricity was transformed in a way so that each element was aligned to produce this specific speed and a numerous number of logic gates could be necessary to achieve this. To be clear and experiment each possibility, we drew the whole schema and we were able to define the exact number of required gates.
+
+Here, in a slightly more complex project, the Takeaway challenge, I represented the different actions and the flow among the classes.
+
+What is interesting here is that the SMS class is wrapping the API twilio that is responsible for sending the sms. Also, we can see how each class has a different responsibility and how they each interact with one another.
+
+![Flow-diagram-takeaway-challenge](readme_images/Flow-diagram-takeaway-challenge.jpg)
+
+[Link to takeaway challenge in Ruby](https://github.com/AdrienFabre/takeaway-challenge-ruby)
 
 ---
 
@@ -1082,6 +1120,19 @@ function Airport(weather){
 [Link to the Airport repository in Javascript](https://github.com/AdrienFabre/airport_challenge_js/blob/master/src/Airport.js)
 
 We can consider all of it as a part of the best practices that we implement at each refactor, part of the TDD process. It could be also customised to what have been decided as a best practice for the project as a group, notably during the SCRUM ceremonies.
+
+
+On the takeaway challenge in Ruby below, this is the same idea, the injection of 'menu', 'config', 'order' and 'sms' enables to isolate each class, so the code is easier to change and to test.
+
+````ruby
+def initialize(menu:, config:, order: nil, sms: nil)
+    @menu = menu
+    @order = order || Order.new(menu)
+    @sms = sms || SMS.new(config)
+end
+````
+
+[Link to Takeaway class in the takeaway challenge in Ruby](https://github.com/AdrienFabre/takeaway-challenge-ruby/blob/master/lib/takeaway.rb)
 
 ---
 

@@ -360,9 +360,9 @@ One of the advantage of TDD is that the test coverage is theoricaly 100%, with R
 
 ---
 
-Feedback I received:
+Feedback
 
-Alice - Coach at Makers - After the training process review
+- Alice - Coach at Makers - After the training process review
 
 "You ask less questions but a very good one 'could you give an example of user interaction?'"
 
@@ -370,15 +370,15 @@ Alice - Coach at Makers - After the training process review
 
 "You are testing behaviour first, which is really good to see."
 
-Kai - Student at Makers - After the training process review
+- Kai - Student at Makers - After the training process review
 
 "You follow the process and persevere to follow the step by step approach"
 
-Brooke - Student at Makers - After the training process review
+- Brooke - Student at Makers - After the training process review
 
 "This is impressive. You don't use the cards because you know the process very well and you know what you are doing at each step."
 
-Clare Pinder - Student at Makers - After the training process review
+-  Clare Pinder - Student at Makers - After the training process review
 
 "Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
 
@@ -416,17 +416,17 @@ As an example, during Makers, facing over 30 challenges with different sizes, sh
 
 ---
 
-Feedback I received
+Feedback
 
-Krzysztof Balejko - Student at Makers
+- Krzysztof Balejko - Student at Makers
 
 "I’ve found his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
 
-Brooke - Student at Makers - After the training process review
+- Brooke - Student at Makers - After the training process review
 
 "This is impressive. You don't use the cards because you know the process very well and you know what you are doing at each step."
 
-Diptis Hadler - Student at Makers - Collaborated on the final project
+- Diptis Hadler - Student at Makers - Collaborated on the final project
 
 "It was clear that he can code fluently as soon after we settled on the technology stack we would use he did a large part of the code to reach our MVP. He then built on that and improved features, especially on the look and feel of the front-end, showing his skill in refactoring the initial deliverables."
 
@@ -781,13 +781,13 @@ Each of those 'bugs' could be sorted, the only reason it is not is the amount of
 [Link to the What Zen repository on Git](https://github.com/what-zen/what-zen-app)
 
 ---
-Feedback I recieved.
+Feedback
 
-Krzysztof Balejko - Student at Makers
+- Krzysztof Balejko - Student at Makers
 
 "I have worked with Adrien on several occasions, during our pair programming sessions he has proven to be very good at debugging, championing the process of tightening the loop and getting visibility."
 
-Clare Pinder - Student at Makers - After the training process review
+- Clare Pinder - Student at Makers - After the training process review
 
 "Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
 
@@ -865,25 +865,25 @@ When I was studying electronics, I focused on the outcome I wanted under specifi
 
 ---
 
-Feedback I recieved
+Feedback
 
-Krzysztof Balejko - Student at Makers
+- Krzysztof Balejko - Student at Makers
 
 "Adrien starts each of his projects with careful planing and I was invited to join in before both bowling and front-end API challenges. During the process Adrien has demonstrated his abilities of modelling user interaction. We have used Realtime Board during both sessions for diagraming and general brainstorming. I would very happily work with him again!"
 
-Kwaku - Student at Makers
+- Kwaku - Student at Makers
 
 "I saw Adrien very easily diagram the shape of our Acebook challenge using RealTimeBoard, a tool that he used in the past but he improved his skills using it to draw accurate diagrams."
 
-Clare - Student at Makers - After a process review session
+- Clare - Student at Makers - After a process review session
 
 "During the process review, I have seen Adrien making a very simple diagram but meaningful before he started to write the tests."
 
-Diptis Hadler - Student at Makers - Collaborated on the final project
+- Diptis Hadler - Student at Makers - Collaborated on the final project
 
 "In some planning sessions he showed his skills in abstracting and modelling our proposed solution in diagrams. Again this helped us all to visualise our product as a team and progress towards solutions."
 
-Dan Groze - Student at Makers - Collaborated on the final project
+- Dan Groze - Student at Makers - Collaborated on the final project
 
 "I like that you always start tackling a problem with lots of planning, you are a master at diagramming and modelling. This helped all our team during our final project to understand our task better."
 
@@ -954,7 +954,15 @@ The same way in other languages, here in React, we created several components, i
 [Link to the list of components of MakersBnB in React](https://github.com/AdrienFabre/makersbnb/tree/master/client/src/components)
 
 ---
-Feedback I received
+Feedback
+
+- Krzysztof Balejko - Student at Makers
+
+"I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
+
+- William Dunk - Student at Makers - Collaborated on the MakersBnB project
+
+"Adrien quickly demonstrated a strong ability to style webpages using CSS and the styled components library for React. Styling instructions were clearly and logically laid out, allowing changes to be rapidly iterated on as the page design evolved."
 
 ---
 
@@ -974,11 +982,15 @@ This is also about constant prioritisation and knowing how the different process
 
 ---
 
-Feedback I received
+Feedback
 
-Diptis Hadler - Student at Makers - Collaborated on the final project
+- Diptis Hadler - Student at Makers - Collaborated on the final project
 
 "His approach to creating new software is very methodical and while we did not do as much formal TDD in this project as we had hoped we were nonetheless working in a very logical way together, and Adrien can take a lot of credit in keeping the team aligned in that way."
+
+- Sherif Shendidy - Student at Makers - Collaborated on the final project
+
+"It was a real pleasure working with you on our final project at Makers. You were so dedicated, your thoughts were very organised, and it was so helpful the way you diagrammed the options we had and plans/routes we can follow to deliver the required feature."
 
 ---
 
@@ -1003,21 +1015,25 @@ I also summarised our 4 cycles with different focused:
 
 ---
 
-Feedback I received:
+Feedback
 
-Luca Fruzza - Student at Makers - Collaboration on Acebook
+- Luca Fruzza - Student at Makers - Collaboration on Acebook
 
 "Adrien was very enthusiastic and helped the whole team to really understand it the second week of the Acebook challenge, while the first scrum process was jeopardize by our learning of Ruby on Rails."
 
-Elliot Jennings - Student at Makers - Collaboration on Acebook
+- Elliot Jennings - Student at Makers - Collaboration on Acebook
 
 Before working on Jungl-Book with Adrien I thought I had grasped the concept of agile development. It was the guidance of Adrien during this project which allowed our team to now say we are confident with the framework. He gave us workshops on the scrum process and was devoted to making us stick to the following agile development in our second week. He is driven to manage a project and it seems to be a natural position for him as he always focuses on the bigger picture even when the team are being slightly short-sighted.
 
-Diptis Hadler - Student at Makers - Collaborated on the final project
+- Diptis Hadler - Student at Makers - Collaborated on the final project
 
 "I was in Team What Zen with Adrien for our final project. I was very impressed with Adrien's contributions in all aspects to the project.
 
 In general he led the ideation and planning sessions that we had, writing notes and diagrams on the whiteboard to capture the salient points from the discussions we were having as a team. This helped us to focus on the key issues and explore ideas more effectively. I particularly liked the way he would ensure that the voice of everyone in the team was heard so that the any decisions the team would make would be achieved through consensus. This aligned well with the goal of our What Zen product."
+
+- Sherif Shendidy - Student at Makers - Collaborated on the final project
+
+"I liked and respected how brave you were in making decisions involving the use of tools and technologies that we didn’t know even when the time frame we had we so tight, then how focused you were in learning them and successfully implementing them in our project."
 
 ---
 
@@ -1069,13 +1085,13 @@ We can consider all of it as a part of the best practices that we implement at e
 
 ---
 
-Feedback I received
+Feedback
 
-Krzysztof Balejko - Student at Makers
+- Krzysztof Balejko - Student at Makers
 
 "I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
 
-William Dunk - Student at Makers - Collaborated on the MakersBnB project
+- William Dunk - Student at Makers - Collaborated on the MakersBnB project
 
 "Adrien quickly demonstrated a strong ability to style webpages using CSS and the styled components library for React. Styling instructions were clearly and logically laid out, allowing changes to be rapidly iterated on as the page design evolved."
 
@@ -1094,15 +1110,19 @@ I collaborated with different kind of people, some willing to lead, some with le
 
 ---
 
-Feedback I received
+Feedback
 
-Elliot Jennings - Student at Makers - Collaboration on Acebook
+- Elliot Jennings - Student at Makers - Collaboration on Acebook
 
 Before working on Jungl-Book with Adrien I thought I had grasped the concept of agile development. It was the guidance of Adrien during this project which allowed our team to now say we are confident with the framework. He gave us workshops on the scrum process and was devoted to making us stick to the following agile development in our second week. He is driven to manage a project and it seems to be a natural position for him as he always focuses on the bigger picture even when the team are being slightly short-sighted.
 
-Diptis Hadler - Student at Makers - Collaborated on the final project
+- Diptis Hadler - Student at Makers - Collaborated on the final project
 
 "In the second week of the project our team worked very well following Agile processes and Adrien's contribution was a key factor in achieving this. He made sure that we performed the necessary Agile ceremonies and that we iterated and collaborated in our work. I was also glad for the quality of the planning and feedback he gave to us all as we prepared the presentation and demo of our product. This helped to make the last two days of the project very rewarding for me personally."
+
+- Sherif Shendidy - Student at Makers - Collaborated on the final project
+
+"You were also a great team player, with great sense of humer and ability engage in a focused fruitful conversation to solve problems and plan for the works ahead of us."
 
 ---
 
@@ -1126,33 +1146,33 @@ The same way when I was focusing on learning the facilitation of design thinking
 
 ---
 
-Feedback I received
+Feedback
 
-William Dunk - Student at Makers - Collaborated on the MakersBnB project
+- William Dunk - Student at Makers - Collaborated on the MakersBnB project
 
 "Adrien was a pleasure to work with throughout the Makers BnB project, he handled the pressures of new technologies and the first taste of software development group work with ease. When faced with questions with the new concepts he was the first to press for clarification often to the benefit of the wider group. Equally at ease pairing and working solo, Adrien could always be relied upon to meet sprint goals."
 
-Vaith Schmitz - Student at Makers - Collaborated on Acebook
+- Vaith Schmitz - Student at Makers - Collaborated on Acebook
 
 Adrien has been great to work with on JunglBook. He's super eager to learn and always found a ton of resources for us to use to understand a topic. His curiosity led us to question our processes more and he was the driving force behind us deciding to redo everything from scratch in week 2 to follow strict agile principles. Especially in this implementing good practices, Adrien was a huge asset to the team by his knowledge and experience.
 
-Krzysztof Balejko - Student at Makers
+- Krzysztof Balejko - Student at Makers
 
 "I have worked with Adrien on several occasions, during our pair programming sessions he has proven to be very good at debugging, championing the process of tightening the loop and getting visibility."
 
-Emilie Desterbecq - Food Entrepreneur
+- Emilie Desterbecq - Food Entrepreneur
 
 "Highly proactive, Adrien has greatly helped me to set up my company. He is creative and always find new ways to market the shop. He has very good eye for details and do things from A to Z regardless how long it takes. Adrien is a mutli-tasks from painting to website improving. He listen carefully people to be able to understand the all concept and offer an optimal solution for their business."
 
-Mursal Hedayat - Chatterbox Founder, Forbes 30 Under 30, MIT Innovator, FT Top 100 Most Influential Leaders in Tech
+- Mursal Hedayat - Chatterbox Founder, Forbes 30 Under 30, MIT Innovator, FT Top 100 Most Influential Leaders in Tech
 
 "It was a delightful working with Adrien. He produced a highly engaging and well attended MakeSense workshop for Chatterbox in very little time. He was very attentive to our needs and delivered outputs that far exceeded our expectations. I would highly recommend him."
 
-Diptis Hadler - Student at Makers - Collaborated on the final project
+- Diptis Hadler - Student at Makers - Collaborated on the final project
 
 "When it came to investigating new technologies and testing them out he showed his keenness and ability in learning by himself. He got some example code working very quickly by following tutorials and other online resources. When he shared and explained his work it helped the team to understand the possibilities and challenges involved with those technologies."
 
-Dan Groze - Student at Makers - Collaborated on the final project
+- Dan Groze - Student at Makers - Collaborated on the final project
 
 "I really enjoyed working with you, having spent a difficult week on our Task manager app, being on a deadline and having to learn several new technologies, you were always positive and helped the team a lot with researching."
 
@@ -1180,9 +1200,9 @@ Then I walk 45 min twice a day to come to Makers, this is also a way to spend so
 
 ---
 
-Feedback I received
+Feedback
 
-Dana - Joy Officer at Makers
+- Dana - Joy Officer at Makers
 
 "Adrien is highly contentious when it comes to managing his wellbeing. Adrien is regular attendee of meditation and yoga and was always very proactive regarding our 1:1 sessions."
 
@@ -1230,15 +1250,15 @@ I also learned to create few wordpress websites:
 
 ---
 
-Feedback I received
+Feedback
 
-Rohan Metha - from MakeSense (an open source volunteer-driven network creating events to support social entrepreneurs)
+- Rohan Metha - from MakeSense (an open source volunteer-driven network creating events to support social entrepreneurs)
 
 "Very soon after attending his first event he was eager to jump on board and learn how to facilitate one of our workshops. By conducting these workshops he got to deeply understand several social entrepreneurs and help them figure out how to improve their business. He did these extremely well and soon became part of the core team. 6 months after he attended his first MakeSense workshop Adrien was the lead in organising a large-scale event “Food Glorious Food” tackling food waste with a full day event with workshops, activities, and talks featuring 12 different social entrepreneurs in the food sustainability sector. Adrien found the venue, negotiated using it for free, came up with the concept, created the marketing materials and was directing 6 other volunteers to pull off a really successful event.
 
 Adrien demonstrates a really strong work ethic. If he says he will do something he will go to great lengths to make sure it gets done. I have also found that he learns very quickly. If he is interested in something he will dive head first into it, contacting people to talk to and create opportunities to learn as much as he can by doing. He is a self-starter and very good at finding ways to improve the ways we work together."
 
-Michael Graham - Founder and Director at MJB Graham Sales Consultancy
+- Michael Graham - Founder and Director at MJB Graham Sales Consultancy
 
 "Adrien is a great asset to any team in a business environment. He has an incredible work ethic blended with a great student mentality. During his time at MJB he proved himself to be a fast learner and demonstrated a willingness to continuously go the extra mile to generate results. He developed his sales and business development skills massively whilst at MJB and I'm glad to say that he was a pleasure to work with."
 

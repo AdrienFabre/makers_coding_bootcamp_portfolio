@@ -885,7 +885,7 @@ Diptis Hadler - Student at Makers - Collaborated on the final project
 
 Dan Groze - Student at Makers - Collaborated on the final project
 
-"I can model anything: I like that you always start tackling a problem with lots of planning, you are a master at diagramming and modelling. This helped all our team during our final project to understand our task better."
+"I like that you always start tackling a problem with lots of planning, you are a master at diagramming and modelling. This helped all our team during our final project to understand our task better."
 
 ---
 
@@ -1075,6 +1075,10 @@ Krzysztof Balejko - Student at Makers
 
 "I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
 
+William Dunk - Student at Makers - Collaborated on the MakersBnB project
+
+"Adrien quickly demonstrated a strong ability to style webpages using CSS and the styled components library for React. Styling instructions were clearly and logically laid out, allowing changes to be rapidly iterated on as the page design evolved."
+
 ---
 
 ### I can justify the way I work in a business context
@@ -1123,6 +1127,10 @@ The same way when I was focusing on learning the facilitation of design thinking
 ---
 
 Feedback I received
+
+William Dunk - Student at Makers - Collaborated on the MakersBnB project
+
+"Adrien was a pleasure to work with throughout the Makers BnB project, he handled the pressures of new technologies and the first taste of software development group work with ease. When faced with questions with the new concepts he was the first to press for clarification often to the benefit of the wider group. Equally at ease pairing and working solo, Adrien could always be relied upon to meet sprint goals."
 
 Vaith Schmitz - Student at Makers - Collaborated on Acebook
 

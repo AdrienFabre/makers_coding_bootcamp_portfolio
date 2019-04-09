@@ -1290,17 +1290,19 @@ Adrien has been great to work with on JunglBook. He's super eager to learn and a
 
 **Manage my own well-being it is like if I was a good coach to myself, where I find the balance in doing what is new and what I already know so I progress and my motivation stays high.**
 
-At Makers I was constantly challenged and I took every opportunity to find the balanche between the challenge of my body and my mind, among different kind of focus an pace.
+At Makers I was constantly challenged and I took every opportunity to find the balance between the challenge of my body and my mind. It helped me to adapt among different kind of focus an pace.
 
-I went to every yoga and meditation class, I kept going to swim several times a week and took few courses so I was able to swim over 3km in 1h10min, it was a way for me not to only prioritise mental challenges. I also love the calm of holding my breath under water and swim very slowly.
+I went to every yoga and meditation class, I kept going to swim several times a week and took few courses so I was able to swim over 3km in 1h10min in front crawl (while before I was doing 1km), it was a way for me not to only prioritise mental challenges, but to balance. I also love the calm of holding my breath under water and swim very slowly, this is the same idea of balance between intense moment of coding where the focus is high and moments of wonders, where the body is driving.
 
-I met Dana, the Joy Officer for at least 3 times and kept her updated regularly. This goes with my regular healthy habits and I could find that her advice resonated with me and the week of meditation retreat I did last year in Scotland.
+I met Dana, the Joy Officer for at least 3 times during the 12 weeks and kept her updated regularly, she gave me plenty of advice and resources that I carefully absorbed and practiced, so I could enjoy the process as well as achieve results. Those new best practices go along with my holistic approach towards healthy habits and I could find that her advice resonated with me and the week of [meditation retreat](https://www.dhanakosa.com/retreat/2019/awake-wild) I did last year in Scotland.
 
-I also write a blog, for now this is a draft that I shared, and got several good feedback, I will follow recommendations, split it and develop it in 2 blogs. [Blog about Stretching mind and body at Makers.](https://medium.com/@AdrienFabre/stretching-mind-and-body-at-makers-f922582c9dbb)
+I also write a blog, for now this is a draft that I shared, and got several good feedback, I will follow recommendations, split it and develop it in 2 blogs. What feels good is to create content. [Blog about Stretching mind and body at Makers.](https://medium.com/@AdrienFabre/stretching-mind-and-body-at-makers-f922582c9dbb)
 
-I also kept doing few talks on what I like, I social impact, on perspective and I saw people loving my pictures, that was very good to see this.
+Also, I kept doing few talks on what I like, I social impact, on perspectives and I saw people loving my pictures, that was very good to see this.
 
 Then I walk 45 min twice a day to come to Makers, this is also a way to spend some time with myself, looking at the trees, listening string musics, focusing on my posture or my breathing.
+
+All of this together, and regularly meeting friends and Makers students, the new ones and the old ones made me really enjoy the atmosphere at Makers. This is this kind of balance with individual and collective, relaxing and intense activities that I feel at my best.
 
 ---
 
@@ -1314,7 +1316,7 @@ Then I walk 45 min twice a day to come to Makers, this is also a way to spend so
 
 ### I can learn anything by myself
 
-I can learn anyting by myself, I think this starts with the belief that everything is possible and that every intention is important, so it drives actions and progress. Actions and progresses that can take many shapes, more or less expected but that bring us into a zone of exploration and transforms into learnings.
+**I can learn anyting by myself, I think this starts with the belief that everything is possible and that every intention is important, so it drives actions and progress. Actions and progresses that can take many shapes, more or less expected but that bring us into a zone of exploration and transform into learnings.**
 
 I have a deep belief that I can learn anything.
 
@@ -1338,11 +1340,11 @@ I have a deep belief that I can learn anything.
 
 All this journey was surrounded by by-products of my progression.
 
-For example and learned English very well. I learned that international politic conflicts, like the sanctions that made the Russian currency drop made me come to London, so, even with the best I can do, I am not in control. I learnt to drive a motorcycle, I learned scuba diving. I learnt some finance by doing a loan to support myself. I learnt to create and cook food going through plenty of jobs from green houses, to fast food, to healthy food and to delivery of food by bicycle to pay my expenses. I learned to meditate and to travel in my body, to calm me down and to find new ways to explore the unknown. I learned to travel, to adapt to cultures and environment, also in places like India or Australia. I learned to adapt to different social levels, city sizes, and working environments.
+For example and learned English very well and my Russian is still kind of good. I learned that I do not control everything throught international politic conflicts, like the sanctions that made the Russian currency drop and made me come to London. I learnt to drive a motorcycle, I learned scuba diving. I learnt some finance by doing a loan to support myself. I learnt to create and cook food going through plenty of jobs from green houses, to fast food, to healthy food and to delivery of food by bicycle to pay my expenses. I learned to meditate and to travel in my body, to calm me down and to find new ways to explore the myself. I learned to travel, to adapt to cultures and environments, also in places like India, Australia and Ireland. I learned to adapt to different social levels, city sizes, and working environments.
 
 You may believe I am doing too many things, but I also learned to focus, one thing at a time. Watching Ted Talks and reading The Power of Now helped me to do so.
 
-Recently I improved my swimming skills, my front crawl and also my ability to write blogs. I really found that Makers helped me not only to learn to code but to enhance this confidence at learning anything, in this specific case, learning a programming language, a testing framework, a stack and then do it again for an entire new environment. So, learning to learn is also about knowing that we don't know everything, one thing I progressed a lot is about problem solving and Googling, I think people found me good at it already, but now, I can apply it and enlarge any kind of limit.
+Recently I improved my swimming skills, my front crawl and also my ability to write blogs. **I really found that Makers helped me not only to learn to code but to enhance this confidence at learning anything, in this specific case, learning a programming language, a testing framework, a stack and then do it again for an entire new environment. Not to forget the ability to learn to collaborate efficiently quickly with new people. So, learning to learn is also about knowing that we don't know everything, one other thing I progressed a lot is about problem solving and online searches, I think people found me good at it already, I expanded it.**
 
 During this whole journey, I cultivated my perseverance and developed a higher level of self awareness.
 
@@ -1351,6 +1353,10 @@ I also learned to create few wordpress websites:
 [Family Hairdressing Salon Website](http://attitude-michele-joel.com)
 
 [Personal Website](http://adrienfabre.net)
+
+This last website will also show more in details the events and workshops I ran, which are focused on social impact and that are educational experiments by themselves, abeing an organiser, a facilitator and a student at the same time.
+
+Finaly, I find that one of the best way to keep learning and to be motivated is to dive into a new ecosystem and connect with the different material available, to create stuff but above all with the individuals, this is why one of my focus now is to learn from Software Engineers. To connect with more depth with them and with potential employers I am creating my profiles [CV on GitHub](https://github.com/AdrienFabre/CV). To be faster, what I am planning is to organise regular events focused on tech, using my skills to develop the new ones faster.
 
 ---
 

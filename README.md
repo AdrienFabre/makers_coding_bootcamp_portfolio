@@ -12,11 +12,20 @@ The [Makers Software Engineering Bootcamp](https://makers.tech/) is a 12 week, f
   - [Table of Contents](#table-of-contents)
   - [I can make anything](#i-can-make-anything)
     - [I can TDD anything](#i-can-tdd-anything)
+      - [Shortcut to my process](#shortcut-to-my-process)
+      - [Feedback](#feedback)
     - [I can program fluently](#i-can-program-fluently)
+      - [Feedback](#feedback-1)
     - [I can debug anything](#i-can-debug-anything)
+      - [Shortcut to summary](#shortcut-to-summary)
+      - [Feedback](#feedback-2)
     - [I can model anything](#i-can-model-anything)
+      - [Shortcut to summary](#shortcut-to-summary-1)
+      - [Feedback](#feedback-3)
     - [I can refactor anything](#i-can-refactor-anything)
+      - [Feedback](#feedback-4)
     - [I have a methodical approach to solving problems](#i-have-a-methodical-approach-to-solving-problems)
+      - [Feedback](#feedback-5)
   - [I help my teams succeed](#i-help-my-teams-succeed)
     - [I use an Agile product development process](#i-use-an-agile-product-development-process)
     - [I write code that is easy to change](#i-write-code-that-is-easy-to-change)
@@ -82,30 +91,32 @@ Then we decompose the 'Feature Test' that is often a complex black box into smal
 
 ![feature-unit-test-cycle](readme_images/feature-unit-test-cycle.jpg)
 
-Previous to the tests, from the specifications or users stories, I read and refine entirely the requirements to get a general understanding of the user interactions. The big picture helps me to get an idea of the direction. Then make a quick drawing of the entire project so I can easily keep it in mind. If I find it necessary, I write or rewrite the users stories so that they have a more manageable size to work with. I then order the user stories and create a diagram of the classes, properties and functions needed for the first feature, this is the planning part. Finally, I start the process:
+#### Shortcut to my process
 
-Red phase - Test
+Previous to the tests, from the specifications or users stories, I **read** and **refine** entirely the requirements to get a general understanding of the user interactions. The big picture helps me to get an idea of the direction. Then make a quick drawing of the entire project so I can easily keep it in mind. If I find it necessary, I write or rewrite the users stories so that they have a more manageable size to work with. I then order the user stories and create a diagram of the classes, properties and functions needed for the first feature, this is the **planning** part. Finally, I start the process:
+
+**Red** phase - Test
 
 - 1- I translate the first user story into my first feature test.
 - 2- I run the test to make sure my feature test fails.
 - 3- I write the failing unit test matching the feature test.
 - 4- I run the test to make sure my unit test and feature test fail for the same reason.
 
-Green phase - Implement
+**Green** phase - Implement
 
 - 5- I write the easiest code to make the unit test pass, no more.
 - 6- I run the tests and check if unit test passes. If not, repeat step 5.
 - 7- I repeat steps 5-6 until the feature test passes entirely.
 
-Refactor phase - Refactor
+**Refactor** phase - Refactor
 
 - 8- I modify the code without adding any feature. I make sure all best practices are respected.
 - 9- I run tests again to check that the refactoring did not break the tests.
 - 10- I then start the loop again with a new user story.
 
-When I commit, I add, commit and push to [Github](https://github.com), it helps to save the different versions of my work, working alone or in a group. I can also take more risks when I write code because I know a saved version of the working code exists. Here it is important to write meaningful and consistent message, so, anyone can find the relevant commit.
+When I **commit**, I add, commit and push to [Github](https://github.com), it helps to save the different versions of my work, working alone or in a group. I can also take more risks when I write code because I know a saved version of the working code exists. Here it is important to write meaningful and consistent message, so, anyone can find the relevant commit.
 
-After 15 minutes working on writing some code to implement a test, it is good to step back and wonder if the test we are doing is the good one in term of what we are testing and of how much we are testing, this is why it is recommended that after 15 minutes we remove all our changes since our last commit , 'revert', and 'simplify' our test.
+After 15 minutes working on writing some code to implement a test, it is good to step back and wonder if the test we are doing is the good one in term of what we are testing and of how much we are testing, this is why it is recommended that after 15 minutes we remove all our changes since our last commit , '**revert**', and '**simplify**' our test.
 
 ---
 
@@ -197,11 +208,11 @@ it 'adds an apple to the basket' do
 end
 ````
 
-THis is why we say that our approach to Test Driven Development is **Behavior Driven Development**.
+THis is why we say that our approach to Test Driven Development is **Behaviour Driven Development**.
 
 ---
 
-'I can Test Drive Develop anything' means that when I am facing a problem, I am able to divide it in small chunks, that I am able to be very clear about what I want to achieve in those chunks, that I develop my solution step by step, writing the test first and then finding the solution. It means that whatever language or project I am working on, I am able to consistently use a methodology such as the Red-Green-Refactor In other words, I can use a process to create structured code, easy to read, debug and update.
+**'I can Test Drive Develop anything' means that when I am facing a problem, I am able to divide it in small chunks, that I am able to be very clear about what I want to achieve in those chunks, that I develop my solution step by step, writing the test first and then finding the solution. It means that whatever language or project I am working on, I am able to consistently use a methodology such as the Red-Green-Refactor In other words, I can use a process to create structured code, easy to read, debug and update.**
 
 ---
 
@@ -227,7 +238,7 @@ So, we were able to use a plane in our tests for the Airport class while it was 
 When we want to test what is output in the terminal, we use the following syntax:
 
 ````ruby
-  it "prompts the user to say something with 'Say something:'" do 
+  it "prompts the user to say something with 'Say something:'" do
       expect { Echo.prompt }.to output('Say something:').to_stdout
   end
 ````
@@ -360,7 +371,7 @@ One of the advantage of TDD is that the test coverage is theoricaly 100%, with R
 
 ---
 
-Feedback
+#### Feedback
 
 - Alice - Coach at Makers - After the training process review
 
@@ -378,7 +389,7 @@ Feedback
 
 "This is impressive. You don't use the cards because you know the process very well and you know what you are doing at each step."
 
--  Clare Pinder - Student at Makers - After the training process review
+- Clare Pinder - Student at Makers - After the training process review
 
 "Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
 
@@ -392,7 +403,7 @@ The part that is similar among languages and that makes it easier to learn new l
 
 Programming languages have those two parts too, learning Ruby was challenging because I did not have any reference from previous programming language. Once I understood the patterns, the big picture, the details, I acquired the key words to quickly search online whatever syntax was missing. Because I did not know the syntax but I knew what I was willing to use in term of logic or structure. This first programming language helped me to explore Javascript and a little bit of Java with their own differences and similarities. Then, learning the test framework language was another step, because the logic is different, however after RSpec, Jasmine was also easier.
 
-Program fluency means that I have explored enough programming languages so that I am confident that I can use my acquired abilities to understand programming languages, to search efficiently and to learn quickly, and perform in a reasonable amount of time.
+**Program fluency means that I have explored enough programming languages so that I am confident that I can use my acquired abilities to understand programming languages, to search efficiently and to learn quickly, and perform in a reasonable amount of time.**
 
 I can show few examples of different programming environments I adapted in the past.
 
@@ -408,7 +419,7 @@ The important part is that between those 2 projects, while the language and the 
 
 [Link to a version of a minimalist Trello created with React and FireBase in a group](https://github.com/what-zen/what-zen-app)
 
-The other side of progamming fluently, is the ability to translate human language such as specification or user stories into code and to write code using the best practices such as Test Driven Development, Don’t Repeat Yourself, and Single Responsibility. In other words, keep in mind the person that may use your user interface as a user and your code as a software developer.
+The other side of **progamming fluently, is the ability to translate human language such as specification or user stories into code and to write code** using the best practices such as Test Driven Development, Don’t Repeat Yourself, and Single Responsibility. In other words, keep in mind the person that may use your user interface as a user and your code as a software developer.
 
 I found that my various expriences in term of jobs as well as facilitation of design thinking workshops helped me to keep those 2 types of person in mind.
 
@@ -430,7 +441,7 @@ let(:printed_menu) { "Chicken: 3.50" }
 
 The most interesting here is how the different objects are created from the 'Unit Test' of the Takeaway class. On the first line we can see all the argument passed to the class, then we can see the double of each of those argument being created with their specific methods and attributes. To me, the fluency is to be able to move forward step by step using the TDD methodology, to read and write code. Here, 'double' does not take into account the real class while the 'instance_double' does, it allows to check that the real class has the method we doubled. Here, if the tests passe, it means that the real Object 'Order' has a method called 'total' and that the real Object 'SMS' has a method 'deliver'.
 
-I think fluency needs to be cultivated, it is about knowing enough of the basics to learn fast while also maintaining a some practice in different languages.
+**I think fluency needs to be cultivated**, it is about knowing enough of the basics to learn fast while also maintaining a some practice in different languages.
 
 I keep practicing on:
 
@@ -446,7 +457,7 @@ and personal projects under constructions.
 
 ---
 
-Feedback
+#### Feedback
 
 - Krzysztof Balejko - Student at Makers
 
@@ -460,16 +471,15 @@ Feedback
 
 "It was clear that he can code fluently as soon after we settled on the technology stack we would use he did a large part of the code to reach our MVP. He then built on that and improved features, especially on the look and feel of the front-end, showing his skill in refactoring the initial deliverables."
 
-
 ---
 
 ### I can debug anything
 
-A bug is an unexpected behavior. Debugging is about finding why this behavior occurs and modifying it so it matches our expectations.
+**A bug is an unexpected behavior**. Debugging is about finding why this behavior occurs and modifying it so it matches our expectations.
 
-Being able to debug anything is about having a clear process to find the source of a bug, a process that can be used in any language. This process is divided in two main parts.
+**Being able to debug anything is about having a clear process to find the source of a bug, a process that can be used in any language.** This process is divided in two main parts.
 
-'Getting visibility', finding ways to follow the flow and to display the information created along the flow, then 'Tighten the loop', narrow down so we can find out at which moment the unexpected behavior occurs. Each environment has different syntax to make it happen but the process is similar in those environments.
+**'Getting visibility'**, finding ways to follow the flow and to display the information created along the flow, then **'Tighten the loop'**, narrow down so we can find out at which moment the unexpected behavior occurs. Each environment has different syntax to make it happen but the process is similar in those environments.
 
 The first example would be the error message I shown in the TDD part, when the error message shows, this is a bug, but because we define a precise test, the bug is already clear, we already have the visibility and the loop thightened, so we know how to move forward. So, the first way to get some information about the bug is to run the test. (if we are lucky enough to have tests in the test we are debugging)
 
@@ -617,7 +627,7 @@ Finished in 0.30878 seconds (files took 1.15 seconds to load)
 3 examples, 0 failures
 ````
 
-This is how, in a new environment (Linux Ubuntu 18.04), I start to use my debugging skills before writting any code. This is actually a skill that I built through Makers and that slowed me down more than expected during weekend challenges.
+This is how, in a new environment (Linux Ubuntu 18.04), **I start to use my debugging skills before writting any code.** This is actually a skill that I built through Makers and that slowed me down more than expected during weekend challenges.
 
 ---
 
@@ -695,7 +705,7 @@ Redirected to http://localhost:3000/
 Completed 302 Found in 162ms (ActiveRecord: 4.9ms)
 ````
 
-Devise use Active Record to connect to the database and create my login data, so it returns:'302 Found', saying that it is working. Also I see that the password is encrypted.
+Devise use Active Record to connect to the database and create my login data, so it returns:'302 Found', saying that it is a redirection and that it is working. Also I see that the password is encrypted.
 
 Here I see all the information being created, for example those which are saved into the database. In that specific case we are using [Devise as an identification solution](https://github.com/plataformatec/devise), so we don't manage everything. I can also see what is created in the database using [TablePlus](https://tableplus.io/) or [Postman](https://www.getpostman.com/).
 
@@ -782,7 +792,9 @@ The weather we define in our test is created but not used by the airport we are 
 
 In several cases I faced errors where the expected behavior is not what I want and there is no error messages, so, I have to find by myself the information flow that creates this unwanted behavior. The examples shown are representative of the bugs I regularly faced but not extensive. With some time, debugging became natural and I did not notice it.
 
-I can debug anything means that I am able to understand what is the expected behavior, to notice that the expected behavior it not fulfilled and then I am able to make a clear assumption about why this unexpected error occurs and then find ways to verify this assumption. Then, step by step, througt research and following the flow of the error, I finally solve the error message. Meaning that with enough time, I have developed the right process to debug anything. One step at a time.
+#### Shortcut to summary
+
+**I can debug anything means that I am able to understand what is the expected behavior, to notice that the expected behavior it not fulfilled and then I am able to make a clear assumption about why this unexpected error occurs and then find ways to verify this assumption. Then, step by step, througth research and following the flow of the error, I finally solve the error message. Meaning that with enough time, I have developed the right process to debug anything. One step at a time.**
 
 ---
 
@@ -811,7 +823,8 @@ Each of those 'bugs' could be sorted, the only reason it is not is the amount of
 [Link to the What Zen repository on Git](https://github.com/what-zen/what-zen-app)
 
 ---
-Feedback
+
+#### Feedback
 
 - Krzysztof Balejko - Student at Makers
 
@@ -825,7 +838,7 @@ Feedback
 
 ### I can model anything
 
-Model something is about taking something abstract and transforming in something tangible.
+**Model something is about taking something abstract and transforming in something tangible.**
 
 In our situations as software developers, we can model different things, often we are transforming specification and user stories into a few squares and arrows, that develops our understanding of the big picture and help us to define each part and how they fits together.
 
@@ -889,7 +902,9 @@ and created the following diagram:
 
 This diagram shows the different interactions among classes that could represent the solution of the Bank Challenge, this is independent to the language, as soon as the language is Object Oriented Programmed we can use it, like Ruby or Javascript.
 
-I can model anything means that I am able to understand abstract concepts and to create words, shapes and interaction that may help personal and collective understanding of what exists or of what is planned to be created.
+#### Shortcut to summary
+
+**I can model anything means that I am able to understand abstract concepts and to create words, shapes and interaction that may help personal and collective understanding of what exists or of what is planned to be created.**
 
 When I was studying electronics, I focused on the outcome I wanted under specific circumstances. For example if a user was pushing a button a train should go at a specific speed. The electricity was transformed in a way so that each element was aligned to produce this specific speed and a numerous number of logic gates could be necessary to achieve this. To be clear and experiment each possibility, we drew the whole schema and we were able to define the exact number of required gates.
 
@@ -903,7 +918,7 @@ What is interesting here is that the SMS class is wrapping the API twilio that i
 
 ---
 
-Feedback
+#### Feedback
 
 - Krzysztof Balejko - Student at Makers
 
@@ -929,7 +944,7 @@ Feedback
 
 ### I can refactor anything
 
-Refactoring, this is modifying the code so it is better in different ways but the input and output stay the same. Basically this is doing the same thing in a better way. This is about knowing what is good and bad and where the compromises should be made.
+**Refactoring, this is modifying the code so it is better in different ways but the input and output stay the same. Basically this is doing the same thing in a better way. This is about knowing what is good and bad and where the compromises should be made.**
 
 For example the best is to have a code that is easy to read and also short, but the fact that we keep it short does not mean that we allow ourselves to be misunderstood for the sake of being short.
 
@@ -947,7 +962,7 @@ Here we can see the verb 'make a deposit', the nouns like 'amount', 'date', 'tra
 
 Here you can see several commits with few having the word 'refactor' inside. Some of the refactoring may come from messages coming from a linter, in that case [Rubocop](https://github.com/rubocop-hq/rubocop), it will check that I am respecting the best practices of this language. Or I may get some external information from the badges I integrated in my readme, if [Travis](https://travis-ci.org/) is passing, if the coverage is 100% with [Coveralls](https://coveralls.io) and if the maintainability is A with [Codeclimate](https://codeclimate.com), those are usually signs that the code has been refactored.
 
-However there are choices that are made that are less obvious. For example for the Bank test, I limit the size of the Printer methods by separating them, making sure each method respect the Single Responsibility Principle and stays DRY (Do not Repeat Yourself).
+However there are choices that are made that are less obvious. For example for the Bank test, I limit the size of the Printer methods by separating them, **making sure each method respect the Single Responsibility Principle and stays DRY (Do not Repeat Yourself). The idea is to keep classes, methods and lines shorts as well as having a clear porpose of each of them, what increases the understanding and modification of it.**
 
 ````ruby
 class Printer
@@ -991,8 +1006,30 @@ The same way in other languages, here in React, we created several components, i
 
 [Link to the list of components of MakersBnB in React](https://github.com/AdrienFabre/makersbnb/tree/master/client/src/components)
 
+Refactoring is a practice continuouly improved with practice and exchanges of best practices. Recently, I have spent time improving this code and I am now yet satisfied about how it looks but I am happy with what it does (test refactored, see below), I succeeded to implement the best TDD practices, keeping all datas injected but the methods are slightly big. This is an opportunity to ask for advice and learn.
+
+````ruby
+
+describe Shop do
+
+  price_table = {
+    'A' => 50,
+    'B' => 30,
+    'C' => 20,
+    'D' => 15
+  }
+
+  special_offer = {
+    '3A' => 130,
+    '2B' => 45
+  }
+subject(:shop) { described_class.new(price_table, special_offer) }
+````
+
+[Link to Shop challenge in Ruby](https://github.com/AdrienFabre/shop_ruby/blob/master/lib/shop.rb)
+
 ---
-Feedback
+#### Feedback
 
 - Krzysztof Balejko - Student at Makers
 
@@ -1008,9 +1045,9 @@ Feedback
 
 Methodical approach to solving problems is what we are learning all along at Makers. In other words this is about knowing what to do next. In the [blog about problem solving from Sam Morgan](https://blog.makersacademy.com/how-i-solve-problems-a6a84d167598).
 
-He describes the idea to solve a problem Systematically and Systemically. It took me some time to really understand it but now it is clear to me.
+He describes the idea to **solve a problem Systematically and Systemically**. It took me some time to really understand it but now it is clear to me.
 
-I would say that the first is about knowing what to do next because we have process and the second is about knowing what to do next because we have a direction.
+I would say that the first is about **knowing what to do next because we have process** and the second is about **knowing what to do next because we have a direction**.
 
 This is what I used naturally in the previous description of my processes and how I implemented them. I see all those processes we learnt as cycles. For example we have processes to solve a very small problem like implementing a test or it could be creating an entire app with a team an implementing the agile processes.
 
@@ -1018,9 +1055,11 @@ This is also about constant prioritisation and knowing how the different process
 
 ![Big-picture-processes](readme_images/Big-picture-processes.jpg)
 
+In those cycles, from the left, the second big rectangle represents the whole product with all the features, it is connected to the Agile process on the left which is going help to work together and to take decisions collectively, to prioritise. On the other side, this is the process we have seen previously related to TDD but also to every part. I think having a methodical approach to solving problem is very related to the ability of formalising and organising thoughts through modeling or even just formalising them with sentences. **This is about being aware about what we are doing and why, in that way, pairing or working in a group helped me a lot to develop my ability to do so. Also getting constant feedback on my method and learning from others' methodologies gave me opportunities to perfect it.**
+
 ---
 
-Feedback
+#### Feedback
 
 - Diptis Hadler - Student at Makers - Collaborated on the final project
 
@@ -1046,14 +1085,14 @@ I have done it through the white board and through the Wiki:
 
 As well as during our final project presentation, I highlighted the Agile Values focusing on eXtreme Programming: communication, Simplicity, Feedback, Courage and Respect.
 
-The way I embodied this is to make sure that everyday we had a session in front of the whiteboard where we remembered the collective goal and why we were going in that direction. Also, creating space for everyone to be heard, those stepping forward as much as those who were ok with any direction.
+The way** I embodied this is to make sure that everyday we had a session in front of the whiteboard where we remembered the collective goal** and why we were going in that direction. Also, **creating space for everyone to be heard**, those stepping forward as much as those who were ok with any direction.
 
 I also summarised our 4 cycles with different focused:
 ![Scrum-presentation-final-project](readme_images/Scrum-presentation-final-project.png)
 
 ---
 
-Feedback
+**Feedback**
 
 - Luca Fruzza - Student at Makers - Collaboration on Acebook
 
@@ -1121,7 +1160,6 @@ function Airport(weather){
 
 We can consider all of it as a part of the best practices that we implement at each refactor, part of the TDD process. It could be also customised to what have been decided as a best practice for the project as a group, notably during the SCRUM ceremonies.
 
-
 On the takeaway challenge in Ruby below, this is the same idea, the injection of 'menu', 'config', 'order' and 'sms' enables to isolate each class, so the code is easier to change and to test.
 
 ````ruby
@@ -1134,9 +1172,11 @@ end
 
 [Link to Takeaway class in the takeaway challenge in Ruby](https://github.com/AdrienFabre/takeaway-challenge-ruby/blob/master/lib/takeaway.rb)
 
+At Makers, working with very different people, I found the common best practices crutial to implement in everything I do. Also, all my time searching online different things from different people in different programming languages, it deeply anchored my will to produce code easy to understand as much as creating code easy to change. Spending time on Mondays checking other students' code that they produced on the weekend, I also experienced how hard it could be to get a deep understanding of a person that has not yet acquired those best practices. The same way for me,  feedback from others on my code was also very rich in leanings.
+
 ---
 
-Feedback
+**Feedback**
 
 - Krzysztof Balejko - Student at Makers
 
@@ -1154,14 +1194,13 @@ I can justify the way I work in a business context. To me, this means that I am 
 
 In previous situations, when I organise event with participants, venues and speakers or when I was project buyers with suppliers, project managers and engineers I always found ways to listen carefully and to offer the best solutions I could in the present situation. I found those multiple situations helped me to understand quickly a very diverse group of people. Also, in London, working in Sales and attending plenty of networking event, I got used to listen others properly and adpat my pitch, which is not about finding a way to sell something, but finding a way to help.
 
-I have seen that during Makers, working in a group was a challenge
-by itself because everyone has a personal strong interest to progress, and progress does not mean the same to everyone, some people want to be more in control and some people have different expertises. I think that working in front of a white board, making sure everyone was heard, keeping the collective goal at the center of the discussion while being heard was a good exercise.
+I have seen that during Makers, working in a group was a challenge by itself because everyone has a personal strong interest to progress, and progress does not mean the same to everyone, some people want to be more in control and some people have different expertises. I think that working in front of a white board, making sure everyone was heard, keeping the collective goal at the center of the discussion while being heard was a good exercise.
 
-I collaborated with different kind of people, some willing to lead, some with less direct intentions, and I adapted to each environment. I found that the important is to keep a solid foundation in the discussion, for example with the client's requirement, and notifying that everyone has the same intention but with a different approach to it often helps to solidify a team. Then choices are justified one step at a time, so each point is made and is clear, then a concensus can be found.
+I collaborated with different kind of people, some willing to lead, some with less direct intentions, and I adapted to each environment. **I found that the important is to keep a solid foundation in the discussion, for example with the client's requirement, and notifying that everyone has the same intention but with a different approach to it often helps to solidify a team.** Then choices are justified one step at a time, so each point is made and is clear, then a concensus can be found.
 
 ---
 
-Feedback
+**Feedback**
 
 - Elliot Jennings - Student at Makers - Collaboration on Acebook
 
@@ -1179,9 +1218,9 @@ Before working on Jungl-Book with Adrien I thought I had grasped the concept of 
 
 ### I can grow collaboratively
 
-It means that can evolve in a team where I contribute to my individual progress as well as the individual progress to every person in the group and to the collective goal.
+**It means that can evolve in a team where I contribute to my individual progress as well as the individual progress to every person in the group and to the collective goal.**
 
-In a broader sense it means that I collaborate with anyone in order to progress, that I perceive the value of working with people more skilled as well as less skilled and that in both cases I dedicate the energy to learn from expertise or to learn from intention to learn. 
+In a broader sense it means that I collaborate with anyone in order to progress, that I perceive the value of working with people more skilled as well as less skilled and that in both cases I dedicate the energy to learn from expertise or to learn from intention to learn.
 
 For example, at Makers, I was the mentee of Jackie Dunne and I mentored Kim Diep. Both of those relations were really focused on collaborative growth.
 
@@ -1195,9 +1234,11 @@ In those project I initiated collective learning documentation:
 
 The same way when I was focusing on learning the facilitation of design thinking workshop for social entrepreneurs, I had a mentor and mentees, where at the beginning I was the only one learning and where at some point I became teacher as well.
 
+**My perception of how much I learn when I teach is very clear and I have experienced how collective enthusiasm enable individuals to grow faster, I experienced in any kind of group I worked in, this is what I am looking for to cultivate.**
+
 ---
 
-Feedback
+**Feedback**
 
 - William Dunk - Student at Makers - Collaborated on the MakersBnB project
 
@@ -1235,23 +1276,23 @@ Adrien has been great to work with on JunglBook. He's super eager to learn and a
 
 ### I manage my own well-being
 
-Manage my own well-being it is like if I was a good coach to myself, where I find the balance in doing what is new and what I already know so I progress and my motivation stays high. 
+**Manage my own well-being it is like if I was a good coach to myself, where I find the balance in doing what is new and what I already know so I progress and my motivation stays high.**
 
 At Makers I was constantly challenged and I took every opportunity to find the balanche between the challenge of my body and my mind, among different kind of focus an pace.
 
-I went to every yoga and meditation class, I kept going to swim several times a week and took few courses so I was able to swim over 3km in 1h10min, it was a way for me not to only prioritise mental challenges.
+I went to every yoga and meditation class, I kept going to swim several times a week and took few courses so I was able to swim over 3km in 1h10min, it was a way for me not to only prioritise mental challenges. I also love the calm of holding my breath under water and swim very slowly.
 
 I met Dana, the Joy Officer for at least 3 times and kept her updated regularly. This goes with my regular healthy habits and I could find that her advice resonated with me and the week of meditation retreat I did last year in Scotland.
 
-I also write a blog, for now this is a draft that I shared, and got several good feedback, I will follow recommendations, split it and develop it in 3 blogs. [Blog about Stretching mind and body at Makers.](https://medium.com/@AdrienFabre/stretching-mind-and-body-at-makers-f922582c9dbb)
+I also write a blog, for now this is a draft that I shared, and got several good feedback, I will follow recommendations, split it and develop it in 2 blogs. [Blog about Stretching mind and body at Makers.](https://medium.com/@AdrienFabre/stretching-mind-and-body-at-makers-f922582c9dbb)
 
 I also kept doing few talks on what I like, I social impact, on perspective and I saw people loving my pictures, that was very good to see this.
 
-Then I walk 45 min twice a day to come to Makers, this is also a way to spend some time with myself, looking at the trees, focusing on my posture or my breathing.
+Then I walk 45 min twice a day to come to Makers, this is also a way to spend some time with myself, looking at the trees, listening string musics, focusing on my posture or my breathing.
 
 ---
 
-Feedback
+**Feedback**
 
 - Dana - Joy Officer at Makers
 
@@ -1301,7 +1342,7 @@ I also learned to create few wordpress websites:
 
 ---
 
-Feedback
+**Feedback**
 
 - Rohan Metha - from MakeSense (an open source volunteer-driven network creating events to support social entrepreneurs)
 

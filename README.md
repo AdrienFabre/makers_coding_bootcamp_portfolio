@@ -1,8 +1,10 @@
 # Makers Coding Bootcamp Portfolio
 
-This portfolio is under construction. This is a draft.
+This portfolio is under construction.
 
-The [Makers Software Engineering Bootcamp](https://makers.tech/) is a 12 week, full-time, onsite course. Here is the portfolio that shows evidences of my learnings. The repositories shared in this document are not meant to be perfect but to show the progression in each of the topics listed in the Table of Contents below.  
+The [Makers Software Engineering Bootcamp](https://makers.tech/) is a 12 week, full-time, onsite course. Here is the portfolio that shows evidences of my learnings. The repositories shared in this document are not meant to be perfect but to show the progression in each of the topics listed in the Table of Contents below.
+
+The 'I can make anything' parts are longer and some of them contain 'tutorial like' parts that I found the most relevant to demonstrate my understanding of those points and where I have used those practices. For convenience, I created shortcuts to summaries and feedback for the longest parts in the Table of Contents below. Please contact me for any question or suggestion.
 
 ---
 
@@ -12,15 +14,15 @@ The [Makers Software Engineering Bootcamp](https://makers.tech/) is a 12 week, f
   - [Table of Contents](#table-of-contents)
   - [I can make anything](#i-can-make-anything)
     - [I can TDD anything](#i-can-tdd-anything)
-      - [Shortcut to my process](#shortcut-to-my-process)
+      - [Summary](#summary)
       - [Feedback](#feedback)
     - [I can program fluently](#i-can-program-fluently)
       - [Feedback](#feedback-1)
     - [I can debug anything](#i-can-debug-anything)
-      - [Shortcut to summary](#shortcut-to-summary)
+      - [Summary](#summary-1)
       - [Feedback](#feedback-2)
     - [I can model anything](#i-can-model-anything)
-      - [Shortcut to summary](#shortcut-to-summary-1)
+      - [Summary](#summary-2)
       - [Feedback](#feedback-3)
     - [I can refactor anything](#i-can-refactor-anything)
       - [Feedback](#feedback-4)
@@ -39,11 +41,9 @@ The [Makers Software Engineering Bootcamp](https://makers.tech/) is a 12 week, f
 
 ## I can make anything
 
----
-
 ### I can TDD anything
 
-TDD stands for Test Driven Development. It means that before writing any code, we think, plan and write the result that we want to obtain. We focus on the simpliest next step. We postpone decisions.
+TDD stands for Test Driven Development. It means that before writing any code, we think, plan and write the result that we want to obtain. We focus on the simpliest next step.
 
 Once the next step is defined, we write and run the test. Then, we read the error messages produced by our test and fix them one by one. The error messages drive the development of our code, this is TDD.
 
@@ -91,7 +91,7 @@ Then we decompose the 'Feature Test' that is often a complex black box into smal
 
 ![feature-unit-test-cycle](readme_images/feature-unit-test-cycle.jpg)
 
-#### Shortcut to my process
+#### Summary
 
 Previous to the tests, from the specifications or users stories, I **read** and **refine** entirely the requirements to get a general understanding of the user interactions. The big picture helps me to get an idea of the direction. Then make a quick drawing of the entire project so I can easily keep it in mind. If I find it necessary, I write or rewrite the users stories so that they have a more manageable size to work with. I then order the user stories and create a diagram of the classes, properties and functions needed for the first feature, this is the **planning** part. Finally, I start the process:
 
@@ -792,7 +792,7 @@ The weather we define in our test is created but not used by the airport we are 
 
 In several cases I faced errors where the expected behavior is not what I want and there is no error messages, so, I have to find by myself the information flow that creates this unwanted behavior. The examples shown are representative of the bugs I regularly faced but not extensive. With some time, debugging became natural and I did not notice it.
 
-#### Shortcut to summary
+#### Summary
 
 **I can debug anything means that I am able to understand what is the expected behavior, to notice that the expected behavior it not fulfilled and then I am able to make a clear assumption about why this unexpected error occurs and then find ways to verify this assumption. Then, step by step, througth research and following the flow of the error, I finally solve the error message. Meaning that with enough time, I have developed the right process to debug anything. One step at a time.**
 
@@ -830,9 +830,13 @@ Each of those 'bugs' could be sorted, the only reason it is not is the amount of
 
 "I have worked with Adrien on several occasions, during our pair programming sessions he has proven to be very good at debugging, championing the process of tightening the loop and getting visibility."
 
-- Clare Pinder - Student at Makers - After the training process review
+- Clare Pinder - Student at Makers - After a process review
 
 "Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
+
+- Matthew Whitaker - Student at Makers - After a process review
+
+"Additionally you were really helpful when I was trying to debug my bash_profile issue, offering a comparison to your own to help me reach a quick solution."
 
 ---
 
@@ -902,7 +906,7 @@ and created the following diagram:
 
 This diagram shows the different interactions among classes that could represent the solution of the Bank Challenge, this is independent to the language, as soon as the language is Object Oriented Programmed we can use it, like Ruby or Javascript.
 
-#### Shortcut to summary
+#### Summary
 
 **I can model anything means that I am able to understand abstract concepts and to create words, shapes and interaction that may help personal and collective understanding of what exists or of what is planned to be created.**
 
@@ -1039,6 +1043,10 @@ subject(:shop) { described_class.new(price_table, special_offer) }
 
 "Adrien quickly demonstrated a strong ability to style webpages using CSS and the styled components library for React. Styling instructions were clearly and logically laid out, allowing changes to be rapidly iterated on as the page design evolved."
 
+- Matthew Whitaker - Student at Makers - After a process review
+
+"You were also very diligent in keeping your classes very flexible, for example lifting out the prices in the checkout challenge to the tests. This allowed you write a very clean adaptable class, and showed me a new way to approach the problem."
+
 ---
 
 ### I have a methodical approach to solving problems
@@ -1069,11 +1077,13 @@ In those cycles, from the left, the second big rectangle represents the whole pr
 
 "It was a real pleasure working with you on our final project at Makers. You were so dedicated, your thoughts were very organised, and it was so helpful the way you diagrammed the options we had and plans/routes we can follow to deliver the required feature."
 
+- Matthew Whitaker - Student at Makers - After a process review
+
+"You were generally very effective when writing tests and debugging any subsequent solutions, keeping them simple and iterating up to a more complex implementation. The only time you seemed to struggle was when you added in a bulk of complexity in one go, and you seemed to be a bit stuck on what to do next. To offer a suggestion here, the error message was giving a clear indication of the problem ('cannot coerce nil to integer') along with the particular line - paying closer attention this would likely have helped you narrow down the scope of the problem. To look at it positively, this situation reinforces your original methodology of keeping it simple and building up step-by-step, is very effective. It was only when you deviated away from your method when you seemed to get stuck."
+
 ---
 
 ## I help my teams succeed
-
----
 
 ### I use an Agile product development process
 
@@ -1186,6 +1196,10 @@ At Makers, working with very different people, I found the common best practices
 
 "Adrien quickly demonstrated a strong ability to style webpages using CSS and the styled components library for React. Styling instructions were clearly and logically laid out, allowing changes to be rapidly iterated on as the page design evolved."
 
+- Matthew Whitaker - Student at Makers - After a process review
+
+"I felt like I learned a couple of really valuable things from observing your process in the workshop, especially around how to keep your tests lean and elegant using things like subject. You clearly have a very solid understanding of ruby and are very driven to writing high quality code which is flexible yet very readable."
+
 ---
 
 ### I can justify the way I work in a business context
@@ -1271,8 +1285,6 @@ Adrien has been great to work with on JunglBook. He's super eager to learn and a
 ---
 
 ## I am equipped for long term growth
-
----
 
 ### I manage my own well-being
 

@@ -43,7 +43,7 @@ The 'I can make anything' parts are longer and some of them contain 'tutorial li
 
 ### I can TDD anything
 
-TDD stands for Test Driven Development. It means that before writing any code, we think, plan and write the result that we want to obtain. We focus on the simpliest next step.
+**TDD stands for Test Driven Development. It means that before writing any code, we think, plan and write the result that we want to obtain. We focus on the simpliest next step.**
 
 Once the next step is defined, we write and run the test. Then, we read the error messages produced by our test and fix them one by one. The error messages drive the development of our code, this is TDD.
 
@@ -367,7 +367,17 @@ Here we did not succeed to properly Test Drive our application, we did create fe
 
 ---
 
-One of the advantage of TDD is that the test coverage is theoricaly 100%, with Ruby we used [Simplecov](https://github.com/colszowka/simplecov) to make sure it was.
+The advantages of TDD are:
+
+- It helps to **proactively** notice and solve a lot of bugs that otherwise could have persisted up to the production stage, which **increases the quality**. Notably thanks to acceptance criterias that helps to make sure the expected behavior is maintained and to think about the public interface.
+
+- It helps notice the dependencies and optimise them when the test is created and that dependencies are mocked.
+
+- It prevents developper from damaging other features when they work on a new feature, because the test coverage is theoricaly 100%, with Ruby we used [Simplecov](https://github.com/colszowka/simplecov) to make sure it was. So, bugs are noticed and located, notably during refactoring.
+
+- It becomes a part of the documentation and helps new developpers involved in the project to understand every part. It **increases development confidence**.
+
+- The process may be longer on the very short term but then saves a lot of time on the long term because it is **easier to find bugs** and it helps focus during the development process, so, to **increase productivity** and cost efficiency.
 
 ---
 
@@ -1357,6 +1367,15 @@ I also learned to create few wordpress websites:
 This last website will also show more in details the events and workshops I ran, which are focused on social impact and that are educational experiments by themselves, abeing an organiser, a facilitator and a student at the same time.
 
 Finaly, I find that one of the best way to keep learning and to be motivated is to dive into a new ecosystem and connect with the different material available, to create stuff but above all with the individuals, this is why one of my focus now is to learn from Software Engineers. To connect with more depth with them and with potential employers I am creating my profiles [CV on GitHub](https://github.com/AdrienFabre/CV). To be faster, what I am planning is to organise regular events focused on tech, using my skills to develop the new ones faster.
+
+I like to get the big picture in mind, for example at Makers, we focused on Object Oriented Programming, then I wonder, why? why do we focus on that and what could be the alternative to this? Then I get a sharper understandig on my own. I like to get a sharper understanding of the concepts and create my own definitions, as an example:
+
+- Encapsulation, focuses on hiding the data for the purpose of protection
+- Abstraction, focuses on hidind the details for the purpose of simplicity
+- Inheritance, focuses on reusing code for the purpose of brevity
+- Plymorphism, focuses on reusing code for the purpose of consistency
+
+This portfolio itself is a tool for me to structure and strengthen my learnings.
 
 ---
 

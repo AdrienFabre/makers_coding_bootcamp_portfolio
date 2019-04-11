@@ -381,6 +381,86 @@ The advantages of TDD are:
 
 ---
 
+Here I would like to go through some vocabulary that I spent some time to explore precisely. When previously I mentionned faking a method in a 'Unit Test', there are different ways to do it:
+
+- **Stub:** here we tell our test that a method **could be called**. The test could pass if the method is not called. In Rspec we create it with 'allow'.
+
+Here is an example:
+
+````ruby
+  let(:client) { double(:client) }
+  allow(client).to receive(:message).and_return(message)
+````
+
+Both of those line are stubs. The first one stubs an object and the second stubs the behavior of this object. Here is the same code written concisely:
+
+````ruby
+  let(:client) { double(:client, messages: messages) }
+````
+  
+- **Mock:** here we tell our test that a method **will be called**. The test can not pass if the method is not called. In Rspec we create it with 'expect'.
+  
+Here is an example:
+
+````ruby
+  let(:client) { double(:client) }
+  expect(client).to receive(:message).and_return(message)
+````
+  
+- **Spy:** here we tell out test that a method **has been called**. This is usually used with a stub. This is like a mock but with 2 lines, the first line is like a stub and the second line is created with 'have_received'.
+
+Here what is important is that a test has 3 parts. Firstly, we setup everything we need for the test, Secondly, whatever action is being done, Thirdly, a result is expected. When we mock, we expect at in the first part, this is why the spy is a clearer alternative.
+
+Here is an example of the Takeaway challeng as I described:
+
+````ruby
+describe SMS do 
+
+  subject(:sms) { described_class.new(config, client: client) }
+
+  let(:client) { double(:client, messages: messages) }
+  let(:messages) { double(:messages) } # global setup: we stub the object message
+  let(:config) do
+    {
+      account_sid: '123',
+      auth_token: '23fds',
+      from: '+123',
+      to: '+234',
+      body:"Thank you!, Your order will be delivered before %s"
+    }
+  end
+
+  it 'delievers an SMS with the estimated time' do 
+    args = {
+      from: config[:from],
+      to: config[:to],
+      body:"Thank you!, Your order will be delivered before 18:52"
+    }
+    allow(Time).to receive(:now).and_return(Time.parse('17:52'))
+    allow(messages).to receive(:create).with(args) # First: local setup
+    sms.deliver # Second: local action
+    expect(messages).to have_received(:create).with(args) # Third: local expectation. Here we spy if the expected method has been called with the expected argument.
+  end
+end
+````
+
+There is a shorter way to do it with the word 'spy'. In the previous example the 2 lines:
+
+````ruby
+  let(:messages) { double(:messages) } # global setup: we stub the object
+  allow(messages).to receive(:create).with(args) # First: local setup setup
+````
+
+could be replaced with 1 line:
+
+````ruby
+  let(:messages) { spy(:messages) }
+````
+
+This syntax is like allowing anything to be called on 'messages', this is when we do 'has_received' that we define the specific expectation.
+
+---
+
 #### Feedback
 
 - Alice - Coach at Makers - After the training process review
@@ -399,9 +479,13 @@ The advantages of TDD are:
 
 "This is impressive. You don't use the cards because you know the process very well and you know what you are doing at each step."
 
-- Clare Pinder - Student at Makers - After the training process review
+- Clare Pinder - Student at Makers - After a process review
 
 "Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
+
+- Ellie Turnock - Student at Makers - After a process review
+
+"Your process is very strong, you know what to do next, doing the Feature Test and then the Unit Test. You do not hesitate to modify namings and refactor your tests along you are writing the code. Finally, you communicate on what you are doing and it makes sense, meaning that the process and its implementation is very clear in your head, that was also very helpful to follow your thoughts."
 
 ---
 
@@ -1306,7 +1390,11 @@ I went to every yoga and meditation class, I kept going to swim several times a 
 
 I met Dana, the Joy Officer for at least 3 times during the 12 weeks and kept her updated regularly, she gave me plenty of advice and resources that I carefully absorbed and practiced, so I could enjoy the process as well as achieve results. Those new best practices go along with my holistic approach towards healthy habits and I could find that her advice resonated with me and the week of [meditation retreat](https://www.dhanakosa.com/retreat/2019/awake-wild) I did last year in Scotland.
 
-I also write a blog, for now this is a draft that I shared, and got several good feedback, I will follow recommendations, split it and develop it in 2 blogs. What feels good is to create content. [Blog about Stretching mind and body at Makers.](https://medium.com/@AdrienFabre/stretching-mind-and-body-at-makers-f922582c9dbb)
+I also wrote 2 blog and got several good feedback, I will follow recommendations. What feels good is to create content.
+
+[Link to blog 1. Journey to coding: Why](https://medium.com/@AdrienFabre/journey-to-coding-why-a094a4e06541)
+
+[Link to blog 2. Journey to coding: Makers](https://medium.com/@AdrienFabre/journey-to-coding-makers-d0e3fc97059f)
 
 Also, I kept doing few talks on what I like, I social impact, on perspectives and I saw people loving my pictures, that was very good to see this.
 

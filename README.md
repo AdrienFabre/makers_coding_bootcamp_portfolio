@@ -1,17 +1,15 @@
 # Makers Coding Bootcamp Portfolio
 
-This portfolio is under construction.
+If you are reading this document, you wonder if my software engineering skills are developed enought to start a career.
 
-The [Makers Software Engineering Bootcamp](https://makers.tech/) is a 12 week, full-time, onsite course. Here is the portfolio that shows evidences of my learnings. The repositories shared in this document are not meant to be perfect but to show the progression in each of the topics listed in the Table of Contents below.
+I went on the [Makers Software Engineering Bootcamp](https://makers.tech/)  a 12 week, full-time, onsite course. Here is the portfolio that shows evidences of my learnings. The repositories shared in this document are not meant to be perfect but to show the progression in each of the topics listed in the Table of Contents below.
 
-The 'I can make anything' parts are longer and some of them contain 'tutorial like' parts that I found the most relevant to demonstrate my understanding of those points and where I have used those practices. For convenience, I created shortcuts to summaries and feedback for the longest parts in the Table of Contents below. Please contact me for any question or suggestion.
+The 'I can make anything' parts are longer, for convenience, I created few shortcuts to summaries and feedback in the Table of Contents below.
 
 ---
-
-## Table of Contents
+**Table of Contents**
 
 - [Makers Coding Bootcamp Portfolio](#makers-coding-bootcamp-portfolio)
-  - [Table of Contents](#table-of-contents)
   - [I can make anything](#i-can-make-anything)
     - [I can TDD anything](#i-can-tdd-anything)
       - [Summary](#summary)
@@ -43,6 +41,8 @@ The 'I can make anything' parts are longer and some of them contain 'tutorial li
 
 ### I can TDD anything
 
+----- Here is how I would explain TDD concisely to someone new to coding. -----
+
 **TDD stands for Test Driven Development. It means that before writing any code, we think, plan and write the result that we want to obtain. We focus on the simpliest next step.**
 
 Once the next step is defined, we write and run the test. Then, we read the error messages produced by our test and fix them one by one. The error messages drive the development of our code, this is TDD.
@@ -56,6 +56,8 @@ NoMethodError:
 ````
 
 Here the error message tells us to create a method called 'prompt'. But let's start at the beginning.
+
+----- Here is how I would explain TDD with more details to someone new to coding. -----
 
 To be implemented correctly, the TDD has a process that is summarised in 3 steps: first, it is called RED, the test fails, second, GREEN, the test passes, third, REFACTOR, the code is improved. This is the basics.
 
@@ -87,11 +89,13 @@ Here, in the test, first, we define the noun that is going to do the action (acc
 
 A test is like a 'black box' where we describe an 'input' and an 'output' that summarises a user story but that does not explain how it is going to be solved. A user story test is created from the user perspective, it is called a 'Feature Test', a non-software-developer person should be able to understand it. We can micmic a user interaction to help us.
 
-Then we decompose the 'Feature Test' that is often a complex black box into smaller, simplier black boxes that we call 'Unit Test'. Each time we encounter an error message from the feature test, we create a 'Unit Test' that is going to create the same error message. Once we have solved the 'Unit Test' error message, the 'Feature Test' error message should change, then we move on to the next error message, and so, we create the next 'Unit Test'. The 'Unit Test is simplier about the problem to solve for a developer but it may be less readable by non-software-developers. The process could be represented in the following way:
-
-![feature-unit-test-cycle](readme_images/feature-unit-test-cycle.jpg)
+Then we decompose the 'Feature Test' that is often a complex black box into smaller, simplier black boxes that we call 'Unit Test'. Each time we encounter an error message from the feature test, we create a 'Unit Test' that is going to create the same error message. Once we have solved the 'Unit Test' error message, the 'Feature Test' error message should change, then we move on to the next error message, and so, we create the next 'Unit Test'. The 'Unit Test is simplier about the problem to solve for a developer but it may be less readable by non-software-developers.
 
 #### Summary
+
+The process could be represented in the following way:
+
+![feature-unit-test-cycle](readme_images/feature-unit-test-cycle.jpg)
 
 Previous to the tests, from the specifications or users stories, I **read** and **refine** entirely the requirements to get a general understanding of the user interactions. The big picture helps me to get an idea of the direction. Then make a quick drawing of the entire project so I can easily keep it in mind. If I find it necessary, I write or rewrite the users stories so that they have a more manageable size to work with. I then order the user stories and create a diagram of the classes, properties and functions needed for the first feature, this is the **planning** part. Finally, I start the process:
 
@@ -216,25 +220,37 @@ THis is why we say that our approach to Test Driven Development is **Behaviour D
 
 ---
 
+----- Here is how I would explain TDD specific cases to someone new to coding. -----
+
 Here are few interesting examples. When we go further with testing we encounter those cases:
 
 ---
 
-When a new class is created during a Unit Test, we create a fake, here is an example with Rspec:
+- Test only what we are focusing on
+
+When a new class is created during a Unit Test, we create a fake class, here is an example with Rspec:
 
 ````ruby
-
-let(:plane) { Plane.new }
+  let(:plane) {  double :plane, land: nil, take_off: nil }  
 
 ````
 
-[Link to faking a plane object while solving Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_ruby/blob/6a4b4bc5c3e53e515494e33da19f00478da84f63/spec/airport_spec.rb)
+[Link to faking a plane object while solving Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_ruby/blob/master/spec/airport_spec.rb)
 
-In the Airport Challenge, in the Airport class unit test, so we can use an instance of the class Plane, we create a double that we can access everywhere in this test. This is a good way to make the Unit Test independent, so we only test the Airport class with the Airport Unit Test. This mindset is valuable for every part of the test, we want to test only one thing at a time, so we know what is broken if the test beaks. While in the feature test, we want to test everything together like if a user was using it, so we would never see a fake (or double) in a Feature Test.
+then in the Feature Test, we create a real object:
 
-So, we were able to use a plane in our tests for the Airport class while it was not existing yet.
+````ruby
+let(:plane) { Plane.new }
+````
+
+[Link to the Feature Test of Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_ruby/blob/master/spec/features/user_stories_spec.rb)
+
+In the Airport Challenge, in the Airport class unit test, so we can use a plane, we create a double that we can access everywhere in this test. This is a good way to make the Unit Test of Airport is not dependent to the class Plane, so we only test the Airport class with the Airport Unit Test. This mindset is valuable for every part of the test, we want to test only one thing at a time, so we know what is broken if the test beaks. While in the Feature Test, we want to test everything together like if a user was using it, so we would never see a fake (or double) in a Feature Test.
 
 ---
+
+- Test an output in the terminal
+
 When we want to test what is output in the terminal, we use the following syntax:
 
 ````ruby
@@ -248,6 +264,8 @@ When we want to test what is output in the terminal, we use the following syntax
 This syntax enables us to create an expected output, that will not be returned at the end of the code, but displayed in the terminal.
 
 ---
+
+- Test an input in the terminal
 
 When we want to test what is inputed in the termial, we use the following syntax:
 
@@ -264,6 +282,8 @@ Here, this 'allow...' syntax enables to mimic the user input in that specific ca
 
 ---
 
+- Test when the Time is involved
+
 When we want to test a class that includes the time we need to fake it, in that case we can use:
 
 ````ruby
@@ -277,6 +297,8 @@ When we want to test a class that includes the time we need to fake it, in that 
 Here we are using the class Time and the method 'now' defined by Ruby, we are telling them to return a specific value, so we can test something that involves Time.
 
 ---
+
+- Test an when Randomness is involved
 
 Here what is interesting, in the Rock Paper Scissors game, is that we are faking randomness.
 
@@ -292,6 +314,8 @@ Here what is interesting, in the Rock Paper Scissors game, is that we are faking
 Here we are using the class Kernel and the method 'rand' defined by Ruby, we are telling them to return a specific value, so we can test something that involves randomness. In this specific case, we want the computer player sent random shape and each shape will have a different outcome to the game, so we want to be in control of the shape so we can test each outcome.
 
 ---
+
+- Test a users interactions using a webpage interface
 
 When we want to do a Feature Test in a complete app, we don't want the user to use the terminal, but an interface through the browser, in that case we use Feature Tests mimicing the user interface in the browser. In this case we use [Capybara testing framework](https://github.com/teamcapybara/capybara) to test the [Sinatra](http://sinatrarb.com/) and Ruby environment.
 
@@ -334,6 +358,8 @@ This feature test drived me to create those 2 unit tests that are testing the ca
 
 ---
 
+- Test with another framework: Javascript and Jasmine
+
 Here is another example of the Airport Challenge, where I am using a new language, Javascript, and one of its [testing framework Jasmine](https://jasmine.github.io/2.0/introduction). Here I am creating a block, BeforeEach, that is going to happen before each test. In that case, I am creating a new Airport, the class I am testing. I am also creating a Plane, which is a way to create a fake Plane that is going to answer to the method 'land'.
 
 ````javascript
@@ -348,6 +374,8 @@ Here is another example of the Airport Challenge, where I am using a new languag
 [Link to airport unit test with Jasmine in the Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_js/blob/master/spec/AirportSpec.js)
 
 ---
+
+- Test a users interactions using a webpage interface with another framework: Javascript and Cypress
 
 In the Makers Final Project, we used [React](https://reactjs.org/), so Javascript, to Feature Test our app, we used [Cypress](https://www.cypress.io/).
 
@@ -367,6 +395,8 @@ Here we did not succeed to properly Test Drive our application, we did create fe
 
 ---
 
+----- Here is how I would summarise TDD advantages to someone new to coding. -----
+
 The advantages of TDD are:
 
 - It helps to **proactively** notice and solve a lot of bugs that otherwise could have persisted up to the production stage, which **increases the quality**. Notably thanks to acceptance criterias that helps to make sure the expected behavior is maintained and to think about the public interface.
@@ -380,6 +410,8 @@ The advantages of TDD are:
 - The process may be longer on the very short term but then saves a lot of time on the long term because it is **easier to find bugs** and it helps focus during the development process, so, to **increase productivity** and cost efficiency.
 
 ---
+
+----- Here is how I would precise what 'faking' means in TDD to someone new to coding. -----
 
 Here I would like to go through some vocabulary that I spent some time to explore precisely. When previously I mentionned faking a method in a 'Unit Test', there are different ways to do it:
 
@@ -519,6 +551,8 @@ I found that my various expriences in term of jobs as well as facilitation of de
 
 As an example, during Makers, facing over 30 challenges with different sizes, shapes and requirements in different languages, I learned how to approach programming challenges, this why I could say that I can programme fluently.
 
+---
+
 Here for example, this is a more complex example, this is the Takeway Challenge, I think fluency is also about progressing I understand the different interactions among objects and how they are progressively built with TDD.
 
 ````ruby
@@ -577,7 +611,11 @@ and personal projects under constructions.
 
 The first example would be the error message I shown in the TDD part, when the error message shows, this is a bug, but because we define a precise test, the bug is already clear, we already have the visibility and the loop thightened, so we know how to move forward. So, the first way to get some information about the bug is to run the test. (if we are lucky enough to have tests in the test we are debugging)
 
-Bug are in lot of places and even without a test, I learned that one of the main skill is to be able to read the error message. For example, the bug could be during the setup and we are not able to get much visibility from places we don't control. For example:
+Bug are in lot of places and even without a test, I learned that one of the main skill is to be able to read the error message.
+
+----- Here is how I would keep moving forward debugguging while setting up. -----
+
+For example, the bug could be during the setup and we are not able to get much visibility from places we don't control. For example:
 
 I downloaded a repository online and when I run 'rspec' to see the test I receive the following message:
 
@@ -725,6 +763,8 @@ This is how, in a new environment (Linux Ubuntu 18.04), **I start to use my debu
 
 ---
 
+----- Here is how I would find a bug on Ruby on Rails tested environment. -----
+
 Now that we are setup with a working small Ruby on Rails program with a database I can modify the test and get a 'bug' from a feature test.
 
 ````bash
@@ -755,6 +795,8 @@ Here we can already see that the problem is that what exist does not match the e
 Or, as I can see on my test that the page tested is "/", I could just change the text from the view file that matches the "/" route. Usually, this is the test that is right and the mistake is in the code.
 
 ---
+
+----- Here is how I would get visibility from the terminal on Ruby on Rails environment. -----
 
 This is a Ruby on Rails environment. So I can run 'rails s' and get visibility from the browser on the given address, here it is 'http://localhost:3000/'.
 
@@ -807,6 +849,8 @@ Here is the end of this example with Ruby on Rails.
 [Link to the test of the repo used from the Instagram Challenge](https://github.com/AdrienFabre/instagram-challenge/blob/master/spec/features/welcome_page_spec.rb)
 
 ---
+
+----- Here is how I would find a bug on Javascript tested environment. -----
 
 Here we can see an example with javascript and the Airport Challenge.
 [Link to the tests from the Airport Challenge in Javascript](https://github.com/AdrienFabre/airport_challenge_js/tree/master/spec)
@@ -884,13 +928,15 @@ The weather we define in our test is created but not used by the airport we are 
 
 ---
 
-In several cases I faced errors where the expected behavior is not what I want and there is no error messages, so, I have to find by myself the information flow that creates this unwanted behavior. The examples shown are representative of the bugs I regularly faced but not extensive. With some time, debugging became natural and I did not notice it.
-
 #### Summary
+
+In several cases I faced errors where the expected behavior is not what I want and there is no error messages, so, I have to find by myself the information flow that creates this unwanted behavior. The examples shown are representative of the bugs I regularly faced but not extensive. With some time, debugging became natural and I did not notice it.
 
 **I can debug anything means that I am able to understand what is the expected behavior, to notice that the expected behavior it not fulfilled and then I am able to make a clear assumption about why this unexpected error occurs and then find ways to verify this assumption. Then, step by step, througth research and following the flow of the error, I finally solve the error message. Meaning that with enough time, I have developed the right process to debug anything. One step at a time.**
 
 ---
+
+----- Here is how I would notice bugs. -----
 
 A bug could be other things too, for example, on our deployed website What Zen, the cards coming from the database take time to appear, this is unconvenient for any user, we could consider it like a bug.
 
@@ -942,15 +988,27 @@ In our situations as software developers, we can model different things, often w
 
 We can also model how technologies work together, we can create user stories from our intentions, we can create a model of what the user interaction would be, a model of how we organised the files of an app or just model to explain the logic behind a method, such as a list of conditional statements.
 
+---
+
+----- Here is how I would write user stories. -----
+
 Here, I am defining user stories from our collective intention during the final project:
 
 [Link to the What Zen readme with User Stories](https://github.com/what-zen/what-zen-app)
+
+---
+
+----- Here is how I would learn a new tech environment. -----
 
 Then once this is created, we discussed the technology we are going to use, and one model helped to understand how pieces fit together, this model was found online [here](https://www.mongodb.com/blog/post/the-modern-application-stack-part-1-introducing-the-mean-stack).
 
 ![Mern-stack-model](readme_images/MERN-stack-model.png)
 
 This contributed to the collective decision to move towards less new technologies, using React as the Front End (Client Machine) and [Firebase](https://firebase.google.com/) for the whole Back End and the DataBase.
+
+---
+
+----- Here is how I would draw a wireframe to gather collective decisions. -----
 
 Then I drew a first wireframe, we started on a white board together and recorded digitally the most important part:
 
@@ -966,6 +1024,8 @@ What is important here is to understand that a model is a way to put thoughts in
 
 ---
 
+----- Here is how I would draw a wireframe from written instructions. -----
+
 On another project, we receive the challenge to create a bowling scorecard. I started to translate requirements into user stories and then into tests:
 
 [Link to tests on Scorecard Bowling Challenge in Javascript](https://github.com/AdrienFabre/bowling-challenge/blob/master/spec/scorecardSpec.js)
@@ -980,6 +1040,9 @@ Such as the diagram on this README file that reprensents the first user story wi
 
 [Link to the Bookmark manager README file and its diagram](https://github.com/AdrienFabre/bookmark_manager)
 
+---
+----- Here is how I would draw a model to anchore my learnings. -----
+
 I personaly really like to diagram as it really helps my understanding of things, for example, here the understanding of MVC:
 
 ![MVC-diagram-with-details](readme_images/MVC-diagram-with-details.jpg)
@@ -989,6 +1052,9 @@ For most of those diagram I used [RealTimeBoard (or its new name Miro)](https://
 Also, I found that a small diagram with a pen and paper, deciding on what will be a class, what will be a method and what will be an argument helps to create a test and to make sense of the entirety of the project. Those small diagrams enable me to have the logic on paper and to avoid to re-understand the entire flow each time.
 
 Then, taking time to identify the type of data between each block helps to understand it deeply, as my projects were quite small, I did succeed to get a good understanding of flows without every diagram detailled however I can see the benefit of it in bigger projects. Where I could do a diagram per feature created, so each of my commit on Github would have a diagram relevant to the current state of the implemented features.
+
+---
+----- Here is how I would draw a UML diagram from requirements. -----
 
 At Makers, we used Unified Modeling Language, or UML, to model the relationship among CEO, COO and HR manager, what was very valuable is the broad common understanding of this kind of diagram. Here I used a similar approach to model the Bank Tech Test
 
@@ -1043,6 +1109,9 @@ What is interesting here is that the SMS class is wrapping the API twilio that i
 ### I can refactor anything
 
 **Refactoring, this is modifying the code so it is better in different ways but the input and output stay the same. Basically this is doing the same thing in a better way. This is about knowing what is good and bad and where the compromises should be made.**
+
+---
+----- Here is how I explain refactoring to someone new to coding. -----
 
 For example the best is to have a code that is easy to read and also short, but the fact that we keep it short does not mean that we allow ourselves to be misunderstood for the sake of being short.
 

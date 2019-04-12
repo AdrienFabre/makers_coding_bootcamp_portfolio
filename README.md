@@ -41,7 +41,7 @@ The 'I can make anything' parts are longer, for convenience, I created few short
 
 ### I can TDD anything
 
------ Here is how I would explain TDD concisely to someone new to coding. -----
+>----- Here is how I would explain TDD concisely to someone new to coding. -----
 
 **TDD stands for Test Driven Development. It means that before writing any code, we think, plan and write the result that we want to obtain. We focus on the simpliest next step.**
 
@@ -57,7 +57,7 @@ NoMethodError:
 
 Here the error message tells us to create a method called 'prompt'. But let's start at the beginning.
 
------ Here is how I would explain TDD with more details to someone new to coding. -----
+>----- Here is how I would explain TDD with more details to someone new to coding. -----
 
 To be implemented correctly, the TDD has a process that is summarised in 3 steps: first, it is called RED, the test fails, second, GREEN, the test passes, third, REFACTOR, the code is improved. This is the basics.
 
@@ -220,7 +220,7 @@ THis is why we say that our approach to Test Driven Development is **Behaviour D
 
 ---
 
------ Here is how I would explain TDD specific cases to someone new to coding. -----
+>----- Here is how I would explain TDD specific cases to someone new to coding. -----
 
 Here are few interesting examples. When we go further with testing we encounter those cases:
 
@@ -395,7 +395,7 @@ Here we did not succeed to properly Test Drive our application, we did create fe
 
 ---
 
------ Here is how I would summarise TDD advantages to someone new to coding. -----
+>----- Here is how I would summarise TDD advantages to someone new to coding. -----
 
 The advantages of TDD are:
 
@@ -411,7 +411,7 @@ The advantages of TDD are:
 
 ---
 
------ Here is how I would precise what 'faking' means in TDD to someone new to coding. -----
+>----- Here is how I would precise what 'faking' means in TDD to someone new to coding. -----
 
 Here I would like to go through some vocabulary that I spent some time to explore precisely. When previously I mentionned faking a method in a 'Unit Test', there are different ways to do it:
 
@@ -523,13 +523,19 @@ This syntax is like allowing anything to be called on 'messages', this is when w
 
 ### I can program fluently
 
+>----- Here is how I perceive fluency. -----
+
 From my experiences with human languages, as a French that learnt English and Russian within the past 10 years, I would divide fluency in different parts.
 
 The part that is similar among languages and that makes it easier to learn new languages such as the main logic, structures, rules, characters, environments all of this, even if it is not identical, it helps to understand and adapt in new language environment easily. Each part that is unique to a language can still differenciate what can be done and not be done, so, we can always draw parallels among languages even if they are very different.
 
+>----- Here is how I perceive program fluency. -----
+
 Programming languages have those two parts too, learning Ruby was challenging because I did not have any reference from previous programming language. Once I understood the patterns, the big picture, the details, I acquired the key words to quickly search online whatever syntax was missing. Because I did not know the syntax but I knew what I was willing to use in term of logic or structure. This first programming language helped me to explore Javascript and a little bit of Java with their own differences and similarities. Then, learning the test framework language was another step, because the logic is different, however after RSpec, Jasmine was also easier.
 
 **Program fluency means that I have explored enough programming languages so that I am confident that I can use my acquired abilities to understand programming languages, to search efficiently and to learn quickly, and perform in a reasonable amount of time.**
+
+>----- Here is how I used my programming fluency focused on diversity. -----
 
 I can show few examples of different programming environments I adapted in the past.
 
@@ -553,13 +559,15 @@ As an example, during Makers, facing over 30 challenges with different sizes, sh
 
 ---
 
+>----- Here is how I used my programming fluency focused on interactions. -----
+
 Here for example, this is a more complex example, this is the Takeway Challenge, I think fluency is also about progressing I understand the different interactions among objects and how they are progressively built with TDD.
 
 ````ruby
 subject(:takeaway) { described_class.new(menu: menu, order: order, sms: sms, config: {}) }
 
-let (:menu) { double(:menu, print: printed_menu) }
-let (:order) { instance_double("Order", total: 15.50) }
+let(:menu) { double(:menu, print: printed_menu) }
+let(:order) { instance_double("Order", total: 15.50) }
 let(:sms) { instance_double("SMS", deliver: nil) }
 let(:printed_menu) { "Chicken: 3.50" }
 
@@ -569,19 +577,31 @@ let(:printed_menu) { "Chicken: 3.50" }
 
 The most interesting here is how the different objects are created from the 'Unit Test' of the Takeaway class. On the first line we can see all the argument passed to the class, then we can see the double of each of those argument being created with their specific methods and attributes. To me, the fluency is to be able to move forward step by step using the TDD methodology, to read and write code. Here, 'double' does not take into account the real class while the 'instance_double' does, it allows to check that the real class has the method we doubled. Here, if the tests passe, it means that the real Object 'Order' has a method called 'total' and that the real Object 'SMS' has a method 'deliver'.
 
+---
+
+>----- Here is how I cultivate my programming fluency. -----
+
 **I think fluency needs to be cultivated**, it is about knowing enough of the basics to learn fast while also maintaining a some practice in different languages.
 
-I keep practicing on:
-
-[Codewars](https://www.codewars.com/users/AdrienFabre)
+I keep learning new things with:
 
 [Codeacademy](https://www.codecademy.com/AdrienFabre)
 
-[Exercism](https://exercism.io/profiles/AdrienFabre)
-
 [Udemy](https://www.udemy.com/user/adrien-fabre-add/)
 
-and personal projects under constructions.
+[Freecodecamp](https://www.freecodecamp.org/adrienfabre)
+
+[Scrimba](https://scrimba.com)
+
+I keep practicing with:
+
+[Codewars](https://www.codewars.com/users/AdrienFabre)
+
+[Exercism](https://exercism.io/profiles/AdrienFabre)
+
+[Process Reviews](https://github.com/makersacademy/skills-workshops/tree/master/process_review)
+
+and personal projects under constructions, always focusing on implementing TDD and getting feedback.
 
 ---
 
@@ -613,7 +633,7 @@ The first example would be the error message I shown in the TDD part, when the e
 
 Bug are in lot of places and even without a test, I learned that one of the main skill is to be able to read the error message.
 
------ Here is how I would keep moving forward debugguging while setting up. -----
+>----- Here is how I would keep moving forward debugguging while setting up. -----
 
 For example, the bug could be during the setup and we are not able to get much visibility from places we don't control. For example:
 
@@ -763,7 +783,7 @@ This is how, in a new environment (Linux Ubuntu 18.04), **I start to use my debu
 
 ---
 
------ Here is how I would find a bug on Ruby on Rails tested environment. -----
+>----- Here is how I would find a bug on Ruby on Rails tested environment. -----
 
 Now that we are setup with a working small Ruby on Rails program with a database I can modify the test and get a 'bug' from a feature test.
 
@@ -796,7 +816,7 @@ Or, as I can see on my test that the page tested is "/", I could just change the
 
 ---
 
------ Here is how I would get visibility from the terminal on Ruby on Rails environment. -----
+>----- Here is how I would get visibility from the terminal on Ruby on Rails environment. -----
 
 This is a Ruby on Rails environment. So I can run 'rails s' and get visibility from the browser on the given address, here it is 'http://localhost:3000/'.
 
@@ -850,7 +870,7 @@ Here is the end of this example with Ruby on Rails.
 
 ---
 
------ Here is how I would find a bug on Javascript tested environment. -----
+>----- Here is how I would find a bug on Javascript tested environment. -----
 
 Here we can see an example with javascript and the Airport Challenge.
 [Link to the tests from the Airport Challenge in Javascript](https://github.com/AdrienFabre/airport_challenge_js/tree/master/spec)
@@ -936,7 +956,7 @@ In several cases I faced errors where the expected behavior is not what I want a
 
 ---
 
------ Here is how I would notice bugs. -----
+>----- Here is how I would notice bugs. -----
 
 A bug could be other things too, for example, on our deployed website What Zen, the cards coming from the database take time to appear, this is unconvenient for any user, we could consider it like a bug.
 
@@ -990,7 +1010,7 @@ We can also model how technologies work together, we can create user stories fro
 
 ---
 
------ Here is how I would write user stories. -----
+>----- Here is how I would write user stories. -----
 
 Here, I am defining user stories from our collective intention during the final project:
 
@@ -998,7 +1018,7 @@ Here, I am defining user stories from our collective intention during the final 
 
 ---
 
------ Here is how I would learn a new tech environment. -----
+>----- Here is how I would learn a new tech environment. -----
 
 Then once this is created, we discussed the technology we are going to use, and one model helped to understand how pieces fit together, this model was found online [here](https://www.mongodb.com/blog/post/the-modern-application-stack-part-1-introducing-the-mean-stack).
 
@@ -1008,7 +1028,7 @@ This contributed to the collective decision to move towards less new technologie
 
 ---
 
------ Here is how I would draw a wireframe to gather collective decisions. -----
+>----- Here is how I would draw a wireframe to gather collective decisions. -----
 
 Then I drew a first wireframe, we started on a white board together and recorded digitally the most important part:
 
@@ -1024,7 +1044,7 @@ What is important here is to understand that a model is a way to put thoughts in
 
 ---
 
------ Here is how I would draw a wireframe from written instructions. -----
+>----- Here is how I would draw a wireframe from written instructions. -----
 
 On another project, we receive the challenge to create a bowling scorecard. I started to translate requirements into user stories and then into tests:
 
@@ -1041,7 +1061,7 @@ Such as the diagram on this README file that reprensents the first user story wi
 [Link to the Bookmark manager README file and its diagram](https://github.com/AdrienFabre/bookmark_manager)
 
 ---
------ Here is how I would draw a model to anchore my learnings. -----
+>----- Here is how I would draw a model to anchore my learnings. -----
 
 I personaly really like to diagram as it really helps my understanding of things, for example, here the understanding of MVC:
 
@@ -1054,7 +1074,7 @@ Also, I found that a small diagram with a pen and paper, deciding on what will b
 Then, taking time to identify the type of data between each block helps to understand it deeply, as my projects were quite small, I did succeed to get a good understanding of flows without every diagram detailled however I can see the benefit of it in bigger projects. Where I could do a diagram per feature created, so each of my commit on Github would have a diagram relevant to the current state of the implemented features.
 
 ---
------ Here is how I would draw a UML diagram from requirements. -----
+>----- Here is how I would draw a UML diagram from requirements. -----
 
 At Makers, we used Unified Modeling Language, or UML, to model the relationship among CEO, COO and HR manager, what was very valuable is the broad common understanding of this kind of diagram. Here I used a similar approach to model the Bank Tech Test
 
@@ -1111,7 +1131,7 @@ What is interesting here is that the SMS class is wrapping the API twilio that i
 **Refactoring, this is modifying the code so it is better in different ways but the input and output stay the same. Basically this is doing the same thing in a better way. This is about knowing what is good and bad and where the compromises should be made.**
 
 ---
------ Here is how I explain refactoring to someone new to coding. -----
+>----- Here is how I explain refactoring to someone new to coding. -----
 
 For example the best is to have a code that is easy to read and also short, but the fact that we keep it short does not mean that we allow ourselves to be misunderstood for the sake of being short.
 
@@ -1214,6 +1234,8 @@ subject(:shop) { described_class.new(price_table, special_offer) }
 
 ### I have a methodical approach to solving problems
 
+>----- Here is how I would explain methodical approach to solving problems to someone new to coding. -----
+
 Methodical approach to solving problems is what we are learning all along at Makers. In other words this is about knowing what to do next. In the [blog about problem solving from Sam Morgan](https://blog.makersacademy.com/how-i-solve-problems-a6a84d167598).
 
 He describes the idea to **solve a problem Systematically and Systemically**. It took me some time to really understand it but now it is clear to me.
@@ -1223,6 +1245,8 @@ I would say that the first is about **knowing what to do next because we have pr
 This is what I used naturally in the previous description of my processes and how I implemented them. I see all those processes we learnt as cycles. For example we have processes to solve a very small problem like implementing a test or it could be creating an entire app with a team an implementing the agile processes.
 
 This is also about constant prioritisation and knowing how the different processes we have learned need to be used and how they fit together. Here is a way to connect them, every cycle having a different timescale.
+
+>----- Here is how I would summarise methodical approach to solving problems to someone new to coding. -----
 
 ![Big-picture-processes](readme_images/Big-picture-processes.jpg)
 
@@ -1289,11 +1313,16 @@ In general he led the ideation and planning sessions that we had, writing notes 
 
 ### I write code that is easy to change
 
+>----- Here is how I would explain what makes code easy to change to someone new to coding. -----
+
 Writing a code easy to change means that each noun and verb, class and method names are choosing carefully so the understanding of the project is easy. TDD is a way to help to produce a code easy to change. Refactoring is a moment to specifically be careful at how easy the code is to be changed. Also, a good documentation, starting with an accessible README and a few diagram greatly help a software developer in front of a new code.
 
 What helps is to get insights and input from general best practices and linters. Then to correct every part of the code so we make sure the collective understand of what is good is applied. Another way to guarantee this is to have our own code reviewed so we get feedback, also review someone else code, so we can understand what is not helpful to understand the code.
 
 Another main point is to make sure we manage dependencies in our code, meaning that if one part of the code changes, the rest still works.
+
+---
+>----- Here is how I would use dependency injection in Ruby. -----
 
 Here is an example:
 
@@ -1319,6 +1348,7 @@ Here we can also see that I enable people to enter their own date by putting it 
 [Link to this class on the Bank test in Ruby](https://github.com/AdrienFabre/bank_tech_test_ruby/blob/master/lib/bank_account.rb)
 
 ---
+>----- Here is how I would use dependency injection in Javascript. -----
 
 With another context, with the Airport in Javascript, we can see that we are getting a new Weather for a new Airport, so we get:
 
@@ -1345,7 +1375,10 @@ end
 
 [Link to Takeaway class in the takeaway challenge in Ruby](https://github.com/AdrienFabre/takeaway-challenge-ruby/blob/master/lib/takeaway.rb)
 
-At Makers, working with very different people, I found the common best practices crutial to implement in everything I do. Also, all my time searching online different things from different people in different programming languages, it deeply anchored my will to produce code easy to understand as much as creating code easy to change. Spending time on Mondays checking other students' code that they produced on the weekend, I also experienced how hard it could be to get a deep understanding of a person that has not yet acquired those best practices. The same way for me,  feedback from others on my code was also very rich in leanings.
+---
+>Write code easy to change is about keeping other software engineers in mind.
+
+At Makers, working with very different people, **I found the common best practices crutial to implement in everything I do**. Also, all my time searching online different things from different people in different programming languages, it deeply anchored my will to produce code easy to understand as much as creating code easy to change. Spending time on Mondays checking other students' code that they produced on the weekend, I also experienced how hard it could be to get a deep understanding of a person that has not yet acquired those best practices. The same way for me,  feedback from others on my code was also very rich in leanings.
 
 ---
 
@@ -1485,7 +1518,7 @@ All of this together, and regularly meeting friends and Makers students, the new
 
 **I can learn anyting by myself, I think this starts with the belief that everything is possible and that every intention is important, so it drives actions and progress. Actions and progresses that can take many shapes, more or less expected but that bring us into a zone of exploration and transform into learnings.**
 
-I have a deep belief that I can learn anything.
+> I have a deep belief that I can learn anything.
 
 2006, I learned vocational electronics, my internship was to setup antennas on roofs, in south of France.
 
@@ -1505,7 +1538,9 @@ I have a deep belief that I can learn anything.
 
 2019, I joined Makers and learned to be a software engineer.
 
-All this journey was surrounded by by-products of my progression.
+---
+
+> All this journey was surrounded by by-products of my progression.
 
 For example and learned English very well and my Russian is still kind of good. I learned that I do not control everything throught international politic conflicts, like the sanctions that made the Russian currency drop and made me come to London. I learnt to drive a motorcycle, I learned scuba diving. I learnt some finance by doing a loan to support myself. I learnt to create and cook food going through plenty of jobs from green houses, to fast food, to healthy food and to delivery of food by bicycle to pay my expenses. I learned to meditate and to travel in my body, to calm me down and to find new ways to explore the myself. I learned to travel, to adapt to cultures and environments, also in places like India, Australia and Ireland. I learned to adapt to different social levels, city sizes, and working environments.
 
@@ -1513,7 +1548,9 @@ You may believe I am doing too many things, but I also learned to focus, one thi
 
 Recently I improved my swimming skills, my front crawl and also my ability to write blogs. **I really found that Makers helped me not only to learn to code but to enhance this confidence at learning anything, in this specific case, learning a programming language, a testing framework, a stack and then do it again for an entire new environment. Not to forget the ability to learn to collaborate efficiently quickly with new people. So, learning to learn is also about knowing that we don't know everything, one other thing I progressed a lot is about problem solving and online searches, I think people found me good at it already, I expanded it.**
 
-During this whole journey, I cultivated my perseverance and developed a higher level of self awareness.
+> During this whole journey, I cultivated my perseverance and developed a higher level of self awareness.
+
+---
 
 I also learned to create few wordpress websites:
 

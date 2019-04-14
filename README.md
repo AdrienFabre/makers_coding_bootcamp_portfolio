@@ -1,10 +1,10 @@
 # Makers Coding Bootcamp Portfolio
 
-If you are reading this document, you wonder if my software engineering skills are developed enought to start a career.
+If you are reading this document, you are wondering if my software engineering skills are developed enough to start a career.
 
-I went on the [Makers Software Engineering Bootcamp](https://makers.tech/)  a 12 week, full-time, onsite course. Here is the portfolio that shows evidences of my learnings. The repositories shared in this document are not meant to be perfect but to show the progression in each of the topics listed in the Table of Contents below.
+I went on the [Makers Software Engineering Bootcamp](https://makers.tech/) a 12 week, full-time, onsite course. Here is the portfolio that shows evidences of my learnings. The repositories shared in this document are not meant to be perfect but to show the progression in each of the topics listed below.
 
-The 'I can make anything' parts are longer, for convenience, I created few shortcuts to summaries and feedback in the Table of Contents below.
+The 'I can make anything' parts are longer, for convenience, I created few shortcuts to summaries and feedback in the Table of Contents.
 
 ---
 **Table of Contents**
@@ -55,13 +55,13 @@ NoMethodError:
 
 ````
 
-Here the error message tells us to create a method called 'prompt'. But let's start at the beginning.
+Here the error message tells us to create a method called 'prompt'.
 
 >----- Here is how I would explain TDD with more details to someone new to coding. -----
 
-To be implemented correctly, the TDD has a process that is summarised in 3 steps: first, it is called RED, the test fails, second, GREEN, the test passes, third, REFACTOR, the code is improved. This is the basics.
+The TDD process has 3 steps: first, it is called RED, the test fails, second, GREEN, the test passes, third, REFACTOR, the code is improved.
 
-Our challenge starts by defining a test from a requirement or a user story. A user story is usually framed this way:
+Our challenge starts by defining the first failing test from a requirement or a user story. A user story is usually framed this way:
 
 ````user story
 User story
@@ -71,7 +71,13 @@ So I can buy an item online,
 I want to add an apple to my basket.
 ````
 
-Here, what is important is to select the keywords and to create a test from it. The test is going to impact the design of the code, this is important. We need to understand what the client wants and it may be worth asking for more details if the specifiations or user stories are not clear enough. To ask how the user is expected to use the programme. Here is one possibility for the test.
+What is important here is to select the keywords, their nature and their interactions, we are going to create the first test from them. The test is going to impact the design of the code, this why this is an important step and we can help ourselves with 2 main things:
+
+- model the user story with a diagram, notably using the Unified Modeling System where to structure classes, attributes, opetations and relationships among objects. (see more details on the [I can model anything](#i-can-model-anything) part)
+
+- get more information from the client, aks the client precise questions to understand clearly the specifiations or user stories, ideally we want the client to give us example on how the user is going to interact with the application, how it is going to be used.
+
+Here is one possibility for the first test, the Feature Test:
 
 ````ruby
 Feature test
@@ -85,11 +91,23 @@ context 'as a logged in user' do
 end
 ````
 
-Here, in the test, first, we define the noun that is going to do the action (account) for 'logged in user', second we define the verb that is going to do the action (add_to_basket) and third, the noun that is going to be used during the action (apple). In that case, we are using [Rspec testing framework](http://rspec.info/) , this is for the [programming language Ruby](https://www.ruby-lang.org/en/). Here we define 'user_account' as an instance of 'New Account', 'add_to_basket' as a 'method' with 'apple' as an 'argument'. Then we write the 'expectation', we expect the 'user_account' to have a 'basket' that includes an 'apple'.
+**The Feature Test is like the first step towards translating the user story into code, we source the nouns and verbs from the user story and create a kind of codified story that reprensents the user interaction with the programme. In a Test, there are three steps:**
 
-A test is like a 'black box' where we describe an 'input' and an 'output' that summarises a user story but that does not explain how it is going to be solved. A user story test is created from the user perspective, it is called a 'Feature Test', a non-software-developer person should be able to understand it. We can micmic a user interaction to help us.
+- first, **prepare** what enables the action to be implemented
+  
+- second, **do the action** that is going to be tested
 
-Then we decompose the 'Feature Test' that is often a complex black box into smaller, simplier black boxes that we call 'Unit Test'. Each time we encounter an error message from the feature test, we create a 'Unit Test' that is going to create the same error message. Once we have solved the 'Unit Test' error message, the 'Feature Test' error message should change, then we move on to the next error message, and so, we create the next 'Unit Test'. The 'Unit Test is simplier about the problem to solve for a developer but it may be less readable by non-software-developers.
+- third, **set what is expected** from the action
+
+'Context' and 'it' lines are the syntax for the framework and the language we are testing, it is here to structure and explain what we are testing. Here we are using the [Rspec testing framework](http://rspec.info/) to test the [programming language Ruby](https://www.ruby-lang.org/en/).
+
+After the line 'it', first, we prepare, we create the object 'user_account' from the class 'Account', this is the noun choose to represent the 'logged in user'. Second, we do the action, we define the verb, the method  '.add_to_basket', here the method has an argument, the noun that is going to be used during the action (apple). Third, we write the 'expectation', we expect the 'user_account' to have a 'basket' that includes an 'apple'.
+
+A test is like a 'black box' where we describe an 'input' and an 'output' that summarises a user story but that does not explain how it is going to be solved. The test created from the user perspective is called a 'Feature Test', a non-software-developer person should be able to understand it.
+
+Once the 'Feature Test' is written we decompose it in 'Unit Tests.
+
+The 'Feature Test' is often a complex black box, so, we divide it into simplier black boxes, the 'Unit Tests'. The process is, each time we encounter an error message from the 'Feature Test', we create a 'Unit Test' that is going to create the same error message. Once we have solved the 'Unit Test' error message, the 'Feature Test' error message changes, then we move to the next error message, and so on, we create the next 'Unit Test'. The 'Unit Test' is simplier about the problem to solve for a developer but it may be less readable by non-software-developers, it is written to be read by software developers.
 
 #### Summary
 
@@ -97,34 +115,36 @@ The process could be represented in the following way:
 
 ![feature-unit-test-cycle](readme_images/feature-unit-test-cycle.jpg)
 
-Previous to the tests, from the specifications or users stories, I **read** and **refine** entirely the requirements to get a general understanding of the user interactions. The big picture helps me to get an idea of the direction. Then make a quick drawing of the entire project so I can easily keep it in mind. If I find it necessary, I write or rewrite the users stories so that they have a more manageable size to work with. I then order the user stories and create a diagram of the classes, properties and functions needed for the first feature, this is the **planning** part. Finally, I start the process:
+Previous to the tests, from the specifications or users stories, I **read** and **refine** entirely the requirements to get a general understanding of the user interactions. The big picture helps me to get an idea of the direction I choose. Then, I make a quick drawing of the entire project so I can easily keep it in mind. If I find it necessary, I write or rewrite the users stories so that they have a more manageable size to work with. I then order the user stories and create a model, such as a diagram, for the first feature, this is the **planning** part. Finally, I start the process:
 
 **Red** phase - Test
 
-- 1- I translate the first user story into my first feature test.
-- 2- I run the test to make sure my feature test fails.
-- 3- I write the failing unit test matching the feature test.
-- 4- I run the test to make sure my unit test and feature test fail for the same reason.
+- 1- I translate the first user story into my first Feature Test.
+- 2- I run the test to make sure my Feature Test fails.
+- 3- I write the failing Unit Test matching the Feature Test.
+- 4- I run the test to make sure my Unit Test and Feature Test fail for the same reason.
 
 **Green** phase - Implement
 
-- 5- I write the easiest code to make the unit test pass, no more.
-- 6- I run the tests and check if unit test passes. If not, repeat step 5.
-- 7- I repeat steps 5-6 until the feature test passes entirely.
+- 5- I write the easiest code to make the Unit Test pass, no more.
+- 6- I run the tests and check if Unit Test passes. If not, repeat step 5.
+- 7- I repeat steps 5-6 until the Feature Test passes entirely.
 
-**Refactor** phase - Refactor
+**Refactor** phase - Refactor (see more details on the [I can refactor anything](#i-can-refactor-anything) part)
 
 - 8- I modify the code without adding any feature. I make sure all best practices are respected.
 - 9- I run tests again to check that the refactoring did not break the tests.
-- 10- I then start the loop again with a new user story.
+- 10- I then start the loop again with a new user story. (Here is a good moment to 'commit', details below)
 
-When I **commit**, I add, commit and push to [Github](https://github.com), it helps to save the different versions of my work, working alone or in a group. I can also take more risks when I write code because I know a saved version of the working code exists. Here it is important to write meaningful and consistent message, so, anyone can find the relevant commit.
+When I **commit**, I 'add', 'commit' and 'push' to [Github](https://github.com), it helps to save the different versions of my work, working alone or in a group. Those versions also allow me to take more risks when I write the code because I know a saved version of the working code exists. At this moment, it is important to write meaningful and consistent message, so, anyone can find the relevant commit. (see more details on the [I write code that is easy to change](#i-write-code-that-is-easy-to-change) part)
 
-After 15 minutes working on writing some code to implement a test, it is good to step back and wonder if the test we are doing is the good one in term of what we are testing and of how much we are testing, this is why it is recommended that after 15 minutes we remove all our changes since our last commit , '**revert**', and '**simplify**' our test.
+After 15 minutes working on writing some code to implement a test, it is good time to step back and wonder if the test we are doing is the good one in term of what we are testing and of how much we are testing. In this case we may '**revert**', remove all our changes since our last commit, and '**simplify**' our test.
+
+It is important to be always aware of which step we are in, it helped me to maintain my focus and efficiency. This process does not prevent time boxing learning moment, as I was facing numerous new things, I took time to explore further programming languages and testing framework.
 
 ---
 
-We can see how the 'Unit test' is defined by the 'Feature test error'. In the example taken earlier, the first error would be that we don't have a class Account.
+Following the previous example, we can see how the 'Unit Test' is defined by the 'Feature Test error message. In the example taken earlier, the first error would be that we don't have a class Account.
 
 ````md
 NameError:
@@ -139,9 +159,9 @@ class Account
 end
 ````
 
-Because this test is very basic and simple, we tend to use it only to test the testing environment works and then to skip it. Also, the future test we will write will test this, and as we want to avoid redundant tests, we may delete previous tests in the refactor phase.
+Because this test is very basic and simple, we tend to use it only to test the testing environment works and then to skip it. Also, the future test we will write will test this, and as we want to avoid redundant tests, we may delete previous tests in the 'refactor' phase.
 
-Keeping this example, we are going to receive an error message because we don't have a method called 'add_to_basket'. Here, '#<Account:0x000055f7f162a400>' is an object of the class Account.
+Keeping this example, we are going to receive an error message because we don't have a method called 'add_to_basket'. Here, '#<Account:0x000055f7f162a400>' is an object of the class Account', it is 'user_account'.
 
 ````md
 NoMethodError:
@@ -151,14 +171,16 @@ NoMethodError:
 We can write the Unit Test sending the same error message.
 
 ````ruby
- it 'answers to add_to_basket' do
+describe '#add_to_basket' do
+  it 'answers to an instance of Account' do
     user_account = Account.new
     expect(user_account).to respond_to(:add_to_basket)
   end
+end
 
 ````
 
-And here we solve the unit test problem, then we move to the next one.
+And here we solve the Unit Test error message, then we move to the next one.
 
 ````ruby
 class Account do
@@ -177,7 +199,19 @@ ArgumentError:
 
 ````
 
-So we will create a new Unit Test and solve it this way.
+So, we will create a new Unit Test:
+
+````ruby
+describe '#add_to_basket' do
+  it 'answers to an instance of Account' do
+    user_account = Account.new
+    expect(user_account).to respond_to(:add_to_basket).with(1).argument
+  end
+end
+
+````
+
+And solve it this way:
 
 ````ruby
 class Account do
@@ -187,11 +221,15 @@ class Account do
 end
 ````
 
-Then we would keep going this way, I am not going to go further here. What is important is to understand the step by step approach so we always know what to do next. And if we do hesitate because we work with a new testing framework we can search online, and we know what we are looking for.
+Then we would keep going this way, I am not going to go further here. What is important is to understand the step by step approach so **we always know what to do next**. And if we do hesitate because we work with a new testing framework we can search online, and we know what we are looking for.
 
-Trying to do small steps, we may be tempted to create unecessary test, for example, one usual mistake is to test State over Behavior. When I plan, I work on the scope of my test, making my test simple but meaningful.
+---
 
-The previous example was testing the Behavior because 'add' is the name of the method that will transform the 'basket'. However, the following test is a 'bad' one because it tests the State.
+>----- Here is how I would explain not to tesr State over Behavior to someone new to coding. -----
+
+Trying to do small steps, we may be tempted to create unecessary test, for example, one mistake is to test State over Behavior. When I 'plan', I work on the scope of my test, making my test simple but meaningful.
+
+The previous example was testing the Behavior because 'add_to_basket' is the name of the method that will transform the 'basket'. However, the following test is a 'bad' one because it tests the State.
 
 ````ruby
   it 'basket to have an apple' do
@@ -200,7 +238,7 @@ The previous example was testing the Behavior because 'add' is the name of the m
   end
 ````
 
- To solve this test I could code the answer directly, and no transformation would happen, this is called to 'hardocde' the result. So, I am testing a State that I am writing, not a Behavior I am creating, this is why the latest test is unecessary. Below you can see how I would anwer to a wront test, not creating the behavior expected by the user, not moving forward.
+ To solve this test I could code the answer directly, and no transformation would happen, this is called to 'hardcode' the result. So, I am testing a State that I am writing, not a Behavior I am creating, this is why the latest test is unecessary. Below you can see how I would answer to a wrong test, not creating the behavior expected by the user, not moving forward. This test makes me write a very unflexible code.
 
 ````ruby
 it 'adds an apple to the basket' do
@@ -212,23 +250,17 @@ it 'adds an apple to the basket' do
 end
 ````
 
-THis is why we say that our approach to Test Driven Development is **Behaviour Driven Development**.
-
----
-
-**'I can Test Drive Develop anything' means that when I am facing a problem, I am able to divide it in small chunks, that I am able to be very clear about what I want to achieve in those chunks, that I develop my solution step by step, writing the test first and then finding the solution. It means that whatever language or project I am working on, I am able to consistently use a methodology such as the Red-Green-Refactor In other words, I can use a process to create structured code, easy to read, debug and update.**
+This is why we say that our approach to Test Driven Development is **Behaviour Driven Development**.
 
 ---
 
 >----- Here is how I would explain TDD specific cases to someone new to coding. -----
 
-Here are few interesting examples. When we go further with testing we encounter those cases:
-
----
+When we go further with testing we encounter various cases, here are some:
 
 - Test only what we are focusing on
 
-When a new class is created during a Unit Test, we create a fake class, here is an example with Rspec:
+When a new class is required during a Unit Test, we create a 'fake' class, here is an example with Rspec:
 
 ````ruby
   let(:plane) {  double :plane, land: nil, take_off: nil }  
@@ -237,15 +269,15 @@ When a new class is created during a Unit Test, we create a fake class, here is 
 
 [Link to faking a plane object while solving Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_ruby/blob/master/spec/airport_spec.rb)
 
-then in the Feature Test, we create a real object:
+but in the Feature Test, we always use a real object, if it does not exist it will create an error message that we will solve:
 
 ````ruby
-let(:plane) { Plane.new }
+let(:plane) { Plane.new } # this is the equivalent of 'plane = Plane.new'
 ````
 
 [Link to the Feature Test of Airport Challenge TDD](https://github.com/AdrienFabre/airport_challenge_ruby/blob/master/spec/features/user_stories_spec.rb)
 
-In the Airport Challenge, in the Airport class unit test, so we can use a plane, we create a double that we can access everywhere in this test. This is a good way to make the Unit Test of Airport is not dependent to the class Plane, so we only test the Airport class with the Airport Unit Test. This mindset is valuable for every part of the test, we want to test only one thing at a time, so we know what is broken if the test beaks. While in the Feature Test, we want to test everything together like if a user was using it, so we would never see a fake (or double) in a Feature Test.
+In the Airport Challenge, in the Airport class unit test, so we can use a 'plane', we create a double that we can access everywhere in this test. This is a good way to make sure the Unit Test of Airport is not dependent from the class Plane. We only test the Airport class with the Airport Unit Test. This mindset is valuable for every part of the Unit Tests, we want to test only one thing at a time, so we know what is broken if the test beaks. While in the Feature Tests, we want to test everything together like if a user was using it, so we would never see a 'fake' in a Feature Test.
 
 ---
 
@@ -261,7 +293,7 @@ When we want to test what is output in the terminal, we use the following syntax
 
 [Link to testing the output in the terminal in the Echo Challenge TDD](https://github.com/AdrienFabre/echo_ruby/blob/0307b636c4e105de552e64d75b369bb57daec184/spec/echo_spec.rb)
 
-This syntax enables us to create an expected output, that will not be returned at the end of the code, but displayed in the terminal.
+This syntax enables us to create an expected 'output', that will not be returned at the end of the code, but displayed in the terminal.
 
 ---
 
@@ -278,18 +310,17 @@ end
 
 [Link to testing the input in the terminal in the Echo Challenge TDD](https://github.com/AdrienFabre/echo_ruby/commit/48baaf4b5a212df450160a0ba9de9ec7bbeeb67a#diff-fb4dc7c0bd38dc2a980d90e370c3338a)
 
-Here, this 'allow...' syntax enables to mimic the user input in that specific case because it is use on ':gets', however we can use it in many situation to fake the behavior of another class.
+Here, this 'allow...' syntax enables to mimic the user input in that specific case because it is use on ':gets', however we can use it in many situation to 'fake' the behavior of another class.
 
 ---
 
 - Test when the Time is involved
 
-When we want to test a class that includes the time we need to fake it, in that case we can use:
+When we want to test a class that includes the time we need to 'fake' it, in that case we can use:
 
 ````ruby
     time_now = Time.new(2019, 1, 2, 3, 4, 5, '+00:00')
     allow(Time).to receive(:now).and_return(time_now)
-
 ````
 
 [Link to setting the time 'now' to a fixed time in the Echo Challenge TDD](https://github.com/AdrienFabre/echo_ruby/blob/master/spec/echo_spec.rb)
@@ -300,7 +331,7 @@ Here we are using the class Time and the method 'now' defined by Ruby, we are te
 
 - Test an when Randomness is involved
 
-Here what is interesting, in the Rock Paper Scissors game, is that we are faking randomness.
+Here what is interesting, in the Rock Paper Scissors game, is that we are 'faking' randomness.
 
 ````ruby
     it 'returns a shape' do
@@ -311,13 +342,13 @@ Here what is interesting, in the Rock Paper Scissors game, is that we are faking
 
 [Link to setting the 'randomness' to a fixed number in the RPS Challenge TDD](https://github.com/AdrienFabre/rps-challenge/blob/master/spec/computer_spec.rb)
 
-Here we are using the class Kernel and the method 'rand' defined by Ruby, we are telling them to return a specific value, so we can test something that involves randomness. In this specific case, we want the computer player sent random shape and each shape will have a different outcome to the game, so we want to be in control of the shape so we can test each outcome.
+Here we are using the class Kernel and the method 'rand' defined by Ruby, we are telling them to return a specific value, so we can test something that involves randomness. In this specific case, we want the 'computer player' to send a random shape, each shape will have a different outcome, so, we want to be in control of the shape so we can test each outcome.
 
 ---
 
 - Test a users interactions using a webpage interface
 
-When we want to do a Feature Test in a complete app, we don't want the user to use the terminal, but an interface through the browser, in that case we use Feature Tests mimicing the user interface in the browser. In this case we use [Capybara testing framework](https://github.com/teamcapybara/capybara) to test the [Sinatra](http://sinatrarb.com/) and Ruby environment.
+When we want to do a Feature Test in a complete app, we don't want the user to use the terminal, but an interface through the browser, in that case we use Feature Tests mimicing the user interface in the browser. Here we are using [Capybara testing framework](https://github.com/teamcapybara/capybara) to test Ruby with [Sinatra as a Domain Specific Language](http://sinatrarb.com/).
 
 ````ruby
 feature 'display the celebration message' do
@@ -334,9 +365,9 @@ end
 
 [Link to a feature test with Capybara in the Birthday App Challenge TDD](https://github.com/AdrienFabre/birthday_app/blob/334a29bc2c364e30420e98666e2b1c8b56303592/spec/features/display_birthday_spec.rb)
 
-Here the test is doing the job of testing for the sentence to be right, however, we could need to do more tests because may be our code to answer the test may be valid only if we have a birthday day date that is later in the year, or may be it works only during the current month. This is the moment where we need to write the edge cases tests, that enables us to enable different uses of the app. However, no every case is necessary and testing each edge case is a matter of prioritisation, what is the most important and what resource is availble. Edge cases are dealt with with the unit tests.
+Here the test is doing the job of testing for the sentence to be right, however, we could need to do more tests because may be our code to answer the test may be valid only if we have a birthday day date that is later in the year, or may be it works only during the current month. This is the moment where we need to write the edge cases tests, that enables us to enable different uses of the app. However, no every case is necessary, testing each edge case is a matter of prioritisation, what is the most important and what resource is availble. Edge cases are dealt with with the unit tests.
 
-This feature test drived me to create those 2 unit tests that are testing the cases if it is my Birthday or if it is not.
+This Feature Test drived me to create those 2 Unit Tests that are testing the cases if it is my Birthday or if it is not.
 
 ````ruby
   it "return birthday if the date selected is today" do
@@ -375,7 +406,7 @@ Here is another example of the Airport Challenge, where I am using a new languag
 
 ---
 
-- Test a users interactions using a webpage interface with another framework: Javascript and Cypress
+- Test user interactions using a webpage interface with another framework: Javascript and Cypress
 
 In the Makers Final Project, we used [React](https://reactjs.org/), so Javascript, to Feature Test our app, we used [Cypress](https://www.cypress.io/).
 
@@ -391,7 +422,7 @@ it("can create a new card", () => {
 
 [Link to feature test with Cypress in the project management app](https://github.com/what-zen/what-zen-app/blob/dev/cypress/integration/ourTests/Cards.spec.js)
 
-Here we did not succeed to properly Test Drive our application, we did create feature test after we created our app. We would have needed a some more time to be confortable enough with Jest and Enzyme to Test Drive the entire application. This is where I found the limit of learning a new language and test drive at the same time. In that moment, spiking is a way to learn, otherwise it is hard to test something that we don't know about. With a bit more time, we could do everything again from scratch with TDD.
+Here we did not succeed to properly Test Drive our application, we did create 'Feature Tests' after we created our app. We would have needed some more time to be confortable enough with Jest and Enzyme to Test Drive the entire application. This is where I found the limit of learning a new language and test drive at the same time. In that moment, spiking was a way to learn, otherwise it was hard to test something that we did't know about. With a bit more time, we could do everything again from scratch with TDD.
 
 ---
 
@@ -399,21 +430,21 @@ Here we did not succeed to properly Test Drive our application, we did create fe
 
 The advantages of TDD are:
 
-- It helps to **proactively** notice and solve a lot of bugs that otherwise could have persisted up to the production stage, which **increases the quality**. Notably thanks to acceptance criterias that helps to make sure the expected behavior is maintained and to think about the public interface.
+- It helps to **proactively** notice and solve a lot of bugs that otherwise could have persisted up to the production stage, which **increases the quality**. Notably thanks to acceptance criterias that helps to make sure the expected behavior is maintained and the user interface is kept in mind.
 
-- It helps notice the dependencies and optimise them when the test is created and that dependencies are mocked.
+- It helps notice the dependencies and optimise them when the test is created because dependencies are mocked.
 
-- It prevents developper from damaging other features when they work on a new feature, because the test coverage is theoricaly 100%, with Ruby we used [Simplecov](https://github.com/colszowka/simplecov) to make sure it was. So, bugs are noticed and located, notably during refactoring.
+- It prevents developper from damaging other features when they work on a new feature, as the test coverage is theoricaly 100%. With Ruby we used [Simplecov](https://github.com/colszowka/simplecov) to make sure it was. So, bugs are noticed and located quickly, notably during refactoring.
 
 - It becomes a part of the documentation and helps new developpers involved in the project to understand every part. It **increases development confidence**.
 
-- The process may be longer on the very short term but then saves a lot of time on the long term because it is **easier to find bugs** and it helps focus during the development process, so, to **increase productivity** and cost efficiency.
+- The process may be longer on the very short term but then saves a lot of time on the long term because it is **easier to find bugs** and it helps to focus during the development process, so, it **increases productivity** and cost efficiency.
 
 ---
 
 >----- Here is how I would precise what 'faking' means in TDD to someone new to coding. -----
 
-Here I would like to go through some vocabulary that I spent some time to explore precisely. When previously I mentionned faking a method in a 'Unit Test', there are different ways to do it:
+Here I would like to go through some vocabulary that I spent some time to explore precisely. When previously I mentionned 'faking' a method in a 'Unit Test', there are different ways to do it:
 
 - **Stub:** here we tell our test that a method **could be called**. The test could pass if the method is not called. In Rspec we create it with 'allow'.
 
@@ -439,11 +470,11 @@ Here is an example:
   expect(client).to receive(:message).and_return(message)
 ````
   
-- **Spy:** here we tell out test that a method **has been called**. This is usually used with a stub. This is like a mock but with 2 lines, the first line is like a stub and the second line is created with 'have_received'.
+- **Spy:** here we tell out test that a method **has been called**. This is usually used with a 'stub'. This is like a 'mock' but with 2 lines, the first line is like a 'stub' and the second line is created with 'have_received'.
 
-Here what is important is that a test has 3 parts. Firstly, we setup everything we need for the test, Secondly, whatever action is being done, Thirdly, a result is expected. When we mock, we expect at in the first part, this is why the spy is a clearer alternative.
+Here what is important is to remember the 3 parts of a test. Firstly, we setup everything we need for the test, Secondly, an action is happening, Thirdly, a result is expected. When we mock, we 'expect'in the first part, this is why the spy is a clearer alternative, it allows us to keep the expectation in the Third part.
 
-Here is an example of the Takeaway challeng as I described:
+Here is an example of the Takeaway challenge as I described:
 
 ````ruby
 describe SMS do 
@@ -476,26 +507,30 @@ describe SMS do
 end
 ````
 
-There is a shorter way to do it with the word 'spy'. In the previous example the 2 lines:
+There is a shorter way to do it with the word 'spy'. In the previous example, we have 2 lines:
 
 ````ruby
   let(:messages) { double(:messages) } # global setup: we stub the object
-  allow(messages).to receive(:create).with(args) # First: local setup setup
+  allow(messages).to receive(:create).with(args) # First: local setup
 ````
 
-could be replaced with 1 line:
+it could be replaced with 1 line:
 
 ````ruby
   let(:messages) { spy(:messages) }
 ````
 
-This syntax is like allowing anything to be called on 'messages', this is when we do 'has_received' that we define the specific expectation.
+This syntax is like allowing anything to be called on 'messages', this is when we do 'has_received' that we define the specific expectation. So, this is a shorter way to do it, this is however less precise.
+
+---
+
+**'I can Test Drive Develop anything' means that when I am facing a problem, I am able to divide it into small chunks, that I am able to be very clear about what I want to achieve in those chunks, that I develop my solution step by step, writing the test first and then finding the solution. It means that whatever language or project I am working on, I am able to consistently use a methodology such as the Red-Green-Refactor. In other words, I can use a process to create structured code, easy to read, debug and update.**
 
 ---
 
 #### Feedback
 
-- Alice - Coach at Makers - After the training process review
+- Alice - Coach at Makers - After a process review
 
 "You ask less questions but a very good one 'could you give an example of user interaction?'"
 
@@ -503,11 +538,11 @@ This syntax is like allowing anything to be called on 'messages', this is when w
 
 "You are testing behaviour first, which is really good to see."
 
-- Kai - Student at Makers - After the training process review
+- Kai - Student at Makers - After a process review
 
 "You follow the process and persevere to follow the step by step approach"
 
-- Brooke - Student at Makers - After the training process review
+- Brooke - Student at Makers - After a process review
 
 "This is impressive. You don't use the cards because you know the process very well and you know what you are doing at each step."
 
@@ -527,11 +562,11 @@ This syntax is like allowing anything to be called on 'messages', this is when w
 
 From my experiences with human languages, as a French that learnt English and Russian within the past 10 years, I would divide fluency in different parts.
 
-The part that is similar among languages and that makes it easier to learn new languages such as the main logic, structures, rules, characters, environments all of this, even if it is not identical, it helps to understand and adapt in new language environment easily. Each part that is unique to a language can still differenciate what can be done and not be done, so, we can always draw parallels among languages even if they are very different.
+The part that is similar among languages and that makes it easier to learn new languages such as the main logic, structures, rules, characters, environments, all of this, even if it is not identical, it helps to understand and adapt in new language environment easily. The part that is unique to a language, it can still differenciate what can be done and not be done, so, we can always draw parallels among languages even if they are very different. I found that the more languages I learnt, the more shortcut I made in my head, and so, things were easier to learn and retrieve.
 
 >----- Here is how I perceive program fluency. -----
 
-Programming languages have those two parts too, learning Ruby was challenging because I did not have any reference from previous programming language. Once I understood the patterns, the big picture, the details, I acquired the key words to quickly search online whatever syntax was missing. Because I did not know the syntax but I knew what I was willing to use in term of logic or structure. This first programming language helped me to explore Javascript and a little bit of Java with their own differences and similarities. Then, learning the test framework language was another step, because the logic is different, however after RSpec, Jasmine was also easier.
+Programming languages have those two parts too, learning Ruby was challenging because I did not have any reference from previous programming language. Once I understood the patterns, the big picture, the details, I acquired the key words to quickly search online whatever syntax was missing. I became fast when I did not know the syntax because I knew what I was willing to use in term of logic or structure. This first programming language helped me to explore Javascript and a little bit of Java with their own differences and similarities. Learning the testing frameworks were new steps, because the logic is different, however after RSpec, Jasmine it also became easier.
 
 **Program fluency means that I have explored enough programming languages so that I am confident that I can use my acquired abilities to understand programming languages, to search efficiently and to learn quickly, and perform in a reasonable amount of time.**
 
@@ -543,7 +578,7 @@ I can show few examples of different programming environments I adapted in the p
 
 [Link to the commits to my process review Echo Challenge](https://github.com/AdrienFabre/boris_bikes-1/blob/master/lib/docking_station.rb)
 
-The important part is that between those 2 projects, while the language and the testing framework are identical, my understanding of coding and of the entire process evolved a lot. The fluency is shown by how I was able to solve the Echo challenge that requires different techniques to implement each features. So, programming fluently is about learning how to learn as well as understanding the basics of how to understand client request, testing and coding.
+The important part is that between those 2 projects, while the language and the testing framework are identical, my understanding of coding and of the entire process evolved a lot. The fluency is shown by how I was able to solve the Echo challenge that requires different techniques to implement each feature.
 
 [Link to a version of a minimalist Facebook created with Ruby on Rails in a group](https://github.com/simian-sinister/Acebook-Simian-Sinister)
 
@@ -551,11 +586,11 @@ The important part is that between those 2 projects, while the language and the 
 
 [Link to a version of a minimalist Trello created with React and FireBase in a group](https://github.com/what-zen/what-zen-app)
 
-The other side of **progamming fluently, is the ability to translate human language such as specification or user stories into code and to write code** using the best practices such as Test Driven Development, Don’t Repeat Yourself, and Single Responsibility. In other words, keep in mind the person that may use your user interface as a user and your code as a software developer.
+The other side of **progamming fluently, is the ability to translate human language such as specification or user stories into code** and to write code using the best practices such as Test Driven Development, Don’t Repeat Yourself, and Single Responsibility. In other words, **keep in mind the person that may use your user interface as a user and your code as a software developer**.
 
 I found that my various expriences in term of jobs as well as facilitation of design thinking workshops helped me to keep those 2 types of person in mind.
 
-As an example, during Makers, facing over 30 challenges with different sizes, shapes and requirements in different languages, I learned how to approach programming challenges, this why I could say that I can programme fluently.
+As an example, during Makers, facing over 30 challenges with different sizes, shapes and requirements in various languages, and diverse teams, I learned how to approach programming challenges, this why I could say that I can programme fluently.
 
 ---
 
@@ -575,7 +610,7 @@ let(:printed_menu) { "Chicken: 3.50" }
 
 [Link to Takeaway Spec class in the takeaway challenge in Ruby](https://github.com/AdrienFabre/takeaway-challenge-ruby/blob/master/spec/takeaway_spec.rb)
 
-The most interesting here is how the different objects are created from the 'Unit Test' of the Takeaway class. On the first line we can see all the argument passed to the class, then we can see the double of each of those argument being created with their specific methods and attributes. To me, the fluency is to be able to move forward step by step using the TDD methodology, to read and write code. Here, 'double' does not take into account the real class while the 'instance_double' does, it allows to check that the real class has the method we doubled. Here, if the tests passe, it means that the real Object 'Order' has a method called 'total' and that the real Object 'SMS' has a method 'deliver'.
+The most interesting here is how the different objects are created from the 'Unit Test' of the Takeaway class. On the first line we can see all the arguments passed to the class, then we can see the 'double' of each of those argument being created with their specific methods and attributes. To me, the fluency is to be able to move forward step by step using the TDD methodology, to read and write code. Here, 'double' does not take into account the real class while the 'instance_double' does, it allows to check that the real class has the method we doubled. Here, if the tests pass, it means that the real Object 'Order' has a method called 'total' and that the real Object 'SMS' has a method 'deliver'. Understanding it is an example of how I keep building my fluency.
 
 ---
 
@@ -601,7 +636,7 @@ I keep practicing with:
 
 [Process Reviews](https://github.com/makersacademy/skills-workshops/tree/master/process_review)
 
-and personal projects under constructions, always focusing on implementing TDD and getting feedback.
+and personal projects under construction, always focusing on implementing TDD and getting feedback.
 
 ---
 
@@ -629,9 +664,9 @@ and personal projects under constructions, always focusing on implementing TDD a
 
 **'Getting visibility'**, finding ways to follow the flow and to display the information created along the flow, then **'Tighten the loop'**, narrow down so we can find out at which moment the unexpected behavior occurs. Each environment has different syntax to make it happen but the process is similar in those environments.
 
-The first example would be the error message I shown in the TDD part, when the error message shows, this is a bug, but because we define a precise test, the bug is already clear, we already have the visibility and the loop thightened, so we know how to move forward. So, the first way to get some information about the bug is to run the test. (if we are lucky enough to have tests in the test we are debugging)
+The first example would be the error message I shown in the TDD part, when the error message shows, this is a bug, but because we define a precise test, the bug is already clear, we already have the visibility and the loop thightened, so we know how to move forward. So, the first way to get some information about the bug is to run the test. (if we are lucky enough to have tests in the code we are debugging)
 
-Bug are in lot of places and even without a test, I learned that one of the main skill is to be able to read the error message.
+Bugs are in lot of places and even without a test, I learned that one of the main skill is to be able to read the error message.
 
 >----- Here is how I would keep moving forward debugguging while setting up. -----
 
@@ -672,7 +707,7 @@ and this line:
 checking for pg_config... no
 ````
 
-after some research online, I find out that this error often occurs on Windows or Ubuntu (my situation) because a package is missing and that running the following line will solve it:
+after some research online, I find out that this error often occurs on Windows or Ubuntu (my situation, I have just started with it) because a package is missing and that running the following line will solve it:
 
 ````bash
 sudo apt-get install libpq-dev
@@ -950,9 +985,9 @@ The weather we define in our test is created but not used by the airport we are 
 
 #### Summary
 
-In several cases I faced errors where the expected behavior is not what I want and there is no error messages, so, I have to find by myself the information flow that creates this unwanted behavior. The examples shown are representative of the bugs I regularly faced but not extensive. With some time, debugging became natural and I did not notice it.
+In several cases I faced errors where the expected behavior is not what I want and there is no error messages, so, I have to find by myself the information flow that creates this unwanted behavior. The examples shown are representative of the bugs I regularly faced but not extensive. With some time, debugging became natural and I did not notice it. One part that is very natural and that I did not describe is to get visibility by printing in the terminal the different outputs at different steps. I found it very good to debug, to follow the flow and to learn in general. I also often use [repl](https://repl.it/) to isolate code easily and get quick visibility.
 
-**I can debug anything means that I am able to understand what is the expected behavior, to notice that the expected behavior it not fulfilled and then I am able to make a clear assumption about why this unexpected error occurs and then find ways to verify this assumption. Then, step by step, througth research and following the flow of the error, I finally solve the error message. Meaning that with enough time, I have developed the right process to debug anything. One step at a time.**
+**I can debug anything means that I am able to understand what is the expected behavior, to notice that the expected behavior is not fulfilled and then I am able to make a clear assumption about why this unexpected error occurs and then find ways to verify this assumption. Then, step by step, througth research and following the flow of the error, I finally correct the behavior. Meaning that with enough time, I have developed the right process to debug anything. One step at a time.**
 
 ---
 
@@ -992,7 +1027,7 @@ Each of those 'bugs' could be sorted, the only reason it is not is the amount of
 
 - Clare Pinder - Student at Makers - After a process review
 
-"Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly,  he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
+"Adrien set out a clear plan for program - to follow the 'criteria tests' as feature tests. Where the code was behaving unexpectedly, he read the error message quickly to locate where the issue remained and he studied the code carefully and sought visibility by printing some choice lines to the console. He remained calm and only fixed the error when he knew the problem - he didn't 'shoot around in the dark'."
 
 - Matthew Whitaker - Student at Makers - After a process review
 
@@ -1229,6 +1264,14 @@ subject(:shop) { described_class.new(price_table, special_offer) }
 - Matthew Whitaker - Student at Makers - After a process review
 
 "You were also very diligent in keeping your classes very flexible, for example lifting out the prices in the checkout challenge to the tests. This allowed you write a very clean adaptable class, and showed me a new way to approach the problem."
+
+- Tenebrousedge - Mentor at Exercism
+
+“Your code here is indeed very readable, and another principle would suggest that methods should "only do one thing". What "one thing" means is usually subjective. So again, I don't think there's anything wrong with having more methods as opposed to fewer, I was just curious as to the reasoning. Personally, I'm a very lazy coder — I am always asking myself, "Can I write this more concisely?" I think it's useful to attack the code you write, to eliminate superfluous operations. However, for me, legibility is an afterthought, and people critiquing my code most often say, "It's very clever, but it's unreadable." So I think your instructors have good advice.
+
+It's been said that, “There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult.”
+This code is extremely clear and concise, and there are "obviously no deficiencies", which is one of the best things you can say about a piece of code. Well done 👍👍👍”
+
 
 ---
 

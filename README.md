@@ -1168,7 +1168,7 @@ What is interesting here is that the SMS class is wrapping the API twilio that i
 ---
 >----- Here is how I explain refactoring to someone new to coding. -----
 
-For example the best is to have a code that is easy to read and also short, but the fact that we keep it short does not mean that we allow ourselves to be misunderstood for the sake of being short.
+The ideal is to have a code that is easy to read and also short, but the fact that we keep it short does not mean that we allow ourselves to be misunderstood for the sake of being short.
 
 Then there are some best practices, an Object is usually a noun, a method is usually a verb and both of them should be coherent and be understood by any software developer that is going to read your code. To choose those nouns and verbs we usually use those from requirements and user stories. During the refactoring, we can verify that we are using the most relevant words.
 
@@ -1218,7 +1218,7 @@ class Printer
 end
 ````
 
-May be someone else would find a better way to do it. Here I made every method that is going to be used only internally, private. Private means that nobody has access to it outside of the classe, so there is no point to test it, in this case, it only helps the 'print_statement' method to be shorter and easier to read.
+May be someone else would find a better way to do it, this is why it is crutial to ask feedback too. Here I made every method that is going to be used only internally, private. Private means that nobody has access to it outside of the classe, so there is no point to test it, in this case, it only helps the 'print_statement' method to be shorter and easier to read.
 
 Here, on another repository, we can see that refacoring enabled me to remove lines of code and tests: [Link to commits of the Echo challenge](https://github.com/AdrienFabre/echo_ruby/commits/master)
 
@@ -1228,7 +1228,7 @@ The same way in other languages, here in React, we created several components, i
 
 [Link to the list of components of MakersBnB in React](https://github.com/AdrienFabre/makersbnb/tree/master/client/src/components)
 
-Refactoring is a practice continuouly improved with practice and exchanges of best practices. Recently, I have spent time improving this code and I am now yet satisfied about how it looks but I am happy with what it does (test refactored, see below), I succeeded to implement the best TDD practices, keeping all datas injected but the methods are slightly big. This is an opportunity to ask for advice and learn.
+Refactoring is a practice continuouly improved with practice and exchanges of best practices. Recently, I have spent time improving this code and I am not yet satisfied about how it looks but I am happy with what it does (test refactored, see below), I succeeded to implement the best TDD practices, keeping all datas injected but the methods are slightly big. This is an opportunity to ask for advice and learn.
 
 ````ruby
 
@@ -1255,7 +1255,7 @@ subject(:shop) { described_class.new(price_table, special_offer) }
 
 - Krzysztof Balejko - Student at Makers
 
-"I’ve fond his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
+"I’ve found his code to be of very good quality therefore I had no problem in understanding the logic behind his code base."
 
 - William Dunk - Student at Makers - Collaborated on the MakersBnB project
 
@@ -1272,7 +1272,6 @@ subject(:shop) { described_class.new(price_table, special_offer) }
 It's been said that, “There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult.”
 This code is extremely clear and concise, and there are "obviously no deficiencies", which is one of the best things you can say about a piece of code. Well done 👍👍👍”
 
-
 ---
 
 ### I have a methodical approach to solving problems
@@ -1281,13 +1280,11 @@ This code is extremely clear and concise, and there are "obviously no deficienci
 
 Methodical approach to solving problems is what we are learning all along at Makers. In other words this is about knowing what to do next. In the [blog about problem solving from Sam Morgan](https://blog.makersacademy.com/how-i-solve-problems-a6a84d167598).
 
-He describes the idea to **solve a problem Systematically and Systemically**. It took me some time to really understand it but now it is clear to me.
+He describes the idea to **solve a problem Systematically and Systemically**. I would say that the first is about **knowing what to do next because we have process** and the second is about **knowing what to do next because we have a direction**.
 
-I would say that the first is about **knowing what to do next because we have process** and the second is about **knowing what to do next because we have a direction**.
+This is what I used naturally in the previous description of my processes and how I implemented them. I see all those processes we learnt as cycles. For example we have processes to solve a very small problem like implementing a test or it could be creating an entire app with a team an implementing the Agile processes.
 
-This is what I used naturally in the previous description of my processes and how I implemented them. I see all those processes we learnt as cycles. For example we have processes to solve a very small problem like implementing a test or it could be creating an entire app with a team an implementing the agile processes.
-
-This is also about constant prioritisation and knowing how the different processes we have learned need to be used and how they fit together. Here is a way to connect them, every cycle having a different timescale.
+This is also about constant prioritisation and knowing how the different processes we have learned need to be used, how they fit together and what is their timescale.
 
 >----- Here is how I would summarise methodical approach to solving problems to someone new to coding. -----
 
@@ -1317,7 +1314,7 @@ In those cycles, from the left, the second big rectangle represents the whole pr
 
 ### I use an Agile product development process
 
-As I learnt and practiced design thinking workshop facilitation before I really enjoyed learning and practicing Agile values and Scrum methods along my Acebook and final project What Zen, I spent time to understand it and shared my knowledge with the groups.
+As I learnt and practiced design thinking workshop facilitation before, I really enjoyed learning and practicing Agile values and Scrum methods along my Acebook and final project What Zen, I spent time to understand it and shared my knowledge with the groups.
 
 I have done it through the white board and through the Wiki:
 
@@ -1325,7 +1322,7 @@ I have done it through the white board and through the Wiki:
 
 As well as during our final project presentation, I highlighted the Agile Values focusing on eXtreme Programming: communication, Simplicity, Feedback, Courage and Respect.
 
-The way** I embodied this is to make sure that everyday we had a session in front of the whiteboard where we remembered the collective goal** and why we were going in that direction. Also, **creating space for everyone to be heard**, those stepping forward as much as those who were ok with any direction.
+**The way I embodied this is to make sure that everyday we had a session in front of the whiteboard where we remembered the collective goal and why we were going in that direction. Also, creating space for everyone to be heard, those stepping forward as much as those who were ok with any direction.**
 
 I also summarised our 4 cycles with different focused:
 ![Scrum-presentation-final-project](readme_images/Scrum-presentation-final-project.png)
@@ -1336,11 +1333,11 @@ I also summarised our 4 cycles with different focused:
 
 - Luca Fruzza - Student at Makers - Collaboration on Acebook
 
-"Adrien was very enthusiastic and helped the whole team to really understand it the second week of the Acebook challenge, while the first scrum process was jeopardize by our learning of Ruby on Rails."
+"Adrien was very enthusiastic and helped the whole team to really understand it the second week of the Acebook challenge, while the first scrum process was jeopardized by our learning of Ruby on Rails."
 
 - Elliot Jennings - Student at Makers - Collaboration on Acebook
 
-Before working on Jungl-Book with Adrien I thought I had grasped the concept of agile development. It was the guidance of Adrien during this project which allowed our team to now say we are confident with the framework. He gave us workshops on the scrum process and was devoted to making us stick to the following agile development in our second week. He is driven to manage a project and it seems to be a natural position for him as he always focuses on the bigger picture even when the team are being slightly short-sighted.
+"Before working on Jungl-Book with Adrien I thought I had grasped the concept of agile development. It was the guidance of Adrien during this project which allowed our team to now say we are confident with the framework. He gave us workshops on the scrum process and was devoted to making us stick to the following agile development in our second week. He is driven to manage a project and it seems to be a natural position for him as he always focuses on the bigger picture even when the team are being slightly short-sighted."
 
 - Diptis Hadler - Student at Makers - Collaborated on the final project
 
@@ -1358,11 +1355,11 @@ In general he led the ideation and planning sessions that we had, writing notes 
 
 >----- Here is how I would explain what makes code easy to change to someone new to coding. -----
 
-Writing a code easy to change means that each noun and verb, class and method names are choosing carefully so the understanding of the project is easy. TDD is a way to help to produce a code easy to change. Refactoring is a moment to specifically be careful at how easy the code is to be changed. Also, a good documentation, starting with an accessible README and a few diagram greatly help a software developer in front of a new code.
+Writing a code easy to change means that each noun and verb, class and method names are choosing carefully so the understanding of the project is easy. TDD is a way to help to produce a code easy to change. Refactoring, respecting DRY and Single Responsibility principles ,is a moment to specifically be careful at how easy the code is to be changed. Also, a good documentation, starting with an accessible README and a few diagrams greatly help a software developer in front of a new code.
 
 What helps is to get insights and input from general best practices and linters. Then to correct every part of the code so we make sure the collective understand of what is good is applied. Another way to guarantee this is to have our own code reviewed so we get feedback, also review someone else code, so we can understand what is not helpful to understand the code.
 
-Another main point is to make sure we manage dependencies in our code, meaning that if one part of the code changes, the rest still works.
+Another main point is to make sure we manage dependencies in our code, meaning that if one part of the code changes, most of the rest still works, and if it does not work, a test is present to highlight where the problem is.
 
 ---
 >----- Here is how I would use dependency injection in Ruby. -----
@@ -1406,7 +1403,7 @@ function Airport(weather){
 
 We can consider all of it as a part of the best practices that we implement at each refactor, part of the TDD process. It could be also customised to what have been decided as a best practice for the project as a group, notably during the SCRUM ceremonies.
 
-On the takeaway challenge in Ruby below, this is the same idea, the injection of 'menu', 'config', 'order' and 'sms' enables to isolate each class, so the code is easier to change and to test.
+On the Takeaway challenge in Ruby, below, this is the same idea, the injection of 'menu', 'config', 'order' and 'sms' enables to isolate each class, so the code is easier to change and to test.
 
 ````ruby
 def initialize(menu:, config:, order: nil, sms: nil)
@@ -1421,7 +1418,7 @@ end
 ---
 >Write code easy to change is about keeping other software engineers in mind.
 
-At Makers, working with very different people, **I found the common best practices crutial to implement in everything I do**. Also, all my time searching online different things from different people in different programming languages, it deeply anchored my will to produce code easy to understand as much as creating code easy to change. Spending time on Mondays checking other students' code that they produced on the weekend, I also experienced how hard it could be to get a deep understanding of a person that has not yet acquired those best practices. The same way for me,  feedback from others on my code was also very rich in leanings.
+At Makers, working with very different people, **I found the common best practices crutial to implement in everything I do**. Also, all my time searching online different things from different people in different programming languages, it deeply anchored my will to produce code easy to understand as much as creating code easy to change. Spending time on Mondays checking other students' code that they produced on the weekend, I also experienced how hard it could be to get a deep understanding of a person that has not yet acquired those best practices. The same way for me, feedback from others on my code was also very rich in leanings.
 
 ---
 
@@ -1457,7 +1454,7 @@ I collaborated with different kind of people, some willing to lead, some with le
 
 - Elliot Jennings - Student at Makers - Collaboration on Acebook
 
-Before working on Jungl-Book with Adrien I thought I had grasped the concept of agile development. It was the guidance of Adrien during this project which allowed our team to now say we are confident with the framework. He gave us workshops on the scrum process and was devoted to making us stick to the following agile development in our second week. He is driven to manage a project and it seems to be a natural position for him as he always focuses on the bigger picture even when the team are being slightly short-sighted.
+"Before working on Jungl-Book with Adrien I thought I had grasped the concept of agile development. It was the guidance of Adrien during this project which allowed our team to now say we are confident with the framework. He gave us workshops on the scrum process and was devoted to making us stick to the following agile development in our second week. He is driven to manage a project and it seems to be a natural position for him as he always focuses on the bigger picture even when the team are being slightly short-sighted."
 
 - Diptis Hadler - Student at Makers - Collaborated on the final project
 
@@ -1479,7 +1476,7 @@ For example, at Makers, I was the mentee of Jackie Dunne and I mentored Kim Diep
 
 Then, as a group, with the MakersBnB, the Acebook and the final project What Zen, I dedicated the time to learn and to listen others.
 
-In those project I initiated collective learning documentation:
+In those projects, I initiated collective learning documentation:
 
 [Link to Acebook Wiki](https://github.com/simian-sinister/Acebook-Simian-Sinister/wiki/Learning-documentation)
 
@@ -1531,9 +1528,9 @@ Adrien has been great to work with on JunglBook. He's super eager to learn and a
 
 At Makers I was constantly challenged and I took every opportunity to find the balance between the challenge of my body and my mind. It helped me to adapt among different kind of focus an pace.
 
-I went to every yoga and meditation class, I kept going to swim several times a week and took few courses so I was able to swim over 3km in 1h10min in front crawl (while before I was doing 1km), it was a way for me not to only prioritise mental challenges, but to balance. I also love the calm of holding my breath under water and swim very slowly, this is the same idea of balance between intense moment of coding where the focus is high and moments of wonders, where the body is driving.
+I went to every yoga and meditation class, I kept going to swim several times a week and took few courses so I was able to swim over 3km in 1h10min in front crawl (while before I was doing only 1km), it was a way for me not to only prioritise mental challenges, but to balance. I also love the calm of holding my breath under water and swim very slowly, this is the same idea of balance between intense moment of coding where the focus is high and moments of wonders, where the body is driving.
 
-I met Dana, the Joy Officer for at least 3 times during the 12 weeks and kept her updated regularly, she gave me plenty of advice and resources that I carefully absorbed and practiced, so I could enjoy the process as well as achieve results. Those new best practices go along with my holistic approach towards healthy habits and I could find that her advice resonated with me and the week of [meditation retreat](https://www.dhanakosa.com/retreat/2019/awake-wild) I did last year in Scotland.
+I met Dana, the Joy Officer, for at least 3 times during the 12 weeks and kept her updated regularly, she gave me plenty of advice and resources that I carefully absorbed and practiced, so I could enjoy the process as well as achieve results. Those new best practices go along with my holistic approach towards healthy habits and I could find that her advice resonated with me and the week of [meditation retreat](https://www.dhanakosa.com/retreat/2019/awake-wild) I did last year in Scotland.
 
 I also wrote 2 blog and got several good feedback, I will follow recommendations. What feels good is to create content.
 
@@ -1541,11 +1538,11 @@ I also wrote 2 blog and got several good feedback, I will follow recommendations
 
 [Link to blog 2. Journey to coding: Makers](https://medium.com/@AdrienFabre/journey-to-coding-makers-d0e3fc97059f)
 
-Also, I kept doing few talks on what I like, I social impact, on perspectives and I saw people loving my pictures, that was very good to see this.
+Also, I kept doing few talks on what I like, like 'social impact' and 'diversity of perspectives' and I saw people enjoying it what I created.
 
-Then I walk 45 min twice a day to come to Makers, this is also a way to spend some time with myself, looking at the trees, listening string musics, focusing on my posture or my breathing.
+Then I walk 45 min twice a day to come to Makers, this is also a way to spend some time with myself, looking at the trees, listening music, focusing on my posture or my breathing.
 
-All of this together, and regularly meeting friends and Makers students, the new ones and the old ones made me really enjoy the atmosphere at Makers. This is this kind of balance with individual and collective, relaxing and intense activities that I feel at my best.
+**All of this together, and regularly meeting friends and Makers students, the new ones and the old ones made me really enjoy the atmosphere at Makers. This is this kind of balance with individual and collective, relaxing and intense activities that I feel at my best. The balance.**
 
 ---
 
@@ -1569,9 +1566,9 @@ All of this together, and regularly meeting friends and Makers students, the new
 
 2010, I learned industrial maintenance, I studied mechanics and other scientific fields, I build a street light powered by solar power and created a wind turbine from scratch. I spent 10 weeks internship repairing helicopters.
 
-2012, I did Master a Master in Business Engineering, the first year I joined a student-enterprise, learning about marketing a lot, the second year I learned international business, I spent a year in Moscow, did a marketing internship and learned Russian. The last year, I was studying and working as a Project Buyer of electronic components for Schneider Electric.
+2012, I did a Master in Business Engineering, the first year I joined a student-enterprise, learning about marketing a lot, the second year I learned international business, I spent a year in Moscow, did a marketing internship and learned Russian. The last year, I was studying and working as a Project Buyer of electronic components for Schneider Electric.
 
-2015, I came to London, I learned sales and entrepreurship, going to undreds of events, learning how to network and people skills.
+2015, I came to London, I learned sales and entrepreurship, going to hundreds of events, learning how to network and people skills.
 
 2016, I learned facilitation of design thinking workshops and organisation of events through a network that helps social entrepreneurs to thrive. Exploring the social innovation ecosystem.
 
@@ -1587,9 +1584,9 @@ All of this together, and regularly meeting friends and Makers students, the new
 
 For example and learned English very well and my Russian is still kind of good. I learned that I do not control everything throught international politic conflicts, like the sanctions that made the Russian currency drop and made me come to London. I learnt to drive a motorcycle, I learned scuba diving. I learnt some finance by doing a loan to support myself. I learnt to create and cook food going through plenty of jobs from green houses, to fast food, to healthy food and to delivery of food by bicycle to pay my expenses. I learned to meditate and to travel in my body, to calm me down and to find new ways to explore the myself. I learned to travel, to adapt to cultures and environments, also in places like India, Australia and Ireland. I learned to adapt to different social levels, city sizes, and working environments.
 
-You may believe I am doing too many things, but I also learned to focus, one thing at a time. Watching Ted Talks and reading The Power of Now helped me to do so.
+You may believe I am doing too many things, but I also learned to focus, one thing at a time. Watching a lot  of Ted Talks and reading The Power of Now helped me to do so.
 
-Recently I improved my swimming skills, my front crawl and also my ability to write blogs. **I really found that Makers helped me not only to learn to code but to enhance this confidence at learning anything, in this specific case, learning a programming language, a testing framework, a stack and then do it again for an entire new environment. Not to forget the ability to learn to collaborate efficiently quickly with new people. So, learning to learn is also about knowing that we don't know everything, one other thing I progressed a lot is about problem solving and online searches, I think people found me good at it already, I expanded it.**
+Recently I improved my swimming skills, my front crawl., and also my ability to write blogs. **I really found that Makers helped me not only to learn to code but to enhance this confidence at learning anything, in this specific case, learning a programming language, a testing framework, a stack and then do it again for an entire new environment. Not to forget the ability to learn to collaborate efficiently quickly with new people. So, learning to learn is also about knowing that we don't know everything, one other thing I progressed a lot is about problem solving and online searches, I think people found me good at it already, I expanded it.**
 
 > During this whole journey, I cultivated my perseverance and developed a higher level of self awareness.
 
@@ -1597,11 +1594,11 @@ Recently I improved my swimming skills, my front crawl and also my ability to wr
 
 I also learned to create few wordpress websites:
 
-[Family Hairdressing Salon Website](http://attitude-michele-joel.com)
+[The Family Hairdressing Salon Website](http://attitude-michele-joel.com)
 
-[Personal Website](http://adrienfabre.net)
+[A Personal Website](http://adrienfabre.net)
 
-This last website will also show more in details the events and workshops I ran, which are focused on social impact and that are educational experiments by themselves, abeing an organiser, a facilitator and a student at the same time.
+This last website will also show more in details the events and workshops I ran, which are focused on social impact and that are educational experiments by themselves, being an organiser, a facilitator and a student at the same time.
 
 Finaly, I find that one of the best way to keep learning and to be motivated is to dive into a new ecosystem and connect with the different material available, to create stuff but above all with the individuals, this is why one of my focus now is to learn from Software Engineers. To connect with more depth with them and with potential employers I am creating my profiles [CV on GitHub](https://github.com/AdrienFabre/CV). To be faster, what I am planning is to organise regular events focused on tech, using my skills to develop the new ones faster.
 

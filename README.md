@@ -554,6 +554,10 @@ This syntax is like allowing anything to be called on 'messages', this is when w
 
 "Your process is very strong, you know what to do next, doing the Feature Test and then the Unit Test. You do not hesitate to modify namings and refactor your tests along you are writing the code. Finally, you communicate on what you are doing and it makes sense, meaning that the process and its implementation is very clear in your head, that was also very helpful to follow your thoughts."
 
+- Luca Fruzza - Student at Makers - After a process review 
+
+"I think you have a good TDD method, just make sure you’re doing small steps to get green lights"
+
 ---
 
 ### I can program fluently
@@ -622,6 +626,8 @@ I keep learning new things with:
 
 [Codeacademy](https://www.codecademy.com/AdrienFabre)
 
+[SoloLearn](https://www.sololearn.com/Profile/5164575#)
+
 [Udemy](https://www.udemy.com/user/adrien-fabre-add/)
 
 [Freecodecamp](https://www.freecodecamp.org/adrienfabre)
@@ -653,6 +659,10 @@ and personal projects under construction, always focusing on implementing TDD an
 - Diptis Hadler - Student at Makers - Collaborated on the final project
 
 "It was clear that he can code fluently as soon after we settled on the technology stack we would use he did a large part of the code to reach our MVP. He then built on that and improved features, especially on the look and feel of the front-end, showing his skill in refactoring the initial deliverables."
+
+- Tenebrousedge - Mentor at Exercism - Ruby
+
+"Perfect. This is the best-performing solution, and the one that we use to explain the concepts of this exercise."
 
 ---
 
@@ -1251,6 +1261,10 @@ subject(:shop) { described_class.new(price_table, special_offer) }
 [Link to Shop challenge in Ruby](https://github.com/AdrienFabre/shop_ruby/blob/master/lib/shop.rb)
 
 ---
+
+[Link to Bank challenge final refactoring](https://www.youtube.com/watch?v=V-pv6U-cCbA)
+
+---
 #### Feedback
 
 - Krzysztof Balejko - Student at Makers
@@ -1291,6 +1305,10 @@ This is also about constant prioritisation and knowing how the different process
 ![Big-picture-processes](readme_images/Big-picture-processes.jpg)
 
 In those cycles, from the left, the second big rectangle represents the whole product with all the features, it is connected to the Agile process on the left which is going help to work together and to take decisions collectively, to prioritise. On the other side, this is the process we have seen previously related to TDD but also to every part. I think having a methodical approach to solving problem is very related to the ability of formalising and organising thoughts through modeling or even just formalising them with sentences. **This is about being aware about what we are doing and why, in that way, pairing or working in a group helped me a lot to develop my ability to do so. Also getting constant feedback on my method and learning from others' methodologies gave me opportunities to perfect it.**
+
+[Link to Bank challenge start video in one class](https://youtu.be/Lh52rwFStGk)
+
+[Link to Middle letter challenge video](https://www.youtube.com/watch?v=lOygXZ7JF3g)
 
 ---
 
@@ -1471,7 +1489,7 @@ I collaborated with different kind of people, some willing to lead, some with le
 **It means that can evolve in a team where I contribute to my individual progress as well as the individual progress to every person in the group and to the collective goal.**
 
 In a broader sense it means that I collaborate with anyone in order to progress, that I perceive the value of working with people more skilled as well as less skilled and that in both cases I dedicate the energy to learn from expertise or to learn from intention to learn.
-
+e
 For example, at Makers, I was the mentee of Jackie Dunne and I mentored Kim Diep. Both of those relations were really focused on collaborative growth.
 
 Then, as a group, with the MakersBnB, the Acebook and the final project What Zen, I dedicated the time to learn and to listen others.
@@ -1590,6 +1608,8 @@ Recently I improved my swimming skills, my front crawl., and also my ability to 
 
 > During this whole journey, I cultivated my perseverance and developed a higher level of self awareness.
 
+I regularly meet people related to my current focus, this is a way to learn by itself and to quickly access focused insights, then I deepen the exploration on my own using suggested resources. As an example, I am currently reading a book about psychology and philosophy recommended by the Makers' Joy Officer.
+
 ---
 
 I also learned to create few wordpress websites:
@@ -1614,6 +1634,10 @@ This portfolio itself is a tool for me to structure and strengthen my learnings.
 ---
 
 **Feedback**
+
+- worbunkel - Mentor at Exercism - Typescript
+
+"This is a great solution! Can you think of a way to do this with a single return? If you want to make this slightly more readable, can you think of good variable names that represent the comparisons? Great work overall!"
 
 - Rohan Metha - from MakeSense (an open source volunteer-driven network creating events to support social entrepreneurs)
 

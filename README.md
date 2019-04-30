@@ -1656,14 +1656,11 @@ Adrien demonstrates a really strong work ethic. If he says he will do something 
 
 # Global feedback from Makers' Head of Education
 
-**General feedback**
-
-A great review. You program fast and uidly, move quickly around the process, and have inventive and thoughtful approaches to solving tough problems. Really impressive – do check the speci c feedback below for more :)
+A great review. You program fast and fluidly, move quickly around the process, and have inventive and thoughtful approaches to solving tough problems. Really impressive – do check the specific feedback below for more :)
 
 - **I can TDD anything**
 
-I liked that your rst test was essentially an expression of a working program. However, I might consider moving in smaller steps by constraining the problem – for instance, starting only with input frequencies divided by ve, or using a step of 1. This would allow you to start providing value sooner with working test cases. I really, really liked how you split out your test into actual and expected variables – this made your test extremely easy to read. I gave you a twist performance test, and you came up with a really good way to do this kind of
-benchmarking.
+I liked that your first test was essentially an expression of a working program. However, I might consider moving in smaller steps by constraining the problem – for instance, starting only with input frequencies divided by ve, or using a step of 1. This would allow you to start providing value sooner with working test cases. I really, really liked how you split out your test into actual and expected variables – this made your test extremely easy to read. I gave you a twist performance test, and you came up with a really good way to do this kind of benchmarking.
 
 - **I can program fluently**
 
@@ -1671,7 +1668,7 @@ You moved quickly around the command-line to get set up. You were comfortable wi
 
 - **I can debug anything**
 
-You hit a problem with a typo, then used the command-line to identify and x that problem in short order. I got a strong sense that when you were in "debugging mode", you took time and space to solve the problem.
+You hit a problem with a typo, then used the command-line to identify and fix that problem in short order. I got a strong sense that when you were in "debugging mode", you took time and space to solve the problem.
 
 - **I can model anything**
 
@@ -1688,8 +1685,7 @@ You followed the dev process effectively, starting with eliciting requirements, 
 
 - **I use an Agile product development process**
 
-You asked good questions at the beginning to try and identify the problem. However, the test case you wrote was quite a big "chunk" to move in – I wonder whether breaking it up into smaller steps towards the "chunk" would be a better
-approach (see TDD for more on this).
+You asked good questions at the beginning to try and identify the problem. However, the test case you wrote was quite a big "chunk" to move in – I wonder whether breaking it up into smaller steps towards the "chunk" would be a better approach (see TDD for more on this).
 
 - **I write code that is easy to change**
 
@@ -1697,4 +1693,4 @@ It was really good that you spent time thinking about your test structure to mak
 
 - **I can justify the way I work**
 
-You gave a solid justi cation for using a simple implementation and proposed a step forward – that you'd write this simple version and agree on a step forward. I felt very bought-in to this process.
+You gave a solid justification for using a simple implementation and proposed a step forward – that you'd write this simple version and agree on a step forward. I felt very bought-in to this process.

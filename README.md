@@ -34,6 +34,7 @@ The 'I can make anything' parts are longer, for convenience, I created few short
   - [I am equipped for long term growth](#i-am-equipped-for-long-term-growth)
     - [I manage my own well-being](#i-manage-my-own-well-being)
     - [I can learn anything by myself](#i-can-learn-anything-by-myself)
+- [Global feedback from Makers' Head of Education](#global-feedback-from-makers-head-of-education)
 
 ---
 
@@ -1639,6 +1640,8 @@ This portfolio itself is a tool for me to structure and strengthen my learnings.
 
 "This is a great solution! Can you think of a way to do this with a single return? If you want to make this slightly more readable, can you think of good variable names that represent the comparisons? Great work overall!"
 
+"This looks great! You incorporated the feedback really well.Great work!"
+
 - Rohan Metha - from MakeSense (an open source volunteer-driven network creating events to support social entrepreneurs)
 
 "Very soon after attending his first event he was eager to jump on board and learn how to facilitate one of our workshops. By conducting these workshops he got to deeply understand several social entrepreneurs and help them figure out how to improve their business. He did these extremely well and soon became part of the core team. 6 months after he attended his first MakeSense workshop Adrien was the lead in organising a large-scale event “Food Glorious Food” tackling food waste with a full day event with workshops, activities, and talks featuring 12 different social entrepreneurs in the food sustainability sector. Adrien found the venue, negotiated using it for free, came up with the concept, created the marketing materials and was directing 6 other volunteers to pull off a really successful event.
@@ -1650,3 +1653,48 @@ Adrien demonstrates a really strong work ethic. If he says he will do something 
 "Adrien is a great asset to any team in a business environment. He has an incredible work ethic blended with a great student mentality. During his time at MJB he proved himself to be a fast learner and demonstrated a willingness to continuously go the extra mile to generate results. He developed his sales and business development skills massively whilst at MJB and I'm glad to say that he was a pleasure to work with."
 
 ---
+
+# Global feedback from Makers' Head of Education
+
+**General feedback**
+
+A great review. You program fast and uidly, move quickly around the process, and have inventive and thoughtful approaches to solving tough problems. Really impressive – do check the speci c feedback below for more :)
+
+- **I can TDD anything**
+
+I liked that your rst test was essentially an expression of a working program. However, I might consider moving in smaller steps by constraining the problem – for instance, starting only with input frequencies divided by ve, or using a step of 1. This would allow you to start providing value sooner with working test cases. I really, really liked how you split out your test into actual and expected variables – this made your test extremely easy to read. I gave you a twist performance test, and you came up with a really good way to do this kind of
+benchmarking.
+
+- **I can program fluently**
+
+You moved quickly around the command-line to get set up. You were comfortable with Ruby, using effective Ruby idioms to write the test and the associated method. The solution you came up with to the problem – adding the result of the modulus – was very intuitive and impressive. I hadn't thought of solving the problem like that.
+
+- **I can debug anything**
+
+You hit a problem with a typo, then used the command-line to identify and x that problem in short order. I got a strong sense that when you were in "debugging mode", you took time and space to solve the problem.
+
+- **I can model anything**
+
+You spent some time trying to get a clear picture of the input and the output, along with the data structure. However, it can be a good idea to ask for these things directly from the user – OK, what's the input(s)? What data structure? What's the
+output? What data structure?
+
+- **I can refactor anything**
+
+It was interesting that you moved on to adding the step without taking a break to refactor the code you had already written (for example, you retained an `each` loop that probably should have been a `map`).
+
+- **I have a methodical approach to solving problems**
+
+You followed the dev process effectively, starting with eliciting requirements, modelling, driving a test, implementing a solution, and so on. It felt very methodical indeed.
+
+- **I use an Agile product development process**
+
+You asked good questions at the beginning to try and identify the problem. However, the test case you wrote was quite a big "chunk" to move in – I wonder whether breaking it up into smaller steps towards the "chunk" would be a better
+approach (see TDD for more on this).
+
+- **I write code that is easy to change**
+
+It was really good that you spent time thinking about your test structure to make it readable, including the creation of variables with good names to make it clear what the input and outputs were.
+
+- **I can justify the way I work**
+
+You gave a solid justi cation for using a simple implementation and proposed a step forward – that you'd write this simple version and agree on a step forward. I felt very bought-in to this process.

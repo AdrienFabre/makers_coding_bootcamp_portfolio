@@ -1617,7 +1617,7 @@ I also learned to create few wordpress websites:
 
 [The Family Hairdressing Salon Website](http://attitude-michele-joel.com)
 
-[A Personal Website](http://adrienfabre.net)
+[A Personal Website](http://adrienfabre.dev)
 
 This last website will also show more in details the events and workshops I ran, which are focused on social impact and that are educational experiments by themselves, being an organiser, a facilitator and a student at the same time.
 
